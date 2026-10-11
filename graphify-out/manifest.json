@@ -96,10 +96,10 @@
     "semantic_hash": "4fa29f0459f7b72d51d0084650dd3a72"
   },
   "apps/web/app/monitor/page.tsx": {
-    "mtime": 1791719331.3002238,
-    "seen": 1791719655.347587,
-    "ast_hash": "21c419c938c93baaa7bd2e82e6b355a1",
-    "semantic_hash": "21c419c938c93baaa7bd2e82e6b355a1"
+    "mtime": 1791723875.2585645,
+    "seen": 1791723960.0218337,
+    "ast_hash": "f832bc5b94531e5da7a514fd4214d1fb",
+    "semantic_hash": ""
   },
   "apps/web/app/orders/page.tsx": {
     "mtime": 1791718832.818923,
@@ -108,10 +108,10 @@
     "semantic_hash": "a506849f8dfa91382e6c748d7c21d194"
   },
   "apps/web/app/page.tsx": {
-    "mtime": 1791719322.005225,
-    "seen": 1791719655.347588,
-    "ast_hash": "b50bebf85319ce81c3edf77906012f12",
-    "semantic_hash": "b50bebf85319ce81c3edf77906012f12"
+    "mtime": 1791723828.6070962,
+    "seen": 1791723960.0219529,
+    "ast_hash": "7496113db3dc7787cfc95f5579673659",
+    "semantic_hash": ""
   },
   "apps/web/app/plans/[id]/page.tsx": {
     "mtime": 1791719128.6949341,
@@ -168,9 +168,9 @@
     "semantic_hash": "045f58f487fe9f9a516b03b28aee569e"
   },
   "apps/web/components/shell/sidebar.tsx": {
-    "mtime": 1791722721.4918668,
-    "seen": 1791722820.1581578,
-    "ast_hash": "a6ec3acb4a84ebc7a4bb2b0bbe59ff2b",
+    "mtime": 1791723844.2688735,
+    "seen": 1791723960.023465,
+    "ast_hash": "4b28c199a1957c65229525310c662ae6",
     "semantic_hash": ""
   },
   "apps/web/components/shell/skip-link.tsx": {
@@ -606,9 +606,9 @@
     "semantic_hash": ""
   },
   "apps/web/components/layout/sidebar.tsx": {
-    "mtime": 1791720431.0427835,
-    "seen": 1791720694.48767,
-    "ast_hash": "b10af80e82f489ce565f4a4cb9eb0464",
+    "mtime": 1791723864.97748,
+    "seen": 1791723960.0230513,
+    "ast_hash": "ae22c0ceee2570d3cef63cf6c93bd7d6",
     "semantic_hash": ""
   },
   "apps/web/lib/mock-data.ts": {
@@ -792,9 +792,9 @@
     "semantic_hash": ""
   },
   "apps/web/app/analytics/page.tsx": {
-    "mtime": 1791722746.9884803,
-    "seen": 1791722820.1530678,
-    "ast_hash": "88d86d1d3c28b0e91c237524aba7e66e",
+    "mtime": 1791723918.0856762,
+    "seen": 1791723960.0183434,
+    "ast_hash": "7855bff962ec7a46db315c11fd1ceb6a",
     "semantic_hash": ""
   },
   "apps/web/app/dashboard/page.tsx": {

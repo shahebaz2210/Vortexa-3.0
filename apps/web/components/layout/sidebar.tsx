@@ -13,7 +13,6 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { href: "/", label: "Dashboard", icon: "📊" },
-  { href: "/monitor", label: "Live Telemetry", icon: "📡" },
   { href: "/fleet", label: "Fleet & Drivers", icon: "🚚" },
   { href: "/orders", label: "Orders & Cargo", icon: "📦" },
   { href: "/plans", label: "Route Plans", icon: "🗺️" },

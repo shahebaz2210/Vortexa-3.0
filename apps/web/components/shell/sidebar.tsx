@@ -28,7 +28,6 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "Orders", href: "/orders", icon: Package },
   { label: "Fleet", href: "/fleet", icon: Truck },
   { label: "Route Optimization", href: "/plans", icon: Route },
-  { label: "Live Monitor", href: "/monitor", icon: Activity },
   { label: "Disruptions", href: "/disruptions", icon: AlertTriangle, badge: 2, badgeVariant: "danger" },
   { label: "Driver Web Portal", href: "/driver", icon: Truck },
   { label: "Audit Trail", href: "/audit", icon: CalendarDays },
