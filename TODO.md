@@ -30,11 +30,11 @@
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 13 | Write `docker-compose.yml`: Next.js app, PostgreSQL 16 + PostGIS, Python optimizer worker | TRD §21.1 | `[ ]` |
-| 14 | Add Valhalla service to docker-compose with bounded geographic extract | TRD §21.1 | `[ ]` |
-| 15 | Add optional Photon geocoder service | TRD §21.1 | `[ ]` |
-| 16 | Add optional MinIO (object storage) service | TRD §21.1 | `[ ]` |
-| 17 | Verify `docker compose up` brings up all services | NFR-OBS-05 | `[ ]` |
+| 13 | Write `docker-compose.yml`: Next.js app, PostgreSQL 16 + PostGIS, Python optimizer worker | TRD §21.1 | `[x]` |
+| 14 | Add Valhalla service to docker-compose with bounded geographic extract | TRD §21.1 | `[x]` |
+| 15 | Add optional Photon geocoder service | TRD §21.1 | `[x]` |
+| 16 | Add optional MinIO (object storage) service | TRD §21.1 | `[x]` |
+| 17 | Verify `docker compose up` brings up all services | NFR-OBS-05 | `[x]` |
 
 ### 1.3 Database Foundation
 
