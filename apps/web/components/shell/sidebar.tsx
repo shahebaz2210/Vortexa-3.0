@@ -24,15 +24,14 @@ export interface NavItem {
 }
 
 export const NAV_ITEMS: NavItem[] = [
-  { label: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
+  { label: "Dashboard", href: "/", icon: LayoutDashboard },
   { label: "Orders", href: "/orders", icon: Package },
   { label: "Fleet", href: "/fleet", icon: Truck },
   { label: "Route Optimization", href: "/plans", icon: Route },
-  { label: "Plan Schedule", href: "/schedule", icon: CalendarDays },
   { label: "Live Monitor", href: "/monitor", icon: Activity },
   { label: "Disruptions", href: "/disruptions", icon: AlertTriangle, badge: 2, badgeVariant: "danger" },
-  { label: "Analytics", href: "/analytics", icon: BarChart3 },
-  { label: "Settings", href: "/settings", icon: Settings },
+  { label: "Driver Web Portal", href: "/driver", icon: Truck },
+  { label: "Audit Trail", href: "/audit", icon: CalendarDays },
 ];
 
 export interface SidebarProps {
@@ -55,7 +54,7 @@ export function Sidebar({ isCollapsed = false, onItemClick, className = "" }: Si
           Control Room
         </div>
         {NAV_ITEMS.map((item) => {
-          const isActive = pathname === item.href || (item.href !== "/dashboard" && pathname.startsWith(item.href));
+          const isActive = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
           const Icon = item.icon;
 
           return (
