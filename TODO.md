@@ -15,10 +15,10 @@
 |---|---|---|---|
 | 1 | Initialize monorepo root with `package.json`, `.gitignore`, `.editorconfig`, `README.md` | TRD §4 | `[x]` |
 | 2 | Create directory scaffold: `apps/web/`, `services/optimizer/`, `packages/contracts/`, `packages/database/`, `infra/docker/`, `infra/migrations/` | TRD §4 | `[x]` |
-| 3 | Initialize `apps/web/` as Next.js 15 App Router project with TypeScript 5.x strict mode | TRD §3 | `[ ]` |
-| 4 | Install and configure Tailwind CSS v4 in `apps/web/` | TRD §3, Design §14 | `[ ]` |
-| 5 | Install `lucide-react` icon library | Design §2.1 | `[ ]` |
-| 6 | Add Google Fonts (Inter 400/500/600, JetBrains Mono 500/600) to layout | Design §6 | `[ ]` |
+| 3 | Initialize `apps/web/` as Next.js 15 App Router project with TypeScript 5.x strict mode | TRD §3 | `[x]` |
+| 4 | Install and configure Tailwind CSS v4 in `apps/web/` | TRD §3, Design §14 | `[x]` |
+| 5 | Install `lucide-react` icon library | Design §2.1 | `[x]` |
+| 6 | Add Google Fonts (Inter 400/500/600, JetBrains Mono 500/600) to layout | Design §6 | `[x]` |
 | 7 | Initialize `services/optimizer/` as Python 3.12 project with `pyproject.toml`, FastAPI, Pydantic, OR-Tools | TRD §3, §10 | `[ ]` |
 | 8 | Create `packages/contracts/` with shared Zod schemas for request/response types | TRD §3, §12.1 | `[ ]` |
 | 9 | Create `.env.example` documenting all required environment variables (including `ELEVENLABS_API_KEY`, ElevenLabs voice IDs, DB, Valhalla) | TRD §14 | `[ ]` |
