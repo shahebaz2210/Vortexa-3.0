@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
   Mic,
@@ -18,6 +19,10 @@ import {
   X,
   FileCode2,
   Sparkles,
+  ExternalLink,
+  Ban,
+  TrafficCone,
+  CarFront,
 } from "lucide-react";
 
 export interface FleetVehicleSummary {
@@ -109,6 +114,7 @@ export function HandsFreeDisruptionModal({
 }: HandsFreeDisruptionModalProps) {
   const activeFleet = fleet && fleet.length > 0 ? fleet : DEFAULT_FLEET;
   const [selectedVehicleId, setSelectedVehicleId] = useState<string>(activeFleet[0]?.id || "VH-001");
+  const [disruptionType, setDisruptionType] = useState<"ROAD_CLOSURE" | "TRAFFIC_CONGESTION" | "CANCELLATION">("ROAD_CLOSURE");
   const [isRecording, setIsRecording] = useState(false);
   const [disruptionReason, setDisruptionReason] = useState("");
   const [isAnalyzing, setIsAnalyzing] = useState(false);
@@ -116,6 +122,7 @@ export function HandsFreeDisruptionModal({
   const [guardrailError, setGuardrailError] = useState<string | null>(null);
   const [isConfirming, setIsConfirming] = useState(false);
   const [confirmedSuccess, setConfirmedSuccess] = useState(false);
+  const [newIncidentId, setNewIncidentId] = useState<string | null>(null);
 
   const recognitionRef = useRef<any>(null);
 
@@ -202,8 +209,9 @@ export function HandsFreeDisruptionModal({
     }
   };
 
-  const handleAnalyzeDisruption = async (customReason?: string) => {
+  const handleAnalyzeDisruption = async (customReason?: string, forcedType?: "ROAD_CLOSURE" | "TRAFFIC_CONGESTION" | "CANCELLATION") => {
     const text = customReason || disruptionReason;
+    const typeToUse = forcedType || disruptionType;
     if (!text.trim()) return;
 
     setIsAnalyzing(true);
@@ -217,6 +225,7 @@ export function HandsFreeDisruptionModal({
         body: JSON.stringify({
           transcript: text,
           vehicle_id: selectedVehicle.id,
+          disruption_type: typeToUse,
         }),
       });
 
@@ -229,16 +238,17 @@ export function HandsFreeDisruptionModal({
         setGuardrailError(reason);
         speakAudioFeedback(reason);
       } else if (data.success && data.incident) {
-        // Attach selected vehicle details to the incident
+        // Attach selected vehicle and chosen disruption type
         const validated = {
           ...data.incident,
+          type: typeToUse,
           vehicle_id: selectedVehicle.id,
           driverName: selectedVehicle.driverName,
           vehicleName: selectedVehicle.name,
         };
         setExtractedIncident(validated);
         speakAudioFeedback(
-          `Disruption parsed for ${selectedVehicle.id}. Awaiting dispatcher confirmation.`
+          `Disruption parsed for ${selectedVehicle.id} as ${typeToUse.replace(/_/g, " ")}. Awaiting confirmation.`
         );
       }
     } catch {
@@ -252,6 +262,29 @@ export function HandsFreeDisruptionModal({
     if (!extractedIncident) return;
     setIsConfirming(true);
     try {
+      // 1. Add directly to Disruptions Page (/api/v1/disruptions)
+      const addRes = await fetch("/api/v1/disruptions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          incidentType: disruptionType,
+          vehicleCode: `${selectedVehicle.id} (${selectedVehicle.name})`,
+          driverName: selectedVehicle.driverName,
+          locationName: extractedIncident.from && extractedIncident.to
+            ? `${extractedIncident.from} ➔ ${extractedIncident.to}`
+            : extractedIncident.from || selectedVehicle.nextStop || "Active Corridor",
+          description: disruptionReason || extractedIncident.extracted_summary,
+          delayMinutes: extractedIncident.delay_min || (disruptionType === "CANCELLATION" ? 0 : 45),
+          from: extractedIncident.from,
+          to: extractedIncident.to,
+        }),
+      });
+      const addData = await addRes.json();
+      if (addData.data?.id) {
+        setNewIncidentId(addData.data.id);
+      }
+
+      // 2. Trigger OR-Tools replan
       const replanRes = await fetch("/api/v1/plans/PLAN-SF-2026-10-12/optimize", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -263,16 +296,11 @@ export function HandsFreeDisruptionModal({
       await replanRes.json();
 
       setConfirmedSuccess(true);
-      speakAudioFeedback("Disruption confirmed. Fleet replan generated.");
+      speakAudioFeedback("Disruption added to disruptions page. Replan generated.");
 
       if (onDisruptionConfirmed) {
         onDisruptionConfirmed(extractedIncident);
       }
-
-      setTimeout(() => {
-        setConfirmedSuccess(false);
-        onClose();
-      }, 2000);
     } catch (err) {
       console.error("Failed to confirm disruption:", err);
     } finally {
@@ -294,7 +322,7 @@ export function HandsFreeDisruptionModal({
                 Disruption Detected
               </h2>
               <p className="text-xs text-[var(--muted-foreground)] mt-0.5">
-                Select active fleet vehicle and provide disruption reason as text or voice.
+                Select active fleet vehicle, choose disruption type, and provide reason via text or voice.
               </p>
             </div>
           </div>
@@ -315,7 +343,7 @@ export function HandsFreeDisruptionModal({
             <div className="flex items-center justify-between">
               <span className="text-xs font-semibold text-[var(--foreground)] uppercase tracking-wider flex items-center gap-1.5">
                 <Truck className="h-4 w-4 text-[var(--primary)]" />
-                <span>Select Active Fleet Vehicle:</span>
+                <span>1. Select Active Fleet Vehicle:</span>
               </span>
               <span className="text-[11px] font-mono font-medium text-[var(--muted-foreground)]">
                 {activeFleet.length} Vehicles In Fleet
@@ -380,12 +408,88 @@ export function HandsFreeDisruptionModal({
             )}
           </div>
 
-          {/* 2. Reason of Disruptions Input (Text or Voice) */}
+          {/* 2. Disruption Type Options */}
+          <div className="p-4 rounded-xl border border-[var(--border)] bg-[var(--surface-secondary)]/40 flex flex-col gap-2.5">
+            <span className="text-xs font-semibold text-[var(--foreground)] uppercase tracking-wider flex items-center gap-1.5">
+              <Layers className="h-4 w-4 text-[var(--primary)]" />
+              <span>2. Disruption Type Option:</span>
+            </span>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+              {/* Option A: Road Closures & Blockages */}
+              <button
+                type="button"
+                onClick={() => {
+                  setDisruptionType("ROAD_CLOSURE");
+                  setExtractedIncident(null);
+                }}
+                className={`p-3 rounded-xl border text-left flex flex-col gap-1 transition-all cursor-pointer ${
+                  disruptionType === "ROAD_CLOSURE"
+                    ? "border-rose-500 bg-rose-50/80 dark:bg-rose-950/40 text-rose-900 dark:text-rose-200 ring-1 ring-rose-500"
+                    : "border-[var(--border)] bg-[var(--surface)] text-[var(--foreground)] hover:border-rose-400/50"
+                }`}
+              >
+                <div className="flex items-center gap-1.5 font-bold text-xs">
+                  <TrafficCone className="h-4 w-4 text-rose-600" />
+                  <span>Road Closures & Blockages</span>
+                </div>
+                <p className="text-[11px] text-[var(--muted-foreground)] leading-tight">
+                  Flooding, bridge closed, street blockages (+delay on segment)
+                </p>
+              </button>
+
+              {/* Option B: Severe Traffic Congestion */}
+              <button
+                type="button"
+                onClick={() => {
+                  setDisruptionType("TRAFFIC_CONGESTION");
+                  setExtractedIncident(null);
+                }}
+                className={`p-3 rounded-xl border text-left flex flex-col gap-1 transition-all cursor-pointer ${
+                  disruptionType === "TRAFFIC_CONGESTION"
+                    ? "border-amber-500 bg-amber-50/80 dark:bg-amber-950/40 text-amber-900 dark:text-amber-200 ring-1 ring-amber-500"
+                    : "border-[var(--border)] bg-[var(--surface)] text-[var(--foreground)] hover:border-amber-400/50"
+                }`}
+              >
+                <div className="flex items-center gap-1.5 font-bold text-xs">
+                  <CarFront className="h-4 w-4 text-amber-600" />
+                  <span>Severe Traffic Congestion</span>
+                </div>
+                <p className="text-[11px] text-[var(--muted-foreground)] leading-tight">
+                  High-density congestion, accident gridlock, slowdown (+25-45m)
+                </p>
+              </button>
+
+              {/* Option C: Delivery Cancellations */}
+              <button
+                type="button"
+                onClick={() => {
+                  setDisruptionType("CANCELLATION");
+                  setExtractedIncident(null);
+                }}
+                className={`p-3 rounded-xl border text-left flex flex-col gap-1 transition-all cursor-pointer ${
+                  disruptionType === "CANCELLATION"
+                    ? "border-purple-500 bg-purple-50/80 dark:bg-purple-950/40 text-purple-900 dark:text-purple-200 ring-1 ring-purple-500"
+                    : "border-[var(--border)] bg-[var(--surface)] text-[var(--foreground)] hover:border-purple-400/50"
+                }`}
+              >
+                <div className="flex items-center gap-1.5 font-bold text-xs">
+                  <Ban className="h-4 w-4 text-purple-600" />
+                  <span>Delivery Cancellations</span>
+                </div>
+                <p className="text-[11px] text-[var(--muted-foreground)] leading-tight">
+                  Customer cancelled, closed store, remove delivery from route
+                </p>
+              </button>
+            </div>
+          </div>
+
+          {/* 3. Reason of Disruptions Input (Text or Voice) */}
           <div className="p-4 rounded-xl border border-[var(--border)] bg-[var(--surface-secondary)]/40 flex flex-col gap-3">
             <div className="flex items-center justify-between">
               <span className="text-xs font-semibold text-[var(--foreground)] uppercase tracking-wider flex items-center gap-1.5">
                 <Radio className="h-4 w-4 text-rose-500" />
-                <span>Disruption Reason (Input as Text or Voice):</span>
+                <span>3. Reason of Disruption (Input as Text or Voice):</span>
               </span>
 
               {/* Voice Radio In / Mic Button */}
@@ -416,7 +520,13 @@ export function HandsFreeDisruptionModal({
             {/* Textarea for Text input or Spoken Audio Transcript */}
             <textarea
               rows={3}
-              placeholder="Speak via mic or type disruption reason (e.g., 'Major waterlogging between Node 3 and Node 7. Traffic is halted for at least an hour.')..."
+              placeholder={
+                disruptionType === "ROAD_CLOSURE"
+                  ? "Speak or type road closure reason (e.g., 'Major waterlogging between Node 3 and Node 7. Traffic is halted for at least an hour.')..."
+                  : disruptionType === "TRAFFIC_CONGESTION"
+                  ? "Speak or type traffic congestion reason (e.g., 'Severe gridlock on Market St near 4th St. 40 minutes travel delay expected.')..."
+                  : "Speak or type cancellation reason (e.g., 'Customer at Marina Grocers cancelled order ORD-9902. Skip stop and recalculate.')..."
+              }
               value={disruptionReason}
               onChange={(e) => {
                 setDisruptionReason(e.target.value);
@@ -428,42 +538,45 @@ export function HandsFreeDisruptionModal({
 
             {/* Quick helper test chips */}
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-[11px] text-[var(--muted-foreground)]">Quick test:</span>
+              <span className="text-[11px] text-[var(--muted-foreground)]">Sample inputs:</span>
               <button
                 type="button"
                 onClick={() => {
                   const sample =
                     "Major waterlogging between Node 3 and Node 7. Traffic is halted for at least an hour.";
+                  setDisruptionType("ROAD_CLOSURE");
                   setDisruptionReason(sample);
-                  handleAnalyzeDisruption(sample);
-                }}
-                className="text-[11px] px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800 hover:bg-blue-100 cursor-pointer"
-              >
-                Waterlogging Node 3 ➔ Node 7 (60m)
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  const sample =
-                    "Engine overheated and failed at 10:30 AM on Market St. Vehicle breakdown.";
-                  setDisruptionReason(sample);
-                  handleAnalyzeDisruption(sample);
+                  handleAnalyzeDisruption(sample, "ROAD_CLOSURE");
                 }}
                 className="text-[11px] px-2 py-0.5 rounded bg-rose-50 dark:bg-rose-950/40 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800 hover:bg-rose-100 cursor-pointer"
               >
-                Vehicle Failure at 10:30 AM
+                🛑 Road Closure: Waterlogging Node 3 ➔ 7
               </button>
               <button
                 type="button"
                 onClick={() => {
                   const sample =
-                    "Road blocked near Highway 999 and Atlantis Sector.";
+                    "Severe traffic congestion on Market St near SOMA. Standstill traffic adds 35 mins delay.";
+                  setDisruptionType("TRAFFIC_CONGESTION");
                   setDisruptionReason(sample);
-                  handleAnalyzeDisruption(sample);
+                  handleAnalyzeDisruption(sample, "TRAFFIC_CONGESTION");
                 }}
                 className="text-[11px] px-2 py-0.5 rounded bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800 hover:bg-amber-100 cursor-pointer"
               >
-                Test Unknown Sector Guardrail
+                🚦 Severe Traffic: Market St (+35m)
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  const sample =
+                    "Customer cancelled delivery ORD-9902 at Marina Grocers due to emergency store closure.";
+                  setDisruptionType("CANCELLATION");
+                  setDisruptionReason(sample);
+                  handleAnalyzeDisruption(sample, "CANCELLATION");
+                }}
+                className="text-[11px] px-2 py-0.5 rounded bg-purple-50 dark:bg-purple-950/40 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800 hover:bg-purple-100 cursor-pointer"
+              >
+                ❌ Cancellation: Marina Grocers (ORD-9902)
               </button>
             </div>
 
@@ -526,17 +639,18 @@ export function HandsFreeDisruptionModal({
                     <FileCode2 className="h-3 w-3 text-blue-400" />
                     Structured Disruption Parameters:
                   </span>
-                  <span className="text-emerald-400">Ready for OR-Tools</span>
+                  <span className="text-emerald-400">Ready for Disruptions Page</span>
                 </div>
                 <pre className="text-[11px] overflow-x-auto text-emerald-300">
 {JSON.stringify(
   {
-    type: extractedIncident.type,
-    from: extractedIncident.from || extractedIncident.location_from || "LOC_03",
-    to: extractedIncident.to || extractedIncident.location_to || "LOC_07",
-    delay_min: extractedIncident.delay_min || extractedIncident.delay_minutes || 60,
+    incidentType: disruptionType,
     vehicle_id: selectedVehicle.id,
     driver: selectedVehicle.driverName,
+    from: extractedIncident.from || "LOC_03",
+    to: extractedIncident.to || "LOC_07",
+    delay_min: extractedIncident.delay_min || (disruptionType === "CANCELLATION" ? 0 : 45),
+    reason: disruptionReason,
   },
   null,
   2
@@ -548,21 +662,23 @@ export function HandsFreeDisruptionModal({
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
                 <div className="p-2 rounded-lg bg-[var(--surface-elevated)] border border-[var(--border)]">
                   <span className="text-[10px] text-[var(--muted-foreground)] block uppercase">Type</span>
-                  <span className="font-bold text-[var(--foreground)]">{extractedIncident.type}</span>
+                  <span className="font-bold text-[var(--foreground)]">{disruptionType}</span>
                 </div>
                 <div className="p-2 rounded-lg bg-[var(--surface-elevated)] border border-[var(--border)]">
                   <span className="text-[10px] text-[var(--muted-foreground)] block uppercase">Vehicle</span>
                   <span className="font-bold text-[var(--foreground)] font-mono">{selectedVehicle.id}</span>
                 </div>
                 <div className="p-2 rounded-lg bg-[var(--surface-elevated)] border border-[var(--border)]">
-                  <span className="text-[10px] text-[var(--muted-foreground)] block uppercase">Segment</span>
+                  <span className="text-[10px] text-[var(--muted-foreground)] block uppercase">Location</span>
                   <span className="font-bold text-[var(--foreground)] font-mono">
-                    {extractedIncident.from || "LOC_03"} ➔ {extractedIncident.to || "LOC_07"}
+                    {extractedIncident.from || selectedVehicle.nextStop}
                   </span>
                 </div>
                 <div className="p-2 rounded-lg bg-[var(--surface-elevated)] border border-[var(--border)]">
-                  <span className="text-[10px] text-[var(--muted-foreground)] block uppercase">Delay</span>
-                  <span className="font-bold text-amber-600 font-mono">+{extractedIncident.delay_minutes} min</span>
+                  <span className="text-[10px] text-[var(--muted-foreground)] block uppercase">Delay / Action</span>
+                  <span className="font-bold text-amber-600 font-mono">
+                    {disruptionType === "CANCELLATION" ? "Skip Stop" : `+${extractedIncident.delay_minutes || 45}m`}
+                  </span>
                 </div>
               </div>
 
@@ -582,18 +698,44 @@ export function HandsFreeDisruptionModal({
                   onClick={handleConfirmDisruption}
                   className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold"
                 >
-                  Confirm & Trigger Replanning (OR-Tools) →
+                  Confirm & Add to Disruptions Page →
                 </Button>
               </div>
             </div>
           )}
 
+          {/* Success Banner with Direct Link to Disruptions Page */}
           {confirmedSuccess && (
-            <div className="p-3 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-800 dark:text-emerald-200 text-xs flex items-center gap-2">
-              <CheckCircle2 className="h-4 w-4 text-emerald-600" />
-              <span>
-                <strong>Disruption confirmed!</strong> Fleet replan dispatched to active vehicles.
-              </span>
+            <div className="p-4 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-900 dark:text-emerald-100 text-xs flex flex-col gap-2.5 animate-in fade-in">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-5 w-5 text-emerald-600 shrink-0" />
+                <span className="font-bold text-sm">
+                  Disruption successfully added to Disruptions Page!
+                </span>
+              </div>
+              <p className="text-[11px] text-emerald-800 dark:text-emerald-200">
+                Incident {newIncidentId || "INC-903"} logged for {selectedVehicle.id} ({selectedVehicle.name}). Dynamic route replanning initiated.
+              </p>
+              <div className="flex items-center justify-end gap-2 pt-1">
+                <Link href="/disruptions">
+                  <Button
+                    size="sm"
+                    variant="primary"
+                    className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs flex items-center gap-1.5"
+                  >
+                    <span>View on Disruptions Page</span>
+                    <ExternalLink className="h-3.5 w-3.5" />
+                  </Button>
+                </Link>
+                <Button
+                  size="sm"
+                  variant="outline"
+                  onClick={onClose}
+                  className="text-xs"
+                >
+                  Close
+                </Button>
+              </div>
             </div>
           )}
         </div>
