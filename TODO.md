@@ -124,45 +124,46 @@
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 76 | Create `globals.css` with all CSS custom properties (light mode) | Design §3, §13 | `[ ]` |
-| 77 | Add dark mode CSS custom properties under `.dark` | Design §4, §13 | `[ ]` |
-| 78 | Add typography CSS custom properties | Design §6, §13 | `[ ]` |
-| 79 | Configure Tailwind with custom tokens, fonts, spacing, radius, breakpoints | Design §7, §8, §14 | `[ ]` |
-| 80 | Implement dark mode toggle (light/dark/system) | Design §2.1 | `[ ]` |
+| 76 | Create `globals.css` with all CSS custom properties (light mode) | Design §3, §13 | `[x]` |
+| 77 | Add dark mode CSS custom properties under `.dark` | Design §4, §13 | `[x]` |
+| 78 | Add typography CSS custom properties | Design §6, §13 | `[x]` |
+| 79 | Configure Tailwind with custom tokens, fonts, spacing, radius, breakpoints | Design §7, §8, §14 | `[x]` |
+| 80 | Implement dark mode toggle (light/dark/system) | Design §2.1 | `[x]` |
 
 ### 3.2 Base Components
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 81 | Build `Button` (Primary/Secondary/Outline/Ghost/Danger/Icon; sm/default/lg/xl; all states) | Design §9.1 | `[ ]` |
-| 82 | Build `Input` (text, search with debounce, textarea; focus/error/disabled states) | Design §9.3 | `[ ]` |
-| 83 | Build `Select` (custom popover, native on mobile) | Design §9.3 | `[ ]` |
-| 84 | Build `Checkbox` and `RadioGroup` | Design §9.3 | `[ ]` |
-| 85 | Build `Toggle` (`role="switch"`, visible On/Off text) | Design §9.3 | `[ ]` |
-| 86 | Build `StatusBadge` (all 12 logistics statuses from Design §5) | Design §5 | `[ ]` |
-| 87 | Build `Alert` (success/warning/destructive/info variants) | Design §2.2 | `[ ]` |
-| 88 | Build `KPICard` (label, tabular-nums value, optional delta) | Design §9.4 | `[ ]` |
-| 89 | Build `Modal` / `Dialog` (focus trap, aria-modal, sm/md/lg sizes, Esc, focus restore) | Appflow §F.2 | `[ ]` |
-| 90 | Build `Drawer` (400px/480px; full-screen <640px; focus trap) | Appflow §F.2 | `[ ]` |
-| 91 | Build `Popover` (shadow-popover, trap-less, arrow nav) | Design §8.2 | `[ ]` |
-| 92 | Build `Toast` (max 3 visible, hover pauses timer, success/info/warning/error) | Appflow §F.3 | `[ ]` |
-| 93 | Build `Skeleton` loader (1.2s shimmer, disabled under reduced-motion) | Design §2.2 | `[ ]` |
-| 94 | Build `DataTable` (12px uppercase headers, 36px rows, sortable, sticky header) | Design §6, §9.4 | `[ ]` |
-| 95 | Build `Breadcrumb` component | Appflow §C.1 | `[ ]` |
-| 96 | Build empty state component (24px icon, heading, cause, optional action) | Design §2.2 | `[ ]` |
+| 81 | Build `Button` (Primary/Secondary/Outline/Ghost/Danger/Icon; sm/default/lg/xl; all states) | Design §9.1 | `[x]` |
+| 82 | Build `Input` (text, search with debounce, textarea; focus/error/disabled states) | Design §9.3 | `[x]` |
+| 83 | Build `Select` (custom popover, native on mobile) | Design §9.3 | `[x]` |
+| 84 | Build `Checkbox` and `RadioGroup` | Design §9.3 | `[x]` |
+| 85 | Build `Toggle` (`role="switch"`, visible On/Off text) | Design §9.3 | `[x]` |
+| 86 | Build `StatusBadge` (all 12 logistics statuses from Design §5) | Design §5 | `[x]` |
+| 87 | Build `Alert` (success/warning/destructive/info variants) | Design §2.2 | `[x]` |
+| 88 | Build `KPICard` (label, tabular-nums value, optional delta) | Design §9.4 | `[x]` |
+| 89 | Build `Modal` / `Dialog` (focus trap, aria-modal, sm/md/lg sizes, Esc, focus restore) | Appflow §F.2 | `[x]` |
+| 90 | Build `Drawer` (400px/480px; full-screen <640px; focus trap) | Appflow §F.2 | `[x]` |
+| 91 | Build `Popover` (shadow-popover, trap-less, arrow nav) | Design §8.2 | `[x]` |
+| 92 | Build `Toast` (max 3 visible, hover pauses timer, success/info/warning/error) | Appflow §F.3 | `[x]` |
+| 93 | Build `Skeleton` loader (1.2s shimmer, disabled under reduced-motion) | Design §2.2 | `[x]` |
+| 94 | Build `DataTable` (12px uppercase headers, 36px rows, sortable, sticky header) | Design §6, §9.4 | `[x]` |
+| 95 | Build `Breadcrumb` component | Appflow §C.1 | `[x]` |
+| 96 | Build empty state component (24px icon, heading, cause, optional action) | Design §2.2 | `[x]` |
 
 ### 3.3 Application Shell
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 97 | Build `AppShell`: 56px header + collapsible 240px/64px sidebar + fluid content | Design §2.1, §7.3 | `[ ]` |
-| 98 | Build sidebar: Dashboard, Orders, Fleet, Route Optimization, Plan Schedule, Live Monitor, Disruptions (badge), Analytics, Settings | UI mockups | `[ ]` |
-| 99 | Implement `aria-current="page"` + active indicator on sidebar | Appflow §C.1 | `[ ]` |
-| 100 | Build header: logo, depot selector, date/shift, connection state, theme toggle, user menu | UI mockups | `[ ]` |
-| 101 | Implement mobile layout: sidebar → drawer below 768px | Appflow §C.1 | `[ ]` |
-| 102 | Implement skip link "Skip to main content" | NFR-A11Y-03 | `[ ]` |
-| 103 | Implement route-change focus management (focus to `<h1>`, update document.title) | Appflow §C.4 | `[ ]` |
-| 104 | Build connectivity banner (offline/online state) | Appflow OV-17 | `[ ]` |
+| 97 | Build `AppShell`: 56px header + collapsible 240px/64px sidebar + fluid content | Design §2.1, §7.3 | `[x]` |
+| 98 | Build sidebar: Dashboard, Orders, Fleet, Route Optimization, Plan Schedule, Live Monitor, Disruptions (badge), Analytics, Settings | UI mockups | `[x]` |
+| 99 | Implement `aria-current="page"` + active indicator on sidebar | Appflow §C.1 | `[x]` |
+| 100 | Build header: logo, depot selector, date/shift, connection state, theme toggle, user menu | UI mockups | `[x]` |
+| 101 | Implement mobile layout: sidebar → drawer below 768px | Appflow §C.1 | `[x]` |
+| 102 | Implement skip link "Skip to main content" | NFR-A11Y-03 | `[x]` |
+| 103 | Implement route-change focus management (focus to `<h1>`, update document.title) | Appflow §C.4 | `[x]` |
+| 104 | Build connectivity banner (offline/online state) | Appflow OV-17 | `[x]` |
+
 
 ---
 
