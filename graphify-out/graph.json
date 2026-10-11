@@ -33,19 +33,6 @@
       "source_location": "L29"
     },
     {
-      "id": "apps_web_app_driver_page_driverstop",
-      "label": "DriverStop",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "driverstop",
-      "source_file": "apps/web/app/driver/page.tsx",
-      "source_location": "L24"
-    },
-    {
       "id": "apps_web_app_drivers_page_driverrecord",
       "label": "DriverRecord",
       "_callable": true,
@@ -108,7 +95,7 @@
       "file_type": "code",
       "norm_label": "fleetvehiclesummary",
       "source_file": "apps/web/components/disruptions/hands-free-disruption-modal.tsx",
-      "source_location": "L28"
+      "source_location": "L25"
     },
     {
       "id": "apps_web_components_disruptions_hands_free_disruption_modal_handsfreedisruptionmodalprops",
@@ -121,33 +108,7 @@
       "file_type": "code",
       "norm_label": "handsfreedisruptionmodalprops",
       "source_file": "apps/web/components/disruptions/hands-free-disruption-modal.tsx",
-      "source_location": "L43"
-    },
-    {
-      "id": "apps_web_components_driver_proof_of_delivery_proofofdeliveryprops",
-      "label": "ProofOfDeliveryProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "proofofdeliveryprops",
-      "source_file": "apps/web/components/driver/proof-of-delivery.tsx",
-      "source_location": "L6"
-    },
-    {
-      "id": "apps_web_components_driver_voice_recorder_voicerecorderprops",
-      "label": "VoiceRecorderProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "voicerecorderprops",
-      "source_file": "apps/web/components/driver/voice-recorder.tsx",
-      "source_location": "L6"
+      "source_location": "L40"
     },
     {
       "id": "apps_web_components_fleet_fleet_status_card_fleetvehicle",
@@ -199,7 +160,7 @@
       "file_type": "code",
       "norm_label": "sidebarprops",
       "source_file": "apps/web/components/shell/sidebar.tsx",
-      "source_location": "L38"
+      "source_location": "L37"
     },
     {
       "id": "apps_web_components_ui_alert_alertprops",
@@ -512,19 +473,6 @@
       "norm_label": "navitem",
       "source_file": "apps/web/components/layout/sidebar.tsx",
       "source_location": "L7"
-    },
-    {
-      "id": "apps_web_lib_audit_audit_logger_recordauditeventparams",
-      "label": "RecordAuditEventParams",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "login/route.ts",
-      "file_type": "code",
-      "norm_label": "recordauditeventparams",
-      "source_file": "apps/web/lib/audit/audit-logger.ts",
-      "source_location": "L4"
     },
     {
       "id": "apps_web_lib_auth_rate_limit_attemptrecord",
@@ -1209,7 +1157,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 27,
-      "community_name": "users.ts",
+      "community_name": "auth.test.ts",
       "file_type": "code",
       "norm_label": "permission",
       "source_file": "apps/web/lib/auth/rbac.ts",
@@ -1222,7 +1170,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 27,
-      "community_name": "users.ts",
+      "community_name": "auth.test.ts",
       "file_type": "code",
       "norm_label": "sessiondata",
       "source_file": "apps/web/lib/auth/session.ts",
@@ -1235,7 +1183,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 27,
-      "community_name": "users.ts",
+      "community_name": "auth.test.ts",
       "file_type": "code",
       "norm_label": "userrecord",
       "source_file": "apps/web/lib/auth/users.ts",
@@ -1248,7 +1196,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 27,
-      "community_name": "users.ts",
+      "community_name": "auth.test.ts",
       "file_type": "code",
       "norm_label": "memberrole",
       "source_file": "packages/contracts/src/schemas.ts",
@@ -1489,6 +1437,19 @@
       "source_location": "L3"
     },
     {
+      "id": "apps_web_lib_audit_audit_logger_recordauditeventparams",
+      "label": "RecordAuditEventParams",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 63,
+      "community_name": "audit-logger.ts",
+      "file_type": "code",
+      "norm_label": "recordauditeventparams",
+      "source_file": "apps/web/lib/audit/audit-logger.ts",
+      "source_location": "L4"
+    },
+    {
       "id": "apps_web_app_api_v1_orders_route_orderrecord",
       "label": "OrderRecord",
       "_callable": true,
@@ -1537,18 +1498,6 @@
       "norm_label": "disruptionspage()",
       "source_file": "apps/web/app/disruptions/page.tsx",
       "source_location": "L44"
-    },
-    {
-      "id": "apps_web_app_driver_page_standalonedriverportal",
-      "label": "StandaloneDriverPortal()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "standalonedriverportal()",
-      "source_file": "apps/web/app/driver/page.tsx",
-      "source_location": "L38"
     },
     {
       "id": "apps_web_app_drivers_page_drivermanagementpage",
@@ -1716,31 +1665,7 @@
       "file_type": "code",
       "norm_label": "handsfreedisruptionmodal()",
       "source_file": "apps/web/components/disruptions/hands-free-disruption-modal.tsx",
-      "source_location": "L109"
-    },
-    {
-      "id": "apps_web_components_driver_proof_of_delivery_proofofdeliverymodal",
-      "label": "ProofOfDeliveryModal()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "proofofdeliverymodal()",
-      "source_file": "apps/web/components/driver/proof-of-delivery.tsx",
-      "source_location": "L13"
-    },
-    {
-      "id": "apps_web_components_driver_voice_recorder_voicerecorder",
-      "label": "VoiceRecorder()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "voicerecorder()",
-      "source_file": "apps/web/components/driver/voice-recorder.tsx",
-      "source_location": "L11"
+      "source_location": "L106"
     },
     {
       "id": "apps_web_components_fleet_fleet_status_card_fleetstatuscard",
@@ -1788,7 +1713,7 @@
       "file_type": "code",
       "norm_label": "sidebar()",
       "source_file": "apps/web/components/shell/sidebar.tsx",
-      "source_location": "L44"
+      "source_location": "L43"
     },
     {
       "id": "apps_web_components_shell_skip_link_skiplink",
@@ -2053,18 +1978,6 @@
       "norm_label": "post()",
       "source_file": "apps/web/app/api/v1/auth/login/route.ts",
       "source_location": "L13"
-    },
-    {
-      "id": "apps_web_lib_audit_audit_logger_recordauditevent",
-      "label": "recordAuditEvent()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "login/route.ts",
-      "file_type": "code",
-      "norm_label": "recordauditevent()",
-      "source_file": "apps/web/lib/audit/audit-logger.ts",
-      "source_location": "L14"
     },
     {
       "id": "apps_web_lib_auth_rate_limit_checkloginratelimit",
@@ -2419,7 +2332,7 @@
       "label": "hashPassword()",
       "_callable": true,
       "_origin": "ast",
-      "community": 27,
+      "community": 25,
       "community_name": "users.ts",
       "file_type": "code",
       "norm_label": "hashpassword()",
@@ -2431,7 +2344,7 @@
       "label": "verifyPassword()",
       "_callable": true,
       "_origin": "ast",
-      "community": 27,
+      "community": 25,
       "community_name": "users.ts",
       "file_type": "code",
       "norm_label": "verifypassword()",
@@ -2439,35 +2352,11 @@
       "source_location": "L9"
     },
     {
-      "id": "apps_web_lib_auth_rbac_haspermission",
-      "label": "hasPermission()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 27,
-      "community_name": "users.ts",
-      "file_type": "code",
-      "norm_label": "haspermission()",
-      "source_file": "apps/web/lib/auth/rbac.ts",
-      "source_location": "L61"
-    },
-    {
-      "id": "apps_web_lib_auth_rbac_hasrequiredrole",
-      "label": "hasRequiredRole()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 27,
-      "community_name": "users.ts",
-      "file_type": "code",
-      "norm_label": "hasrequiredrole()",
-      "source_file": "apps/web/lib/auth/rbac.ts",
-      "source_location": "L10"
-    },
-    {
       "id": "apps_web_lib_auth_users_authenticatecredentials",
       "label": "authenticateCredentials()",
       "_callable": true,
       "_origin": "ast",
-      "community": 27,
+      "community": 25,
       "community_name": "users.ts",
       "file_type": "code",
       "norm_label": "authenticatecredentials()",
@@ -2479,12 +2368,36 @@
       "label": "findUserByEmail()",
       "_callable": true,
       "_origin": "ast",
-      "community": 27,
+      "community": 25,
       "community_name": "users.ts",
       "file_type": "code",
       "norm_label": "finduserbyemail()",
       "source_file": "apps/web/lib/auth/users.ts",
       "source_location": "L37"
+    },
+    {
+      "id": "apps_web_lib_auth_rbac_haspermission",
+      "label": "hasPermission()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "auth.test.ts",
+      "file_type": "code",
+      "norm_label": "haspermission()",
+      "source_file": "apps/web/lib/auth/rbac.ts",
+      "source_location": "L61"
+    },
+    {
+      "id": "apps_web_lib_auth_rbac_hasrequiredrole",
+      "label": "hasRequiredRole()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "auth.test.ts",
+      "file_type": "code",
+      "norm_label": "hasrequiredrole()",
+      "source_file": "apps/web/lib/auth/rbac.ts",
+      "source_location": "L10"
     },
     {
       "id": "apps_web_app_api_v1_auth_logout_route_post",
@@ -2509,6 +2422,18 @@
       "norm_label": "get()",
       "source_file": "apps/web/app/api/v1/auth/session/route.ts",
       "source_location": "L4"
+    },
+    {
+      "id": "apps_web_lib_audit_audit_logger_recordauditevent",
+      "label": "recordAuditEvent()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "session.ts",
+      "file_type": "code",
+      "norm_label": "recordauditevent()",
+      "source_file": "apps/web/lib/audit/audit-logger.ts",
+      "source_location": "L14"
     },
     {
       "id": "apps_web_lib_auth_session_clearsession",
@@ -2977,17 +2902,6 @@
       "source_location": "L1"
     },
     {
-      "id": "apps_web_app_driver_page",
-      "label": "driver/page.tsx",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "driver/page.tsx",
-      "source_file": "apps/web/app/driver/page.tsx",
-      "source_location": "L1"
-    },
-    {
       "id": "apps_web_app_drivers_page",
       "label": "drivers/page.tsx",
       "_origin": "ast",
@@ -3128,29 +3042,7 @@
       "file_type": "code",
       "norm_label": "default_fleet",
       "source_file": "apps/web/components/disruptions/hands-free-disruption-modal.tsx",
-      "source_location": "L50"
-    },
-    {
-      "id": "apps_web_components_driver_proof_of_delivery",
-      "label": "proof-of-delivery.tsx",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "proof-of-delivery.tsx",
-      "source_file": "apps/web/components/driver/proof-of-delivery.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "apps_web_components_driver_voice_recorder",
-      "label": "voice-recorder.tsx",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "react",
-      "file_type": "code",
-      "norm_label": "voice-recorder.tsx",
-      "source_file": "apps/web/components/driver/voice-recorder.tsx",
-      "source_location": "L1"
+      "source_location": "L47"
     },
     {
       "id": "apps_web_components_fleet_fleet_status_card",
@@ -4126,17 +4018,6 @@
       "source_location": "L8"
     },
     {
-      "id": "apps_web_lib_audit_audit_logger",
-      "label": "audit-logger.ts",
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "login/route.ts",
-      "file_type": "code",
-      "norm_label": "audit-logger.ts",
-      "source_file": "apps/web/lib/audit/audit-logger.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "apps_web_lib_auth_rate_limit",
       "label": "rate-limit.ts",
       "_origin": "ast",
@@ -4157,28 +4038,6 @@
       "norm_label": "loginattempts",
       "source_file": "apps/web/lib/auth/rate-limit.ts",
       "source_location": "L7"
-    },
-    {
-      "id": "packages_database_src_schema_auditevents",
-      "label": "auditEvents",
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "login/route.ts",
-      "file_type": "code",
-      "norm_label": "auditevents",
-      "source_file": "packages/database/src/schema.ts",
-      "source_location": "L424"
-    },
-    {
-      "id": "packages_database_src_uuid_generateuuidv7",
-      "label": "generateUuidV7",
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "login/route.ts",
-      "file_type": "code",
-      "norm_label": "generateuuidv7",
-      "source_file": "packages/database/src/uuid.ts",
-      "source_location": "L29"
     },
     {
       "id": "apps_web_components_ui_selection_controls",
@@ -5257,59 +5116,48 @@
       "source_location": "L90"
     },
     {
-      "id": "packages_database_package_scripts",
-      "label": "scripts",
+      "id": "apps_web_lib_auth_password",
+      "label": "password.ts",
       "_origin": "ast",
       "community": 25,
-      "community_name": "scripts",
+      "community_name": "users.ts",
       "file_type": "code",
-      "norm_label": "scripts",
-      "source_file": "packages/database/package.json",
-      "source_location": "L7"
+      "norm_label": "password.ts",
+      "source_file": "apps/web/lib/auth/password.ts",
+      "source_location": "L1"
     },
     {
-      "id": "packages_database_package_scripts_build",
-      "label": "build",
+      "id": "apps_web_lib_auth_users",
+      "label": "users.ts",
       "_origin": "ast",
       "community": 25,
-      "community_name": "scripts",
+      "community_name": "users.ts",
       "file_type": "code",
-      "norm_label": "build",
-      "source_file": "packages/database/package.json",
-      "source_location": "L8"
+      "norm_label": "users.ts",
+      "source_file": "apps/web/lib/auth/users.ts",
+      "source_location": "L1"
     },
     {
-      "id": "packages_database_package_scripts_db_generate",
-      "label": "db:generate",
+      "id": "apps_web_lib_auth_users_demo_users",
+      "label": "DEMO_USERS",
       "_origin": "ast",
       "community": 25,
-      "community_name": "scripts",
+      "community_name": "users.ts",
       "file_type": "code",
-      "norm_label": "db:generate",
-      "source_file": "packages/database/package.json",
-      "source_location": "L10"
+      "norm_label": "demo_users",
+      "source_file": "apps/web/lib/auth/users.ts",
+      "source_location": "L16"
     },
     {
-      "id": "packages_database_package_scripts_db_migrate",
-      "label": "db:migrate",
+      "id": "ref_bcryptjs",
+      "label": "bcryptjs",
       "_origin": "ast",
       "community": 25,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "db:migrate",
-      "source_file": "packages/database/package.json",
-      "source_location": "L11"
-    },
-    {
-      "id": "packages_database_package_scripts_typecheck",
-      "label": "typecheck",
-      "_origin": "ast",
-      "community": 25,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "typecheck",
-      "source_file": "packages/database/package.json",
-      "source_location": "L9"
+      "community_name": "users.ts",
+      "file_type": "concept",
+      "norm_label": "bcryptjs",
+      "source_file": "apps/web/package.json",
+      "source_location": "L13"
     },
     {
       "id": "appflow_d1_authentication_and_onboarding",
@@ -5456,22 +5304,11 @@
       "source_location": "L556"
     },
     {
-      "id": "apps_web_lib_auth_password",
-      "label": "password.ts",
-      "_origin": "ast",
-      "community": 27,
-      "community_name": "users.ts",
-      "file_type": "code",
-      "norm_label": "password.ts",
-      "source_file": "apps/web/lib/auth/password.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "apps_web_lib_auth_rbac",
       "label": "rbac.ts",
       "_origin": "ast",
       "community": 27,
-      "community_name": "users.ts",
+      "community_name": "auth.test.ts",
       "file_type": "code",
       "norm_label": "rbac.ts",
       "source_file": "apps/web/lib/auth/rbac.ts",
@@ -5482,7 +5319,7 @@
       "label": "ROLE_HIERARCHY",
       "_origin": "ast",
       "community": 27,
-      "community_name": "users.ts",
+      "community_name": "auth.test.ts",
       "file_type": "code",
       "norm_label": "role_hierarchy",
       "source_file": "apps/web/lib/auth/rbac.ts",
@@ -5493,55 +5330,22 @@
       "label": "ROLE_PERMISSIONS",
       "_origin": "ast",
       "community": 27,
-      "community_name": "users.ts",
+      "community_name": "auth.test.ts",
       "file_type": "code",
       "norm_label": "role_permissions",
       "source_file": "apps/web/lib/auth/rbac.ts",
       "source_location": "L26"
     },
     {
-      "id": "apps_web_lib_auth_users",
-      "label": "users.ts",
-      "_origin": "ast",
-      "community": 27,
-      "community_name": "users.ts",
-      "file_type": "code",
-      "norm_label": "users.ts",
-      "source_file": "apps/web/lib/auth/users.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "apps_web_lib_auth_users_demo_users",
-      "label": "DEMO_USERS",
-      "_origin": "ast",
-      "community": 27,
-      "community_name": "users.ts",
-      "file_type": "code",
-      "norm_label": "demo_users",
-      "source_file": "apps/web/lib/auth/users.ts",
-      "source_location": "L16"
-    },
-    {
       "id": "apps_web_tests_auth_test",
       "label": "auth.test.ts",
       "_origin": "ast",
       "community": 27,
-      "community_name": "users.ts",
+      "community_name": "auth.test.ts",
       "file_type": "code",
       "norm_label": "auth.test.ts",
       "source_file": "apps/web/tests/auth.test.ts",
       "source_location": "L1"
-    },
-    {
-      "id": "ref_bcryptjs",
-      "label": "bcryptjs",
-      "_origin": "ast",
-      "community": 27,
-      "community_name": "users.ts",
-      "file_type": "concept",
-      "norm_label": "bcryptjs",
-      "source_file": "apps/web/package.json",
-      "source_location": "L13"
     },
     {
       "id": "appflow_e_1_global_auth_and_shell",
@@ -8241,6 +8045,17 @@
       "source_location": "L1"
     },
     {
+      "id": "packages_database_src_uuid_generateuuidv7",
+      "label": "generateUuidV7",
+      "_origin": "ast",
+      "community": 59,
+      "community_name": "uuid.ts",
+      "file_type": "code",
+      "norm_label": "generateuuidv7",
+      "source_file": "packages/database/src/uuid.ts",
+      "source_location": "L29"
+    },
+    {
       "id": "packages_database_tests_rls_test",
       "label": "rls.test.ts",
       "_origin": "ast",
@@ -8593,6 +8408,28 @@
       "source_location": "L19"
     },
     {
+      "id": "apps_web_lib_audit_audit_logger",
+      "label": "audit-logger.ts",
+      "_origin": "ast",
+      "community": 63,
+      "community_name": "audit-logger.ts",
+      "file_type": "code",
+      "norm_label": "audit-logger.ts",
+      "source_file": "apps/web/lib/audit/audit-logger.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "packages_database_src_schema_auditevents",
+      "label": "auditEvents",
+      "_origin": "ast",
+      "community": 63,
+      "community_name": "audit-logger.ts",
+      "file_type": "code",
+      "norm_label": "auditevents",
+      "source_file": "packages/database/src/schema.ts",
+      "source_location": "L424"
+    },
+    {
       "id": "apps_web_app_api_v1_orders_route",
       "label": "orders/route.ts",
       "_origin": "ast",
@@ -8811,6 +8648,61 @@
       "norm_label": "private",
       "source_file": "packages/database/package.json",
       "source_location": "L4"
+    },
+    {
+      "id": "packages_database_package_scripts",
+      "label": "scripts",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "database/package.json",
+      "file_type": "code",
+      "norm_label": "scripts",
+      "source_file": "packages/database/package.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "packages_database_package_scripts_build",
+      "label": "build",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "database/package.json",
+      "file_type": "code",
+      "norm_label": "build",
+      "source_file": "packages/database/package.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "packages_database_package_scripts_db_generate",
+      "label": "db:generate",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "database/package.json",
+      "file_type": "code",
+      "norm_label": "db:generate",
+      "source_file": "packages/database/package.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "packages_database_package_scripts_db_migrate",
+      "label": "db:migrate",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "database/package.json",
+      "file_type": "code",
+      "norm_label": "db:migrate",
+      "source_file": "packages/database/package.json",
+      "source_location": "L11"
+    },
+    {
+      "id": "packages_database_package_scripts_typecheck",
+      "label": "typecheck",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "database/package.json",
+      "file_type": "code",
+      "norm_label": "typecheck",
+      "source_file": "packages/database/package.json",
+      "source_location": "L9"
     },
     {
       "id": "packages_database_package_types",
@@ -9090,30 +8982,6 @@
       "type": "INTERFACE"
     },
     {
-      "id": "DriverPortal",
-      "label": "Driver Web Application Portal",
-      "_origin": "semantic",
-      "community": 16,
-      "community_name": "Control Room Dashboard Cockpit",
-      "file_type": "concept",
-      "norm_label": "driver web application portal",
-      "source_file": "apps/web/app/driver/page.tsx",
-      "summary": "Web browser interface for fleet drivers with stop manifests and ElevenLabs voice incident reporting.",
-      "type": "INTERFACE"
-    },
-    {
-      "id": "ElevenLabsVoice",
-      "label": "ElevenLabs Voice AI System",
-      "_origin": "semantic",
-      "community": 16,
-      "community_name": "Control Room Dashboard Cockpit",
-      "file_type": "concept",
-      "norm_label": "elevenlabs voice ai system",
-      "source_file": "apps/web/app/driver/page.tsx",
-      "summary": "Speech-to-text incident ingestion and text-to-speech ETA alerts / fleet briefings.",
-      "type": "INTEGRATION"
-    },
-    {
       "id": "PRD",
       "label": "Product Requirements Document (PRD)",
       "_origin": "semantic",
@@ -9162,17 +9030,6 @@
       "type": "SERVICE"
     },
     {
-      "id": "packages_database_src_index_db",
-      "label": "packages_database_src_index_db",
-      "community": 10,
-      "community_name": "fleet/route.ts",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "packages_database_src_index_db",
-      "source_file": "",
-      "type": "external"
-    },
-    {
       "id": "packages_database_src_index_vehicles",
       "label": "packages_database_src_index_vehicles",
       "community": 10,
@@ -9180,28 +9037,6 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "packages_database_src_index_vehicles",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "packages_database_src_index_auditevents",
-      "label": "packages_database_src_index_auditevents",
-      "community": 15,
-      "community_name": "login/route.ts",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "packages_database_src_index_auditevents",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "packages_database_src_index_generateuuidv7",
-      "label": "packages_database_src_index_generateuuidv7",
-      "community": 15,
-      "community_name": "login/route.ts",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "packages_database_src_index_generateuuidv7",
       "source_file": "",
       "type": "external"
     },
@@ -9308,7 +9143,7 @@
       "id": "packages_contracts_src_index_memberrole",
       "label": "packages_contracts_src_index_memberrole",
       "community": 27,
-      "community_name": "users.ts",
+      "community_name": "auth.test.ts",
       "external": true,
       "file_type": "concept",
       "norm_label": "packages_contracts_src_index_memberrole",
@@ -9345,6 +9180,39 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "ref_node_crypto",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "packages_database_src_index_auditevents",
+      "label": "packages_database_src_index_auditevents",
+      "community": 63,
+      "community_name": "audit-logger.ts",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "packages_database_src_index_auditevents",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "packages_database_src_index_db",
+      "label": "packages_database_src_index_db",
+      "community": 63,
+      "community_name": "audit-logger.ts",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "packages_database_src_index_db",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "packages_database_src_index_generateuuidv7",
+      "label": "packages_database_src_index_generateuuidv7",
+      "community": 63,
+      "community_name": "audit-logger.ts",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "packages_database_src_index_generateuuidv7",
       "source_file": "",
       "type": "external"
     }
@@ -9639,30 +9507,6 @@
       "weight": 1.0
     },
     {
-      "source": "apps_web_app_driver_page_standalonedriverportal",
-      "target": "apps_web_components_driver_voice_recorder_voicerecorder",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "apps/web/app/driver/page.tsx",
-      "source_location": "L417",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_web_app_driver_page_standalonedriverportal",
-      "target": "apps_web_components_driver_proof_of_delivery_proofofdeliverymodal",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "apps/web/app/driver/page.tsx",
-      "source_location": "L457",
-      "weight": 1.0
-    },
-    {
       "source": "apps_web_app_drivers_page_drivermanagementpage",
       "target": "apps_web_components_shell_app_shell_appshell",
       "relation": "calls",
@@ -9683,7 +9527,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/web/app/drivers/page.tsx",
-      "source_location": "L282",
+      "source_location": "L281",
       "weight": 1.0
     },
     {
@@ -10295,31 +10139,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/web/components/disruptions/hands-free-disruption-modal.tsx",
-      "source_location": "L589",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_web_components_driver_proof_of_delivery_proofofdeliverymodal",
-      "target": "apps_web_components_ui_button_button",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "apps/web/components/driver/proof-of-delivery.tsx",
-      "source_location": "L119",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_web_components_driver_voice_recorder_voicerecorder",
-      "target": "apps_web_components_ui_button_button",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "apps/web/components/driver/voice-recorder.tsx",
-      "source_location": "L238",
+      "source_location": "L511",
       "weight": 1.0
     },
     {
@@ -10396,18 +10216,6 @@
     },
     {
       "source": "apps_web_components_shell_header_header",
-      "target": "apps_web_components_ui_button_button",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "apps/web/components/shell/header.tsx",
-      "source_location": "L106",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_web_components_shell_header_header",
       "target": "apps_web_components_theme_theme_toggle_themetoggle",
       "relation": "calls",
       "_origin": "ast",
@@ -10415,7 +10223,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/web/components/shell/header.tsx",
-      "source_location": "L116",
+      "source_location": "L105",
       "weight": 1.0
     },
     {
@@ -10427,7 +10235,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "apps/web/components/shell/header.tsx",
-      "source_location": "L119",
+      "source_location": "L108",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_web_components_shell_header_header",
+      "target": "apps_web_components_ui_button_button",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "apps/web/components/shell/header.tsx",
+      "source_location": "L135",
       "weight": 1.0
     },
     {
@@ -11415,30 +11235,6 @@
       "weight": 1.0
     },
     {
-      "source": "apps_web_app_driver_page",
-      "target": "apps_web_components_driver_voice_recorder_voicerecorder",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "apps/web/app/driver/page.tsx",
-      "source_location": "L5",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_web_app_driver_page",
-      "target": "apps_web_components_driver_proof_of_delivery_proofofdeliverymodal",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "apps/web/app/driver/page.tsx",
-      "source_location": "L6",
-      "weight": 1.0
-    },
-    {
       "source": "apps_web_app_drivers_page",
       "target": "apps_web_components_shell_app_shell_appshell",
       "relation": "imports",
@@ -12204,30 +12000,6 @@
       "context": "import",
       "source_file": "apps/web/components/disruptions/hands-free-disruption-modal.tsx",
       "source_location": "L5",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_web_components_driver_proof_of_delivery",
-      "target": "apps_web_components_ui_button_button",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "apps/web/components/driver/proof-of-delivery.tsx",
-      "source_location": "L4",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_web_components_driver_voice_recorder",
-      "target": "apps_web_components_ui_button_button",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "apps/web/components/driver/voice-recorder.tsx",
-      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -14091,66 +13863,6 @@
       "weight": 1.0
     },
     {
-      "source": "apps_web_app_driver_page",
-      "target": "ref_react",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "apps/web/app/driver/page.tsx",
-      "source_location": "L3",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_web_app_driver_page",
-      "target": "ref_next",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "apps/web/app/driver/page.tsx",
-      "source_location": "L4",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_web_app_driver_page",
-      "target": "apps_web_components_driver_voice_recorder",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "apps/web/app/driver/page.tsx",
-      "source_location": "L5",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_web_app_driver_page",
-      "target": "apps_web_components_driver_proof_of_delivery",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "apps/web/app/driver/page.tsx",
-      "source_location": "L6",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_web_app_driver_page",
-      "target": "ref_lucide_react",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "apps/web/app/driver/page.tsx",
-      "source_location": "L7",
-      "weight": 1.0
-    },
-    {
       "source": "apps_web_app_drivers_page",
       "target": "ref_react",
       "relation": "imports_from",
@@ -15216,54 +14928,6 @@
       "context": "import",
       "source_file": "apps/web/components/disruptions/hands-free-disruption-modal.tsx",
       "source_location": "L6",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_web_components_driver_proof_of_delivery",
-      "target": "ref_react",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "apps/web/components/driver/proof-of-delivery.tsx",
-      "source_location": "L3",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_web_components_driver_proof_of_delivery",
-      "target": "apps_web_components_ui_button",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "apps/web/components/driver/proof-of-delivery.tsx",
-      "source_location": "L4",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_web_components_driver_voice_recorder",
-      "target": "ref_react",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "apps/web/components/driver/voice-recorder.tsx",
-      "source_location": "L3",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_web_components_driver_voice_recorder",
-      "target": "apps_web_components_ui_button",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "apps/web/components/driver/voice-recorder.tsx",
-      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -18148,28 +17812,6 @@
       "weight": 1.0
     },
     {
-      "source": "apps_web_app_driver_page",
-      "target": "apps_web_app_driver_page_driverstop",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "apps/web/app/driver/page.tsx",
-      "source_location": "L24",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_web_app_driver_page",
-      "target": "apps_web_app_driver_page_standalonedriverportal",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "apps/web/app/driver/page.tsx",
-      "source_location": "L38",
-      "weight": 1.0
-    },
-    {
       "source": "apps_web_app_drivers_page",
       "target": "apps_web_app_drivers_page_driverrecord",
       "relation": "contains",
@@ -18452,7 +18094,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/web/components/disruptions/hands-free-disruption-modal.tsx",
-      "source_location": "L109",
+      "source_location": "L106",
       "weight": 1.0
     },
     {
@@ -18463,7 +18105,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/web/components/disruptions/hands-free-disruption-modal.tsx",
-      "source_location": "L28",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -18474,7 +18116,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/web/components/disruptions/hands-free-disruption-modal.tsx",
-      "source_location": "L43",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -18485,51 +18127,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/web/components/disruptions/hands-free-disruption-modal.tsx",
-      "source_location": "L50",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_web_components_driver_proof_of_delivery",
-      "target": "apps_web_components_driver_proof_of_delivery_proofofdeliverymodal",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "apps/web/components/driver/proof-of-delivery.tsx",
-      "source_location": "L13",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_web_components_driver_proof_of_delivery",
-      "target": "apps_web_components_driver_proof_of_delivery_proofofdeliveryprops",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "apps/web/components/driver/proof-of-delivery.tsx",
-      "source_location": "L6",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_web_components_driver_voice_recorder",
-      "target": "apps_web_components_driver_voice_recorder_voicerecorder",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "apps/web/components/driver/voice-recorder.tsx",
-      "source_location": "L11",
-      "weight": 1.0
-    },
-    {
-      "source": "apps_web_components_driver_voice_recorder",
-      "target": "apps_web_components_driver_voice_recorder_voicerecorderprops",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "apps/web/components/driver/voice-recorder.tsx",
-      "source_location": "L6",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -18738,7 +18336,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/web/components/shell/sidebar.tsx",
-      "source_location": "L38",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -18749,7 +18347,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/web/components/shell/sidebar.tsx",
-      "source_location": "L44",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -23871,15 +23469,6 @@
       "source_file": "apps/web/app/page.tsx"
     },
     {
-      "source": "DriverPortal",
-      "target": "ElevenLabsVoice",
-      "_origin": "semantic",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "relationship": "INTEGRATES",
-      "source_file": "apps/web/app/driver/page.tsx"
-    },
-    {
       "source": "ValhallaRouting",
       "target": "TRD",
       "_origin": "semantic",
@@ -23898,15 +23487,6 @@
       "source_file": "Design.md"
     },
     {
-      "source": "DesignSystem",
-      "target": "DriverPortal",
-      "_origin": "semantic",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "relationship": "STYLES",
-      "source_file": "Design.md"
-    },
-    {
       "source": "DispatcherCockpit",
       "target": "PlanIngestion",
       "_origin": "semantic",
@@ -23917,5 +23497,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "d583cfc6230c471ddf81c32a1801dbfb6d840875"
+  "built_at_commit": "b3f990b5f90035dbeb72092049b3ce04ddddb249"
 }

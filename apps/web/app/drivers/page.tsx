@@ -278,16 +278,6 @@ export default function DriverManagementPage() {
           </div>
 
           <div className="flex items-center gap-2.5 flex-wrap">
-            <Link href="/driver" target="_blank">
-              <Button
-                variant="outline"
-                size="sm"
-                className="text-xs font-semibold flex items-center gap-1.5 border-primary/50 text-primary hover:bg-primary/10"
-              >
-                <ExternalLink className="h-3.5 w-3.5" />
-                <span>Launch In-Cab Terminal</span>
-              </Button>
-            </Link>
             <Button
               variant="outline"
               size="sm"
@@ -635,17 +625,6 @@ export default function DriverManagementPage() {
                       >
                         ElevenLabs Audio Ping
                       </Button>
-
-                      <Link href={`/driver`} target="_blank">
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          className="text-xs border-[var(--primary)]/40 text-[var(--primary)] hover:bg-[var(--primary)]/10"
-                        >
-                          <ExternalLink className="h-3.5 w-3.5 mr-1.5" />
-                          Driver In-Cab View
-                        </Button>
-                      </Link>
                     </div>
                   </div>
                 </div>

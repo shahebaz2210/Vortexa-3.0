@@ -71,12 +71,6 @@
     "ast_hash": "9679cef50dc76271bb938305516b3d5b",
     "semantic_hash": ""
   },
-  "apps/web/app/driver/page.tsx": {
-    "mtime": 1791725171.6300354,
-    "seen": 1791725268.3495908,
-    "ast_hash": "3e3a032c31e6a2a27c1a0d5e6406ec41",
-    "semantic_hash": ""
-  },
   "apps/web/app/fleet/[id]/page.tsx": {
     "mtime": 1791719089.2247796,
     "seen": 1791719655.347585,
@@ -162,15 +156,15 @@
     "semantic_hash": "0e4cb491ee0e387d9526d48a48624b55"
   },
   "apps/web/components/shell/header.tsx": {
-    "mtime": 1791724593.860739,
-    "seen": 1791725268.3516212,
-    "ast_hash": "de8f849578532490a4e2704f0d9765db",
+    "mtime": 1791727461.6147199,
+    "seen": 1791727640.576693,
+    "ast_hash": "045f58f487fe9f9a516b03b28aee569e",
     "semantic_hash": ""
   },
   "apps/web/components/shell/sidebar.tsx": {
-    "mtime": 1791725137.6271994,
-    "seen": 1791725268.3516228,
-    "ast_hash": "fc5e889db597b6c156d37c93293a714f",
+    "mtime": 1791727483.4720316,
+    "seen": 1791727640.576695,
+    "ast_hash": "1333cfd8ef7e93a3766aa68becc94150",
     "semantic_hash": ""
   },
   "apps/web/components/shell/skip-link.tsx": {
@@ -593,18 +587,6 @@
     "ast_hash": "2bcba77952c0e05c79c580f59c72cfa0",
     "semantic_hash": ""
   },
-  "apps/web/components/driver/proof-of-delivery.tsx": {
-    "mtime": 1791720381.7007253,
-    "seen": 1791720694.4875677,
-    "ast_hash": "76d9056387ce76429949343fa3dba516",
-    "semantic_hash": ""
-  },
-  "apps/web/components/driver/voice-recorder.tsx": {
-    "mtime": 1791720277.8049047,
-    "seen": 1791720694.487569,
-    "ast_hash": "d4b6deda3e24adc16ae8bce646041d01",
-    "semantic_hash": ""
-  },
   "apps/web/components/layout/sidebar.tsx": {
     "mtime": 1791723864.97748,
     "seen": 1791723960.0230513,
@@ -822,15 +804,15 @@
     "semantic_hash": ""
   },
   "apps/web/app/drivers/page.tsx": {
-    "mtime": 1791725122.5608497,
-    "seen": 1791725268.3495927,
-    "ast_hash": "5a03ef1f8c21a54740bc5e64df9b1f90",
+    "mtime": 1791727510.5499935,
+    "seen": 1791727640.5732994,
+    "ast_hash": "6bb496b2f84eef251525e77527527f09",
     "semantic_hash": ""
   },
   "apps/web/components/disruptions/hands-free-disruption-modal.tsx": {
-    "mtime": 1791726502.013802,
-    "seen": 1791726778.3521402,
-    "ast_hash": "08e4787c6080b2d2eb738b62799e9008",
+    "mtime": 1791727206.0937512,
+    "seen": 1791727640.5758197,
+    "ast_hash": "898ed79b9f8a0029f83ea71284f30c9c",
     "semantic_hash": ""
   },
   "apps/web/app/api/v1/disruptions/route.ts": {

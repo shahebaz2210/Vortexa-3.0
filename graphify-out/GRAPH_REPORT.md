@@ -1,17 +1,17 @@
 # Graph Report - Vortexa 3.0  (2026-10-11)
 
 ## Corpus Check
-- 134 files · ~107,872 words
+- 131 files · ~104,331 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 9 file(s) not represented in the graph (top: (none) 3, .example 1, .ico 1)
 
 ## Summary
-- 801 nodes · 1268 edges · 63 communities (55 shown, 8 thin omitted)
+- 790 nodes · 1243 edges · 64 communities (55 shown, 9 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 21 edges (avg confidence: 0.94)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `d583cfc6`
+- Built from commit: `b3f990b5`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -40,9 +40,9 @@
 - mock-data.ts
 - dispatchx-optimizer
 - ⚡ DispatchX (VORTEXA 3.0 / ReRoute)
-- scripts
-- D. Mermaid Flowcharts
 - users.ts
+- D. Mermaid Flowcharts
+- auth.test.ts
 - E. Screen-by-Screen Interaction Matrix
 - session.ts
 - src/env.ts
@@ -78,13 +78,14 @@
 - metrics.ts
 - valhalla.ts
 - disruptions/route.ts
+- audit-logger.ts
 
 ## God Nodes (most connected - your core abstractions)
-1. `next` - 47 edges
-2. `react` - 42 edges
-3. `Button` - 34 edges
-4. `lucide-react` - 32 edges
-5. `AppShell()` - 31 edges
+1. `next` - 46 edges
+2. `react` - 39 edges
+3. `AppShell()` - 31 edges
+4. `lucide-react` - 31 edges
+5. `Button` - 30 edges
 6. `DispatchX (ReRoute / VORTEXA 3.0) — Project TODO` - 24 edges
 7. `StatusBadge()` - 17 edges
 8. `compilerOptions` - 16 edges
@@ -106,11 +107,11 @@
 ## Import Cycles
 - None detected.
 
-## Communities (63 total, 8 thin omitted)
+## Communities (64 total, 9 thin omitted)
 
 ### Community 0 - "react"
-Cohesion: 0.05
-Nodes (82): AuditEntry, AuditTrailPage(), DisruptionsPage(), Incident, DriverStop, StandaloneDriverPortal(), AVAILABLE_VEHICLES, DriverManagementPage() (+74 more)
+Cohesion: 0.06
+Nodes (76): AuditEntry, AuditTrailPage(), DisruptionsPage(), Incident, AVAILABLE_VEHICLES, DriverManagementPage(), DriverRecord, VehicleDetailContent() (+68 more)
 
 ### Community 1 - "next"
 Cohesion: 0.09
@@ -141,15 +142,15 @@ Cohesion: 0.17
 Nodes (12): CreateOrderSchema, inMemoryOrders, OrderRecord, POST(), FLEET_MAX_VOLUME_M3, FLEET_MAX_WEIGHT_KG, FORMULA_INJECTION_CHARS, hasFormulaInjection() (+4 more)
 
 ### Community 8 - "database/package.json"
-Cohesion: 0.13
-Nodes (13): dependencies, drizzle-orm, postgres, devDependencies, drizzle-kit, typescript, typescript, main (+5 more)
+Cohesion: 0.10
+Nodes (18): dependencies, drizzle-orm, postgres, devDependencies, drizzle-kit, typescript, typescript, main (+10 more)
 
 ### Community 9 - "compilerOptions"
 Cohesion: 0.11
 Nodes (18): compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules, jsx, lib, module (+10 more)
 
 ### Community 10 - "fleet/route.ts"
-Cohesion: 0.22
+Cohesion: 0.24
 Nodes (5): db, sql, vehicles, drizzle-orm, postgres
 
 ### Community 11 - "Phase 4 — Core CRUD APIs (Tasks 105–123)"
@@ -169,12 +170,12 @@ Cohesion: 0.18
 Nodes (10): compilerOptions, declaration, esModuleInterop, forceConsistentCasingInFileNames, module, moduleResolution, skipLibCheck, strict (+2 more)
 
 ### Community 15 - "login/route.ts"
-Cohesion: 0.17
-Nodes (10): LoginRequestSchema, POST(), recordAuditEvent(), RecordAuditEventParams, AttemptRecord, checkLoginRateLimit(), loginAttempts, createSession() (+2 more)
+Cohesion: 0.31
+Nodes (6): LoginRequestSchema, POST(), AttemptRecord, checkLoginRateLimit(), loginAttempts, createSession()
 
 ### Community 16 - "Control Room Dashboard Cockpit"
-Cohesion: 0.29
-Nodes (8): Design System & UI Tokens, Control Room Dashboard Cockpit, Driver Web Application Portal, ElevenLabs Voice AI System, Product Requirements Document (PRD), Excel & CSV Plan Ingestion Engine, Technical Requirements Document (TRD), Valhalla Routing & Distance Matrix
+Cohesion: 0.40
+Nodes (6): Design System & UI Tokens, Control Room Dashboard Cockpit, Product Requirements Document (PRD), Excel & CSV Plan Ingestion Engine, Technical Requirements Document (TRD), Valhalla Routing & Distance Matrix
 
 ### Community 17 - "selection-controls.tsx"
 Cohesion: 0.25
@@ -200,25 +201,25 @@ Nodes (31): POST(), POST(), planLockVersions, jobQueue, POST(), POST(), POST(), 
 Cohesion: 0.17
 Nodes (11): Autonomous, Human-in-the-Loop Dynamic Logistics Dispatch & Disruption Recovery, ⚡ DispatchX (VORTEXA 3.0 / ReRoute), 📌 Executive Summary, 🏃 Getting Started, Installation & Development Run, 🚀 Key Web Application Pages, 📄 License, Prerequisites (+3 more)
 
-### Community 25 - "scripts"
-Cohesion: 0.40
-Nodes (5): scripts, build, db:generate, db:migrate, typecheck
+### Community 25 - "users.ts"
+Cohesion: 0.39
+Nodes (6): hashPassword(), verifyPassword(), authenticateCredentials(), DEMO_USERS, findUserByEmail(), bcryptjs
 
 ### Community 26 - "D. Mermaid Flowcharts"
 Cohesion: 0.17
 Nodes (12): D1. Authentication and Onboarding, D2. Primary Operational Workflow, D3. Incident Lifecycle State Machine, D4. Optimization Job State Machine, D4b. Proposal, Approval, Application, and Notification State Machines, D4c. Per-Edge Guards and Invalid Transitions (D4, D4b, notification machine), D5. Exception and Network Recovery, D6. State Synchronization (+4 more)
 
-### Community 27 - "users.ts"
-Cohesion: 0.17
-Nodes (14): hashPassword(), verifyPassword(), hasPermission(), hasRequiredRole(), Permission, ROLE_HIERARCHY, ROLE_PERMISSIONS, SessionData (+6 more)
+### Community 27 - "auth.test.ts"
+Cohesion: 0.24
+Nodes (8): hasPermission(), hasRequiredRole(), Permission, ROLE_HIERARCHY, ROLE_PERMISSIONS, SessionData, UserRecord, MemberRole
 
 ### Community 28 - "E. Screen-by-Screen Interaction Matrix"
 Cohesion: 0.20
 Nodes (10): E.1 Global, Auth, and Shell, E.2 Dashboard (R-04), E.3 Fleet and Vehicle (R-06, R-07), E.4 Plans and Routes (R-08, R-09, R-10), E.5 Incident Reporting (R-12) — Form and Voice, E.6 Incident List and Detail (R-11, R-13), E.7 Proposal Review and Approval (R-14), E.8 Communications (R-15) (+2 more)
 
 ### Community 29 - "session.ts"
-Cohesion: 0.40
-Nodes (7): POST(), GET(), clearSession(), getSession(), sessions, signToken(), verifyToken()
+Cohesion: 0.36
+Nodes (8): POST(), GET(), recordAuditEvent(), clearSession(), getSession(), sessions, signToken(), verifyToken()
 
 ### Community 30 - "src/env.ts"
 Cohesion: 0.25
@@ -317,8 +318,8 @@ Cohesion: 0.67
 Nodes (3): Dashboard Reference, Plan Schedule Reference, UI Reference — Design Inspiration
 
 ### Community 59 - "uuid.ts"
-Cohesion: 0.28
-Nodes (4): RFC-9562, DEMO_IDS, DEMO_LOCATIONS, uuidv7()
+Cohesion: 0.24
+Nodes (5): RFC-9562, DEMO_IDS, DEMO_LOCATIONS, generateUuidV7, uuidv7()
 
 ### Community 60 - "metrics.ts"
 Cohesion: 0.39
@@ -330,8 +331,8 @@ Nodes (5): DEMO_FALLBACK_MATRIX, fetchTravelTimeMatrix(), LatLng, MatrixResponse
 
 ## Knowledge Gaps
 - **17 isolated node(s):** `@dispatchx/contracts`, `react-dom`, `@tailwindcss/turbopack`, `@types/bcryptjs`, `@types/node` (+12 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 491 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 488 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
@@ -341,12 +342,12 @@ _Questions this graph is uniquely positioned to answer:_
 - **What connects `@dispatchx/contracts`, `react-dom`, `@tailwindcss/turbopack` to the rest of the system?**
   _17 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `react` be split into smaller, more focused modules?**
-  _Cohesion score 0.05461479786422578 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06037735849056604 - nodes in this community are weakly interconnected._
 - **Why does `zod` connect `zod` to `schemas.ts`, `plan-parser.ts`, `contracts/package.json`, `login/route.ts`, `src/env.ts`?**
   _High betweenness centrality (0.085) - this node is a cross-community bridge._
 - **Should `next` be split into smaller, more focused modules?**
   _Cohesion score 0.08695652173913043 - nodes in this community are weakly interconnected._
 - **Why does `DispatchX (ReRoute / VORTEXA 3.0) — Project TODO` connect `DispatchX (ReRoute / VORTEXA 3.0) — Project TODO` to `Phase 4 — Core CRUD APIs (Tasks 105–123)`, `Phase 1 — Project Foundation & Infrastructure (Tasks 1–65)`, `Phase 19 — Testing (Tasks 311–338)`, `Phase 6 — Optimization Engine (Tasks 136–169)`, `Phase 13 — Notifications & Briefings (Tasks 255–272)`, `Phase 8 — Incident Reporting & Validation (Tasks 179–209)`, `Phase 9 — Dynamic Re-optimization (Tasks 210–233)`, `Phase 3 — Design System & UI Foundation (Tasks 76–104)`, `UI Reference — Design Inspiration`?**
-  _High betweenness centrality (0.082) - this node is a cross-community bridge._
+  _High betweenness centrality (0.083) - this node is a cross-community bridge._
 - **Should `schemas.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.041666666666666664 - nodes in this community are weakly interconnected._
