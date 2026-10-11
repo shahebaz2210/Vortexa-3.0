@@ -78,26 +78,26 @@
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 51 | Create non-owner DB role for runtime (no BYPASSRLS) | TRD RLS-3 | `[ ]` |
-| 52 | Create separate migration role | TRD RLS-4 | `[ ]` |
-| 53 | Enable and FORCE RLS on all tenant-scoped tables | TRD RLS-1 | `[ ]` |
-| 54 | Write SELECT/INSERT/UPDATE/DELETE RLS policies per entity per role | TRD RLS-2 | `[ ]` |
-| 55 | Implement transaction-local tenant/user context setting | TRD RLS-5 | `[ ]` |
-| 56 | Write RLS tests (including UUID-guessing cross-tenant attempts) | TRD RLS-6 | `[ ]` |
+| 51 | Create non-owner DB role for runtime (no BYPASSRLS) | TRD RLS-3 | `[x]` |
+| 52 | Create separate migration role | TRD RLS-4 | `[x]` |
+| 53 | Enable and FORCE RLS on all tenant-scoped tables | TRD RLS-1 | `[x]` |
+| 54 | Write SELECT/INSERT/UPDATE/DELETE RLS policies per entity per role | TRD RLS-2 | `[x]` |
+| 55 | Implement transaction-local tenant/user context setting | TRD RLS-5 | `[x]` |
+| 56 | Write RLS tests (including UUID-guessing cross-tenant attempts) | TRD RLS-6 | `[x]` |
 
 ### 1.5 Seed Data
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 57 | Seed: demo organization, dispatcher user, manager user | PRD US-01 | `[ ]` |
-| 58 | Seed: demo depot + location nodes (landmarks, intersections) | PRD §5.1 | `[ ]` |
-| 59 | Seed: demo road edges with distances and travel times | PRD §9.3 | `[ ]` |
-| 60 | Seed: `DEMO-A` fixture (3 vehicles, 12 orders, all feasible) | PRD §10.1 | `[ ]` |
-| 61 | Seed: `DEMO-B` fixture (V2 breakdown, spare capacity) | PRD §10.1 | `[ ]` |
-| 62 | Seed: `DEMO-C` fixture (V2 breakdown, insufficient capacity) | PRD §10.1 | `[ ]` |
-| 63 | Seed: `DEMO-D` (road closure) and `DEMO-E` (urgent order) | PRD §10.1 | `[ ]` |
-| 64 | Make seed scripts idempotent | NFR-OBS-06 | `[ ]` |
-| 65 | Precompute travel-time matrix for demo road network | PRD §9.3 | `[ ]` |
+| 57 | Seed: demo organization, dispatcher user, manager user | PRD US-01 | `[x]` |
+| 58 | Seed: demo depot + location nodes (landmarks, intersections) | PRD §5.1 | `[x]` |
+| 59 | Seed: demo road edges with distances and travel times | PRD §9.3 | `[x]` |
+| 60 | Seed: `DEMO-A` fixture (3 vehicles, 12 orders, all feasible) | PRD §10.1 | `[x]` |
+| 61 | Seed: `DEMO-B` fixture (V2 breakdown, spare capacity) | PRD §10.1 | `[x]` |
+| 62 | Seed: `DEMO-C` fixture (V2 breakdown, insufficient capacity) | PRD §10.1 | `[x]` |
+| 63 | Seed: `DEMO-D` (road closure) and `DEMO-E` (urgent order) | PRD §10.1 | `[x]` |
+| 64 | Make seed scripts idempotent | NFR-OBS-06 | `[x]` |
+| 65 | Precompute travel-time matrix for demo road network | PRD §9.3 | `[x]` |
 
 ---
 
