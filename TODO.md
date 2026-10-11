@@ -21,10 +21,10 @@
 | 6 | Add Google Fonts (Inter 400/500/600, JetBrains Mono 500/600) to layout | Design §6 | `[x]` |
 | 7 | Initialize `services/optimizer/` as Python 3.12 project with `pyproject.toml`, FastAPI, Pydantic, OR-Tools | TRD §3, §10 | `[x]` |
 | 8 | Create `packages/contracts/` with shared Zod schemas for request/response types | TRD §3, §12.1 | `[x]` |
-| 9 | Create `.env.example` documenting all required environment variables (including `ELEVENLABS_API_KEY`, ElevenLabs voice IDs, DB, Valhalla) | TRD §14 | `[ ]` |
-| 10 | Create Zod validation schemas for server-side env config (including ElevenLabs credentials) | TRD §14.3 | `[ ]` |
-| 11 | Create Zod validation schemas for client-side env config | TRD §14.3 | `[ ]` |
-| 12 | Pin all dependency versions and commit lockfiles | TRD STK-1 | `[ ]` |
+| 9 | Create `.env.example` documenting all required environment variables (including `ELEVENLABS_API_KEY`, ElevenLabs voice IDs, DB, Valhalla) | TRD §14 | `[x]` |
+| 10 | Create Zod validation schemas for server-side env config (including ElevenLabs credentials) | TRD §14.3 | `[x]` |
+| 11 | Create Zod validation schemas for client-side env config | TRD §14.3 | `[x]` |
+| 12 | Pin all dependency versions and commit lockfiles | TRD STK-1 | `[x]` |
 
 ### 1.2 Docker & Dev Environment
 
