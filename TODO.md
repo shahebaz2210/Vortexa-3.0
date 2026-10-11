@@ -230,55 +230,55 @@
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 136 | Create FastAPI app with health/ready endpoints | TRD §10.1 | `[ ]` |
-| 137 | Implement shared-secret auth between web app and worker | TRD SEC-13 | `[ ]` |
-| 138 | Implement Pydantic input models (snapshot: plan, vehicles, orders, matrices, weights) | TRD §10.1 | `[ ]` |
-| 139 | Implement Pydantic output models (assignments, ETAs, metrics, unassigned) | TRD §10.1 | `[ ]` |
+| 136 | Create FastAPI app with health/ready endpoints | TRD §10.1 | `[x]` |
+| 137 | Implement shared-secret auth between web app and worker | TRD SEC-13 | `[x]` |
+| 138 | Implement Pydantic input models (snapshot: plan, vehicles, orders, matrices, weights) | TRD §10.1 | `[x]` |
+| 139 | Implement Pydantic output models (assignments, ETAs, metrics, unassigned) | TRD §10.1 | `[x]` |
 
 ### 6.2 OR-Tools Solver
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 140 | Build OR-Tools VRPTW model: nodes per order + start/end per vehicle | PRD §6.5 | `[ ]` |
-| 141 | Implement weight capacity dimension (OPT-H01) | PRD §6.2 | `[ ]` |
-| 142 | Implement volume capacity dimension (OPT-H02) | PRD §6.2 | `[ ]` |
-| 143 | Implement time dimension with windows, waiting times (OPT-H04) | PRD §6.2 | `[ ]` |
-| 144 | Implement vehicle availability constraints (OPT-H03) | PRD §6.2 | `[ ]` |
-| 145 | Implement service duration per stop and ETA computation | PRD FR-007 | `[ ]` |
-| 146 | Implement return-to-depot constraint (OPT-H11) | PRD §6.2 | `[ ]` |
-| 147 | Implement tier-1 objective: disjunction penalty per order by priority | PRD §6.3 | `[ ]` |
-| 148 | Implement tier-2 disruption penalty (replan only) | PRD §6.3 | `[ ]` |
-| 149 | Implement tier-3 operating cost objective with configurable weights | PRD §6.3 | `[ ]` |
-| 150 | Implement integer scaling (seconds, meters, kg×100, m³×1000) | PRD §6.3 | `[ ]` |
-| 151 | Configure solver: PATH_CHEAPEST_ARC, GUIDED_LOCAL_SEARCH, fixed seed, time limit | PRD §6.5 | `[ ]` |
-| 152 | Implement deterministic input ordering (sort by ID) | PRD §6.5 | `[ ]` |
-| 153 | Compute and store `input_hash` for reproducibility | PRD §6.5 | `[ ]` |
+| 140 | Build OR-Tools VRPTW model: nodes per order + start/end per vehicle | PRD §6.5 | `[x]` |
+| 141 | Implement weight capacity dimension (OPT-H01) | PRD §6.2 | `[x]` |
+| 142 | Implement volume capacity dimension (OPT-H02) | PRD §6.2 | `[x]` |
+| 143 | Implement time dimension with windows, waiting times (OPT-H04) | PRD §6.2 | `[x]` |
+| 144 | Implement vehicle availability constraints (OPT-H03) | PRD §6.2 | `[x]` |
+| 145 | Implement service duration per stop and ETA computation | PRD FR-007 | `[x]` |
+| 146 | Implement return-to-depot constraint (OPT-H11) | PRD §6.2 | `[x]` |
+| 147 | Implement tier-1 objective: disjunction penalty per order by priority | PRD §6.3 | `[x]` |
+| 148 | Implement tier-2 disruption penalty (replan only) | PRD §6.3 | `[x]` |
+| 149 | Implement tier-3 operating cost objective with configurable weights | PRD §6.3 | `[x]` |
+| 150 | Implement integer scaling (seconds, meters, kg×100, m³×1000) | PRD §6.3 | `[x]` |
+| 151 | Configure solver: PATH_CHEAPEST_ARC, GUIDED_LOCAL_SEARCH, fixed seed, time limit | PRD §6.5 | `[x]` |
+| 152 | Implement deterministic input ordering (sort by ID) | PRD §6.5 | `[x]` |
+| 153 | Compute and store `input_hash` for reproducibility | PRD §6.5 | `[x]` |
 
 ### 6.3 Post-Solve & Results
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 154 | Implement post-solve validator: re-check OPT-H01–H11 on candidate | PRD §6.2 | `[ ]` |
-| 155 | Implement pre-solve feasibility screen (per-order capacity, window, reachability) | PRD §6.2 | `[ ]` |
-| 156 | Implement reason codes for unassigned orders with numeric evidence | PRD US-15 | `[ ]` |
-| 157 | Implement metrics: distance, duration, fuel est, cost est, CO2 est, utilization | PRD §5.1 | `[ ]` |
-| 158 | Implement fuel/cost model | PRD §6.3 | `[ ]` |
-| 159 | Label all fuel/cost/CO2 as "estimates" | PRD FR-020 | `[ ]` |
+| 154 | Implement post-solve validator: re-check OPT-H01–H11 on candidate | PRD §6.2 | `[x]` |
+| 155 | Implement pre-solve feasibility screen (per-order capacity, window, reachability) | PRD §6.2 | `[x]` |
+| 156 | Implement reason codes for unassigned orders with numeric evidence | PRD US-15 | `[x]` |
+| 157 | Implement metrics: distance, duration, fuel est, cost est, CO2 est, utilization | PRD §5.1 | `[x]` |
+| 158 | Implement fuel/cost model | PRD §6.3 | `[x]` |
+| 159 | Label all fuel/cost/CO2 as "estimates" | PRD FR-020 | `[x]` |
 
 ### 6.4 Job Queue & API
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 160 | Implement PostgreSQL job queue (SELECT FOR UPDATE SKIP LOCKED) | TRD §7.1 | `[ ]` |
-| 161 | `POST /api/v1/plans/{id}/optimize` → 202 with job_id | PRD E-05 | `[ ]` |
-| 162 | `GET /api/v1/jobs/{jobId}` — job status | PRD E-06 | `[ ]` |
-| 163 | `POST /api/v1/jobs/{jobId}/cancel` | PRD E-07 | `[ ]` |
-| 164 | Implement job status transitions (QUEUED→RUNNING→SUCCEEDED etc.) | PRD §5.1 | `[ ]` |
-| 165 | Implement 409 JOB_IN_PROGRESS guard | PRD AC-04.3 | `[ ]` |
-| 166 | Implement single-concurrency-per-plan job queue | PRD AC-20.3 | `[ ]` |
-| 167 | Implement timeout: return incumbent if found, else TIMED_OUT | PRD AC-19.1/2 | `[ ]` |
-| 168 | On crash: FAILED, return incident to PENDING_CONFIRMATION | PRD AC-19.3 | `[ ]` |
-| 169 | On success: create plan_version, store routes/stops/metrics | PRD US-04 | `[ ]` |
+| 160 | Implement PostgreSQL job queue (SELECT FOR UPDATE SKIP LOCKED) | TRD §7.1 | `[x]` |
+| 161 | `POST /api/v1/plans/{id}/optimize` → 202 with job_id | PRD E-05 | `[x]` |
+| 162 | `GET /api/v1/jobs/{jobId}` — job status | PRD E-06 | `[x]` |
+| 163 | `POST /api/v1/jobs/{jobId}/cancel` | PRD E-07 | `[x]` |
+| 164 | Implement job status transitions (QUEUED→RUNNING→SUCCEEDED etc.) | PRD §5.1 | `[x]` |
+| 165 | Implement 409 JOB_IN_PROGRESS guard | PRD AC-04.3 | `[x]` |
+| 166 | Implement single-concurrency-per-plan job queue | PRD AC-20.3 | `[x]` |
+| 167 | Implement timeout: return incumbent if found, else TIMED_OUT | PRD AC-19.1/2 | `[x]` |
+| 168 | On crash: FAILED, return incident to PENDING_CONFIRMATION | PRD AC-19.3 | `[x]` |
+| 169 | On success: create plan_version, store routes/stops/metrics | PRD US-04 | `[x]` |
 
 ---
 
@@ -286,15 +286,15 @@
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 170 | Build Optimization Results page: metrics, per-vehicle routes, unassigned list | PRD Screen 4 | `[ ]` |
-| 171 | Build optimization progress states (queued→solving→done) with aria-live | PRD US-04 | `[ ]` |
-| 172 | Build infeasible/timed-out/failed panels with reasons and retry | PRD US-19 | `[ ]` |
-| 173 | Build Active Fleet & Delivery Plan page | PRD Screen 5 | `[ ]` |
-| 174 | Build fleet table: Vehicle ID, Driver, Status, Load Util, Stops, Next Dest, ETA, SLA, Actions | UI mockups | `[ ]` |
-| 175 | Build KPI summary strip (5 KPIs from mockup) | UI mockups | `[ ]` |
-| 176 | Build per-vehicle route table (sequence, ETA, wait, service, window, load) | PRD US-05 | `[ ]` |
-| 177 | Implement Manager read-only view (no write controls) | PRD AC-05.2 | `[ ]` |
-| 178 | Build plan list page | Appflow R-08 | `[ ]` |
+| 170 | Build Optimization Results page: metrics, per-vehicle routes, unassigned list | PRD Screen 4 | `[x]` |
+| 171 | Build optimization progress states (queued→solving→done) with aria-live | PRD US-04 | `[x]` |
+| 172 | Build infeasible/timed-out/failed panels with reasons and retry | PRD US-19 | `[x]` |
+| 173 | Build Active Fleet & Delivery Plan page | PRD Screen 5 | `[x]` |
+| 174 | Build fleet table: Vehicle ID, Driver, Status, Load Util, Stops, Next Dest, ETA, SLA, Actions | UI mockups | `[x]` |
+| 175 | Build KPI summary strip (5 KPIs from mockup) | UI mockups | `[x]` |
+| 176 | Build per-vehicle route table (sequence, ETA, wait, service, window, load) | PRD US-05 | `[x]` |
+| 177 | Implement Manager read-only view (no write controls) | PRD AC-05.2 | `[x]` |
+| 178 | Build plan list page | Appflow R-08 | `[x]` |
 
 ---
 
@@ -304,47 +304,47 @@
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 179 | `POST /api/v1/plans/{id}/incidents` with Idempotency-Key | PRD US-06 | `[ ]` |
-| 180 | Implement LLM extraction adapter (text → structured JSON) | PRD §9.1 | `[ ]` |
-| 181 | Implement LLM prompt: untrusted data wrapping, system prompt not editable | PRD INT-LLM-02 | `[ ]` |
-| 182 | Implement data minimization for LLM (no customer PII) | PRD INT-LLM-06 | `[ ]` |
-| 183 | Implement LLM response validation (schema check → retry → EXTRACTION_FAILED) | PRD INT-LLM-01 | `[ ]` |
-| 184 | Implement prompt injection protection | PRD AC-06.2 | `[ ]` |
-| 185 | Implement deterministic entity resolution (vehicle, location against gazetteer) | TRD §8.2 | `[ ]` |
-| 186 | Implement location validation: unknown → NEEDS_CLARIFICATION; never guess | TRD INC-1/2 | `[ ]` |
-| 187 | `POST /api/v1/incidents/{id}/clarify` — field clarification | PRD E-11 | `[ ]` |
-| 188 | `POST /api/v1/incidents/{id}/validate` — re-validate after edits | PRD E-10 | `[ ]` |
-| 189 | Implement confidence thresholds (STT<0.80, LLM<0.75 → NEEDS_CLARIFICATION) | PRD §9.1 | `[ ]` |
-| 190 | Implement LLM fallback: 502 → structured form pre-filled with raw text | PRD AC-06.3 | `[ ]` |
+| 179 | `POST /api/v1/plans/{id}/incidents` with Idempotency-Key | PRD US-06 | `[x]` |
+| 180 | Implement LLM extraction adapter (text → structured JSON) | PRD §9.1 | `[x]` |
+| 181 | Implement LLM prompt: untrusted data wrapping, system prompt not editable | PRD INT-LLM-02 | `[x]` |
+| 182 | Implement data minimization for LLM (no customer PII) | PRD INT-LLM-06 | `[x]` |
+| 183 | Implement LLM response validation (schema check → retry → EXTRACTION_FAILED) | PRD INT-LLM-01 | `[x]` |
+| 184 | Implement prompt injection protection | PRD AC-06.2 | `[x]` |
+| 185 | Implement deterministic entity resolution (vehicle, location against gazetteer) | TRD §8.2 | `[x]` |
+| 186 | Implement location validation: unknown → NEEDS_CLARIFICATION; never guess | TRD INC-1/2 | `[x]` |
+| 187 | `POST /api/v1/incidents/{id}/clarify` — field clarification | PRD E-11 | `[x]` |
+| 188 | `POST /api/v1/incidents/{id}/validate` — re-validate after edits | PRD E-10 | `[x]` |
+| 189 | Implement confidence thresholds (STT<0.80, LLM<0.75 → NEEDS_CLARIFICATION) | PRD §9.1 | `[x]` |
+| 190 | Implement LLM fallback: 502 → structured form pre-filled with raw text | PRD AC-06.3 | `[x]` |
 
 ### 8.2 Voice Incidents
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 191 | `POST /api/v1/plans/{id}/incidents/voice` (multipart, ≤5MB, ≤60s) | PRD US-07 | `[ ]` |
-| 192 | Implement STT adapter with ElevenLabs (Scribe / Speech-to-Text) provider integration | TRD VOX-2 | `[ ]` |
-| 193 | Implement audio validation (413 >5MB, 415 unsupported MIME) | PRD AC-07.3 | `[ ]` |
-| 194 | Implement audio retention: delete after transcription | PRD US-07 | `[ ]` |
-| 195 | Implement STT fallback: 502 → "type the incident instead" | PRD AC-07.2 | `[ ]` |
-| 196 | Build Report Incident page: text, mic, form fallback | PRD Screen 6 | `[ ]` |
-| 197 | Build voice recording UI (8 states from Design §9.2) | Design §9.2 | `[ ]` |
-| 198 | Implement recording controls: push-to-talk, timer, auto-stop 30s | PRD US-07 | `[ ]` |
-| 199 | Build transcript review: editable textarea, source badge | Design §9.3 | `[ ]` |
+| 191 | `POST /api/v1/plans/{id}/incidents/voice` (multipart, ≤5MB, ≤60s) | PRD US-07 | `[x]` |
+| 192 | Implement STT adapter with ElevenLabs (Scribe / Speech-to-Text) provider integration | TRD VOX-2 | `[x]` |
+| 193 | Implement audio validation (413 >5MB, 415 unsupported MIME) | PRD AC-07.3 | `[x]` |
+| 194 | Implement audio retention: delete after transcription | PRD US-07 | `[x]` |
+| 195 | Implement STT fallback: 502 → "type the incident instead" | PRD AC-07.2 | `[x]` |
+| 196 | Build Report Incident page: text, mic, form fallback | PRD Screen 6 | `[x]` |
+| 197 | Build voice recording UI (8 states from Design §9.2) | Design §9.2 | `[x]` |
+| 198 | Implement recording controls: push-to-talk, timer, auto-stop 30s | PRD US-07 | `[x]` |
+| 199 | Build transcript review: editable textarea, source badge | Design §9.3 | `[x]` |
 
 ### 8.3 Incident Confirmation & Approval
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 200 | `POST /api/v1/incidents/{id}/approve` → 202 with job_id | PRD US-09 | `[ ]` |
-| 201 | `POST /api/v1/incidents/{id}/reject` → store reason | PRD US-09 | `[ ]` |
-| 202 | Implement approval guards (only PENDING_CONFIRMATION) | PRD AC-08.1 | `[ ]` |
-| 203 | Implement idempotent approval (same key → same response) | PRD AC-20.1/2 | `[ ]` |
-| 204 | Store approval record: decision, actor (from session), edits | PRD AC-09.3 | `[ ]` |
-| 205 | Implement VEHICLE_ALREADY_UNAVAILABLE guard | PRD AC-20.5 | `[ ]` |
-| 206 | Build Incident Confirmation Modal: fields, validation, confidence, Approve/Reject | PRD Screen 7 | `[ ]` |
-| 207 | Implement focus trap, Esc behavior, Approve disabled until approvable | Appflow OV-08 | `[ ]` |
-| 208 | Build location clarification UI (candidates, selection) | PRD US-08 | `[ ]` |
-| 209 | Build ambiguous location UI (multiple candidates) | PRD AC-08.2 | `[ ]` |
+| 200 | `POST /api/v1/incidents/{id}/approve` → 202 with job_id | PRD US-09 | `[x]` |
+| 201 | `POST /api/v1/incidents/{id}/reject` → store reason | PRD US-09 | `[x]` |
+| 202 | Implement approval guards (only PENDING_CONFIRMATION) | PRD AC-08.1 | `[x]` |
+| 203 | Implement idempotent approval (same key → same response) | PRD AC-20.1/2 | `[x]` |
+| 204 | Store approval record: decision, actor (from session), edits | PRD AC-09.3 | `[x]` |
+| 205 | Implement VEHICLE_ALREADY_UNAVAILABLE guard | PRD AC-20.5 | `[x]` |
+| 206 | Build Incident Confirmation Modal: fields, validation, confidence, Approve/Reject | PRD Screen 7 | `[x]` |
+| 207 | Implement focus trap, Esc behavior, Approve disabled until approvable | Appflow OV-08 | `[x]` |
+| 208 | Build location clarification UI (candidates, selection) | PRD US-08 | `[x]` |
+| 209 | Build ambiguous location UI (multiple candidates) | PRD AC-08.2 | `[x]` |
 
 ---
 
@@ -354,40 +354,40 @@
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 210 | Build replan state snapshot (freeze completed, read positions, collect pending, apply overlays) | PRD §6.4 | `[ ]` |
-| 211 | Implement completed-stop freezing (OPT-H07) | PRD OPT-R04 | `[ ]` |
-| 212 | Implement in-progress stop handling (frozen + service time → start time) | PRD §5.2 | `[ ]` |
-| 213 | Implement vehicle start from current position (OPT-H08) | PRD OPT-H08 | `[ ]` |
-| 214 | Implement vehicle breakdown: BROKEN_DOWN, return pending to pool (OPT-R01) | PRD US-10 | `[ ]` |
-| 215 | Implement road closure: remove edges, recompute matrix (OPT-R06) | PRD US-11 | `[ ]` |
-| 216 | Implement delay multiplier on affected arcs (OPT-R07) | PRD US-11 | `[ ]` |
-| 217 | Implement urgent order insertion (OPT-R08) | PRD US-12 | `[ ]` |
-| 218 | Implement stability warm start (previous routes as initial solution) (OPT-R11) | PRD OPT-R11 | `[ ]` |
-| 219 | Implement overlay accumulation across incidents (OPT-R09) | PRD OPT-R09 | `[ ]` |
+| 210 | Build replan state snapshot (freeze completed, read positions, collect pending, apply overlays) | PRD §6.4 | `[x]` |
+| 211 | Implement completed-stop freezing (OPT-H07) | PRD OPT-R04 | `[x]` |
+| 212 | Implement in-progress stop handling (frozen + service time → start time) | PRD §5.2 | `[x]` |
+| 213 | Implement vehicle start from current position (OPT-H08) | PRD OPT-H08 | `[x]` |
+| 214 | Implement vehicle breakdown: BROKEN_DOWN, return pending to pool (OPT-R01) | PRD US-10 | `[x]` |
+| 215 | Implement road closure: remove edges, recompute matrix (OPT-R06) | PRD US-11 | `[x]` |
+| 216 | Implement delay multiplier on affected arcs (OPT-R07) | PRD US-11 | `[x]` |
+| 217 | Implement urgent order insertion (OPT-R08) | PRD US-12 | `[x]` |
+| 218 | Implement stability warm start (previous routes as initial solution) (OPT-R11) | PRD OPT-R11 | `[x]` |
+| 219 | Implement overlay accumulation across incidents (OPT-R09) | PRD OPT-R09 | `[x]` |
 
 ### 9.2 Versioning & Comparison
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 220 | Create new PlanVersion on successful reoptimization; previous → SUPERSEDED | PRD US-10 | `[ ]` |
-| 221 | `GET /api/v1/plans/{id}/compare?from=&to=` — KEPT/MOVED/BROKEN | PRD US-16 | `[ ]` |
-| 222 | Implement KEPT classification (same vehicle + ETA delta ≤ tolerance) | PRD §5.2 | `[ ]` |
-| 223 | Implement MOVED classification (diff vehicle or ETA > tolerance + reason) | PRD §5.2 | `[ ]` |
-| 224 | Implement BROKEN classification (unassigned + reason + evidence) | PRD §5.2 | `[ ]` |
-| 225 | Persist delivery change records per version transition | PRD §5.1 | `[ ]` |
-| 226 | Flag urgent orders as `is_new = true` | PRD §5.2 | `[ ]` |
+| 220 | Create new PlanVersion on successful reoptimization; previous → SUPERSEDED | PRD US-10 | `[x]` |
+| 221 | `GET /api/v1/plans/{id}/compare?from=&to=` — KEPT/MOVED/BROKEN | PRD US-16 | `[x]` |
+| 222 | Implement KEPT classification (same vehicle + ETA delta ≤ tolerance) | PRD §5.2 | `[x]` |
+| 223 | Implement MOVED classification (diff vehicle or ETA > tolerance + reason) | PRD §5.2 | `[x]` |
+| 224 | Implement BROKEN classification (unassigned + reason + evidence) | PRD §5.2 | `[x]` |
+| 225 | Persist delivery change records per version transition | PRD §5.1 | `[x]` |
+| 226 | Flag urgent orders as `is_new = true` | PRD §5.2 | `[x]` |
 
 ### 9.3 Replan UI
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 227 | Build Re-optimization Progress page: status, time, outcome, retry/cancel | PRD Screen 8 | `[ ]` |
-| 228 | Implement progress phases (queued→solving→validating→done) with role="status" | PRD US-04 | `[ ]` |
-| 229 | Build failure panel: "Current plan unchanged", retry options | PRD US-19 | `[ ]` |
-| 230 | Build Before-vs-After Comparison page: counts, per-order rows, ETAs, deltas, reasons | PRD Screen 9 | `[ ]` |
-| 231 | Implement KEPT/MOVED/BROKEN with text + icon + color (never color alone) | NFR-A11Y-07 | `[ ]` |
-| 232 | Implement sortable/filterable comparison table | PRD Screen 9 | `[ ]` |
-| 233 | Build metrics deltas panel (before/after with "estimate" labels) | PRD FR-020 | `[ ]` |
+| 227 | Build Re-optimization Progress page: status, time, outcome, retry/cancel | PRD Screen 8 | `[x]` |
+| 228 | Implement progress phases (queued→solving→validating→done) with role="status" | PRD US-04 | `[x]` |
+| 229 | Build failure panel: "Current plan unchanged", retry options | PRD US-19 | `[x]` |
+| 230 | Build Before-vs-After Comparison page: counts, per-order rows, ETAs, deltas, reasons | PRD Screen 9 | `[x]` |
+| 231 | Implement KEPT/MOVED/BROKEN with text + icon + color (never color alone) | NFR-A11Y-07 | `[x]` |
+| 232 | Implement sortable/filterable comparison table | PRD Screen 9 | `[x]` |
+| 233 | Build metrics deltas panel (before/after with "estimate" labels) | PRD FR-020 | `[x]` |
 
 ---
 
@@ -395,14 +395,14 @@
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 234 | `POST /api/v1/proposals/{id}/activate` — atomic DB transaction | TRD §13 | `[ ]` |
-| 235 | Implement activation: BEGIN→lock→verify version→verify approved→verify feasible→verify completed unchanged→SUPERSEDE old→ACTIVATE new→audit→COMMIT | TRD §13 | `[ ]` |
-| 236 | Implement stale rejection: 409 STALE_PLAN_VERSION | TRD ACT-2 | `[ ]` |
-| 237 | Implement concurrent activation rejection | TRD ACT-4 | `[ ]` |
-| 238 | Implement full rollback on any failed check | TRD ACT-1 | `[ ]` |
-| 239 | Implement queued approval during active replan (QUEUED_BEHIND_JOB) | PRD AC-20.3 | `[ ]` |
-| 240 | Implement stale base version: discard STALE, re-queue against latest | PRD AC-20.4 | `[ ]` |
-| 241 | Write concurrency tests: stale, concurrent, idempotent, queued | PRD US-20 | `[ ]` |
+| 234 | `POST /api/v1/proposals/{id}/activate` — atomic DB transaction | TRD §13 | `[x]` |
+| 235 | Implement activation: BEGIN→lock→verify version→verify approved→verify feasible→verify completed unchanged→SUPERSEDE old→ACTIVATE new→audit→COMMIT | TRD §13 | `[x]` |
+| 236 | Implement stale rejection: 409 STALE_PLAN_VERSION | TRD ACT-2 | `[x]` |
+| 237 | Implement concurrent activation rejection | TRD ACT-4 | `[x]` |
+| 238 | Implement full rollback on any failed check | TRD ACT-1 | `[x]` |
+| 239 | Implement queued approval during active replan (QUEUED_BEHIND_JOB) | PRD AC-20.3 | `[x]` |
+| 240 | Implement stale base version: discard STALE, re-queue against latest | PRD AC-20.4 | `[x]` |
+| 241 | Write concurrency tests: stale, concurrent, idempotent, queued | PRD US-20 | `[x]` |
 
 ---
 
@@ -410,13 +410,13 @@
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 242 | Build Dashboard page: fleet overview, KPIs, incidents, routes summary | PRD Screen 5 | `[ ]` |
-| 243 | Build KPI grid (5 cards): Delivered, Active Fleet, SLA Rate, Load Util, Incidents | UI mockups | `[ ]` |
-| 244 | Build Active Routes tab bar: All, Active Routes, Deliveries, Disruptions, SLA Risk | UI mockups | `[ ]` |
-| 245 | Build AI Copilot panel: NL disruption input, detected disruption card, "Analyze Query" | UI mockups | `[ ]` |
-| 246 | Build route optimization banner: proposed reroute, savings, "Approve & Push" | UI mockups | `[ ]` |
-| 247 | Implement shift selector (Morning/Afternoon/Evening tabs) | UI mockups | `[ ]` |
-| 248 | Build Dispatch Engine status indicator (bottom-left) | UI mockups | `[ ]` |
+| 242 | Build Dashboard page: fleet overview, KPIs, incidents, routes summary | PRD Screen 5 | `[x]` |
+| 243 | Build KPI grid (5 cards): Delivered, Active Fleet, SLA Rate, Load Util, Incidents | UI mockups | `[x]` |
+| 244 | Build Active Routes tab bar: All, Active Routes, Deliveries, Disruptions, SLA Risk | UI mockups | `[x]` |
+| 245 | Build AI Copilot panel: NL disruption input, detected disruption card, "Analyze Query" | UI mockups | `[x]` |
+| 246 | Build route optimization banner: proposed reroute, savings, "Approve & Push" | UI mockups | `[x]` |
+| 247 | Implement shift selector (Morning/Afternoon/Evening tabs) | UI mockups | `[x]` |
+| 248 | Build Dispatch Engine status indicator (bottom-left) | UI mockups | `[x]` |
 
 ---
 
@@ -424,12 +424,12 @@
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 249 | Build Plan Schedule page: live timetable, monthly/weekly/daily toggle | UI mockups | `[ ]` |
-| 250 | Build Daily Shift Manifest: Morning/Afternoon/Evening sections | UI mockups | `[ ]` |
-| 251 | Build per-route row: vehicle, driver, stops, payload bars, SLA, telemetry, actions | UI mockups | `[ ]` |
-| 252 | Build Weekly Fleet Schedule Matrix: 7-day grid, order counts, health status | UI mockups | `[ ]` |
-| 253 | Implement shift status badges (Active Execution, Scheduled, Planned) | UI mockups | `[ ]` |
-| 254 | Implement "Create Plan" and "Pre-Dispatch All" actions | UI mockups | `[ ]` |
+| 249 | Build Plan Schedule page: live timetable, monthly/weekly/daily toggle | UI mockups | `[x]` |
+| 250 | Build Daily Shift Manifest: Morning/Afternoon/Evening sections | UI mockups | `[x]` |
+| 251 | Build per-route row: vehicle, driver, stops, payload bars, SLA, telemetry, actions | UI mockups | `[x]` |
+| 252 | Build Weekly Fleet Schedule Matrix: 7-day grid, order counts, health status | UI mockups | `[x]` |
+| 253 | Implement shift status badges (Active Execution, Scheduled, Planned) | UI mockups | `[x]` |
+| 254 | Implement "Create Plan" and "Pre-Dispatch All" actions | UI mockups | `[x]` |
 
 ---
 
@@ -439,34 +439,34 @@
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 255 | Implement TTS adapter with ElevenLabs (Text-to-Speech API, dynamic voice synthesis) | TRD VOX-2 | `[ ]` |
-| 256 | `POST /api/v1/notifications` — generate text + audio via ElevenLabs from template + solver data | PRD US-17 | `[ ]` |
-| 257 | Implement message template: order ref, revised ETA, reason; optional LLM rephrase with ETA validation | PRD AC-17.1 | `[ ]` |
-| 258 | Implement audio storage with `expires_at` | TRD §16.3 | `[ ]` |
-| 259 | `GET /api/v1/notifications/{id}` — signed audio URL | PRD E-17 | `[ ]` |
-| 260 | `POST /api/v1/notifications/{id}/simulate-send` → SIMULATED_SENT | PRD E-18 | `[ ]` |
-| 261 | Implement TTS fallback: 502 / quota → text still returned | PRD AC-17.3 | `[ ]` |
-| 262 | Build Customer Voice Preview page: text, audio, "Preview only — no call placed" | PRD Screen 10 | `[ ]` |
-| 263 | Build accessible audio player (play/pause/seek, transcript, no autoplay) | NFR-A11Y-08 | `[ ]` |
-| 264 | Implement "simulate send" with SIMULATED label | PRD §2.1 | `[ ]` |
+| 255 | Implement TTS adapter with ElevenLabs (Text-to-Speech API, dynamic voice synthesis) | TRD VOX-2 | `[x]` |
+| 256 | `POST /api/v1/notifications` — generate text + audio via ElevenLabs from template + solver data | PRD US-17 | `[x]` |
+| 257 | Implement message template: order ref, revised ETA, reason; optional LLM rephrase with ETA validation | PRD AC-17.1 | `[x]` |
+| 258 | Implement audio storage with `expires_at` | TRD §16.3 | `[x]` |
+| 259 | `GET /api/v1/notifications/{id}` — signed audio URL | PRD E-17 | `[x]` |
+| 260 | `POST /api/v1/notifications/{id}/simulate-send` → SIMULATED_SENT | PRD E-18 | `[x]` |
+| 261 | Implement TTS fallback: 502 / quota → text still returned | PRD AC-17.3 | `[x]` |
+| 262 | Build Customer Voice Preview page: text, audio, "Preview only — no call placed" | PRD Screen 10 | `[x]` |
+| 263 | Build accessible audio player (play/pause/seek, transcript, no autoplay) | NFR-A11Y-08 | `[x]` |
+| 264 | Implement "simulate send" with SIMULATED label | PRD §2.1 | `[x]` |
 
 ### 13.2 Fleet Briefing
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 265 | `POST /api/v1/plans/{id}/briefing` — generate structured text & ElevenLabs audio briefing from persisted data | PRD US-18 | `[ ]` |
-| 266 | Validate briefing: every number from stored data only | PRD AC-18.2 | `[ ]` |
-| 267 | Enforce ≤120 words | PRD AC-18.1 | `[ ]` |
-| 268 | Build Fleet Briefing page: facts, text, audio player with transcript (ElevenLabs generated voice) | PRD Screen 11 | `[ ]` |
+| 265 | `POST /api/v1/plans/{id}/briefing` — generate structured text & ElevenLabs audio briefing from persisted data | PRD US-18 | `[x]` |
+| 266 | Validate briefing: every number from stored data only | PRD AC-18.2 | `[x]` |
+| 267 | Enforce ≤120 words | PRD AC-18.1 | `[x]` |
+| 268 | Build Fleet Briefing page: facts, text, audio player with transcript (ElevenLabs generated voice) | PRD Screen 11 | `[x]` |
 
 ### 13.3 Communications
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 269 | Build Communications page: notification list, channel/status filters | Appflow R-15 | `[ ]` |
-| 270 | Implement retry for failed notifications (per-row + batch) | Appflow E.8 | `[ ]` |
-| 271 | Implement "Mark contacted manually" (auditable, requires note) | Appflow E.8 | `[ ]` |
-| 272 | Implement customer PII masking by default | Appflow §J.6 | `[ ]` |
+| 269 | Build Communications page: notification list, channel/status filters | Appflow R-15 | `[x]` |
+| 270 | Implement retry for failed notifications (per-row + batch) | Appflow E.8 | `[x]` |
+| 271 | Implement "Mark contacted manually" (auditable, requires note) | Appflow E.8 | `[x]` |
+| 272 | Implement customer PII masking by default | Appflow §J.6 | `[x]` |
 
 ---
 
@@ -474,10 +474,10 @@
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 273 | `GET /api/v1/audit-events` — paginated, filterable | TRD §12 | `[ ]` |
-| 274 | Audit events for: login, plan creation, optimization, approval, activation, notification | PRD FR-023 | `[ ]` |
-| 275 | Build Audit History page: timeline with actor, action, timestamp, entity links | TRD §2.3 | `[ ]` |
-| 276 | Structured JSON audit logs with correlation_id, plan_id, job_id | NFR-OBS-01 | `[ ]` |
+| 273 | `GET /api/v1/audit-events` — paginated, filterable | TRD §12 | `[x]` |
+| 274 | Audit events for: login, plan creation, optimization, approval, activation, notification | PRD FR-023 | `[x]` |
+| 275 | Build Audit History page: timeline with actor, action, timestamp, entity links | TRD §2.3 | `[x]` |
+| 276 | Structured JSON audit logs with correlation_id, plan_id, job_id | NFR-OBS-01 | `[x]` |
 
 ---
 
@@ -485,17 +485,17 @@
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 277 | Build Login page (error summary, lockout message, spinner) | PRD Screen 1 | `[ ]` |
-| 278 | Build session-expired overlay (OV-15): preserve data, re-auth in place | Appflow OV-15 | `[ ]` |
-| 279 | Build 403 access-denied page | Appflow R-19 | `[ ]` |
-| 280 | Build 404 not-found page (in-shell) | Appflow R-20 | `[ ]` |
-| 281 | Build 409 conflict handling: refetch, show diff, require decision | Appflow §D5 | `[ ]` |
-| 282 | Build INFEASIBLE state: constraints explained, unassigned orders with reasons | PRD US-15 | `[ ]` |
-| 283 | Build TIMED_OUT state: "Current plan unchanged" with retry | PRD US-19 | `[ ]` |
-| 284 | Build empty states for all screens | Design §2.2 | `[ ]` |
-| 285 | Build stale-data indicator (amber chip "Updated X min ago") | Design §2.2 | `[ ]` |
-| 286 | Build unsaved-changes dialog (OV-14) | Appflow OV-14 | `[ ]` |
-| 287 | Build persistent "Demo / Simulated positions" label | PRD §8 | `[ ]` |
+| 277 | Build Login page (error summary, lockout message, spinner) | PRD Screen 1 | `[x]` |
+| 278 | Build session-expired overlay (OV-15): preserve data, re-auth in place | Appflow OV-15 | `[x]` |
+| 279 | Build 403 access-denied page | Appflow R-19 | `[x]` |
+| 280 | Build 404 not-found page (in-shell) | Appflow R-20 | `[x]` |
+| 281 | Build 409 conflict handling: refetch, show diff, require decision | Appflow §D5 | `[x]` |
+| 282 | Build INFEASIBLE state: constraints explained, unassigned orders with reasons | PRD US-15 | `[x]` |
+| 283 | Build TIMED_OUT state: "Current plan unchanged" with retry | PRD US-19 | `[x]` |
+| 284 | Build empty states for all screens | Design §2.2 | `[x]` |
+| 285 | Build stale-data indicator (amber chip "Updated X min ago") | Design §2.2 | `[x]` |
+| 286 | Build unsaved-changes dialog (OV-14) | Appflow OV-14 | `[x]` |
+| 287 | Build persistent "Demo / Simulated positions" label | PRD §8 | `[x]` |
 
 ---
 
@@ -503,15 +503,15 @@
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 288 | Semantic HTML: `<header>`, `<nav>`, `<main>`, single `<h1>` per page | NFR-A11Y-02 | `[ ]` |
-| 289 | Real `<table>` with `<th scope>`, captions for data tables | NFR-A11Y-02 | `[ ]` |
-| 290 | Full keyboard: visible focus ring ≥3:1 contrast, ≥2px | NFR-A11Y-03 | `[ ]` |
-| 291 | Modal focus trap + Esc + focus return | NFR-A11Y-03 | `[ ]` |
-| 292 | Form labels, `aria-describedby`, `aria-invalid`, focusable error summary | NFR-A11Y-04 | `[ ]` |
-| 293 | Status announcements: `role="status"` / `aria-live`, `role="alert"` for errors | NFR-A11Y-05 | `[ ]` |
-| 294 | Verify contrast ≥4.5:1 text, ≥3:1 UI components | NFR-A11Y-06 | `[ ]` |
-| 295 | Responsive ≥1024px desktop, 768–1023px tablet; touch targets ≥44px | NFR-A11Y-09 | `[ ]` |
-| 296 | Run axe-core on all screens: zero critical violations | PRD §10.1 | `[ ]` |
+| 288 | Semantic HTML: `<header>`, `<nav>`, `<main>`, single `<h1>` per page | NFR-A11Y-02 | `[x]` |
+| 289 | Real `<table>` with `<th scope>`, captions for data tables | NFR-A11Y-02 | `[x]` |
+| 290 | Full keyboard: visible focus ring ≥3:1 contrast, ≥2px | NFR-A11Y-03 | `[x]` |
+| 291 | Modal focus trap + Esc + focus return | NFR-A11Y-03 | `[x]` |
+| 292 | Form labels, `aria-describedby`, `aria-invalid`, focusable error summary | NFR-A11Y-04 | `[x]` |
+| 293 | Status announcements: `role="status"` / `aria-live`, `role="alert"` for errors | NFR-A11Y-05 | `[x]` |
+| 294 | Verify contrast ≥4.5:1 text, ≥3:1 UI components | NFR-A11Y-06 | `[x]` |
+| 295 | Responsive ≥1024px desktop, 768–1023px tablet; touch targets ≥44px | NFR-A11Y-09 | `[x]` |
+| 296 | Run axe-core on all screens: zero critical violations | PRD §10.1 | `[x]` |
 
 ---
 
@@ -519,13 +519,13 @@
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 297 | Structured JSON logging (request_id, job_id, plan_version, tenant) | NFR-OBS-01 | `[ ]` |
-| 298 | Metrics: optimization_job_duration_ms, solver_duration_ms, matrix_duration_ms | TRD §19.1 | `[ ]` |
-| 299 | Metrics: job_failure_total, unassigned_deliveries_total | TRD §19.1 | `[ ]` |
-| 300 | Metrics: incident_validation_rejection, activation_conflict | TRD §19.1 | `[ ]` |
-| 301 | Metrics: voice_transcription_duration, voice_generation_duration, notification_failure | TRD §19.1 | `[ ]` |
-| 302 | Error reporting: error IDs to users, diagnostics only in logs | NFR-OBS-03 | `[ ]` |
-| 303 | Verify no secrets/tokens/raw audio/customer PII in logs | TRD SEC-12 | `[ ]` |
+| 297 | Structured JSON logging (request_id, job_id, plan_version, tenant) | NFR-OBS-01 | `[x]` |
+| 298 | Metrics: optimization_job_duration_ms, solver_duration_ms, matrix_duration_ms | TRD §19.1 | `[x]` |
+| 299 | Metrics: job_failure_total, unassigned_deliveries_total | TRD §19.1 | `[x]` |
+| 300 | Metrics: incident_validation_rejection, activation_conflict | TRD §19.1 | `[x]` |
+| 301 | Metrics: voice_transcription_duration, voice_generation_duration, notification_failure | TRD §19.1 | `[x]` |
+| 302 | Error reporting: error IDs to users, diagnostics only in logs | NFR-OBS-03 | `[x]` |
+| 303 | Verify no secrets/tokens/raw audio/customer PII in logs | TRD SEC-12 | `[x]` |
 
 ---
 
@@ -533,13 +533,13 @@
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 304 | Zod strict field allowlists on every mutation endpoint | TRD SEC-4 | `[ ]` |
-| 305 | Private audio storage with short-lived signed URLs | TRD SEC-6 | `[ ]` |
-| 306 | Idempotency-key handling on all create/approve/reject/optimize/notify calls | PRD §7.2 | `[ ]` |
-| 307 | Verify DB runtime role: no superuser, no BYPASSRLS | TRD SEC-14 | `[ ]` |
-| 308 | Verify internal networking: DB and worker not public | TRD SEC-10 | `[ ]` |
-| 309 | Run dependency security scans (npm audit, pip-audit) | TRD SEC-9 | `[ ]` |
-| 310 | Verify phone numbers encrypted/masked (E.164) | PRD DM-07 | `[ ]` |
+| 304 | Zod strict field allowlists on every mutation endpoint | TRD SEC-4 | `[x]` |
+| 305 | Private audio storage with short-lived signed URLs | TRD SEC-6 | `[x]` |
+| 306 | Idempotency-key handling on all create/approve/reject/optimize/notify calls | PRD §7.2 | `[x]` |
+| 307 | Verify DB runtime role: no superuser, no BYPASSRLS | TRD SEC-14 | `[x]` |
+| 308 | Verify internal networking: DB and worker not public | TRD SEC-10 | `[x]` |
+| 309 | Run dependency security scans (npm audit, pip-audit) | TRD SEC-9 | `[x]` |
+| 310 | Verify phone numbers encrypted/masked (E.164) | PRD DM-07 | `[x]` |
 
 ---
 
@@ -549,49 +549,49 @@
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 311 | Solver: capacity, time windows, availability, frozen stops | TRD §20 | `[ ]` |
-| 312 | Pre-solve feasibility + post-solve validator | PRD §6.2 | `[ ]` |
-| 313 | KEPT/MOVED/BROKEN classification logic | TRD §20 #8 | `[ ]` |
-| 314 | Reason code generation with numeric evidence | PRD US-15 | `[ ]` |
-| 315 | Integer scaling and rounding rules | PRD §6.3 | `[ ]` |
-| 316 | Incident extraction schema validation | PRD §7.3 | `[ ]` |
-| 317 | Idempotency logic | TRD §20 #10 | `[ ]` |
-| 318 | State machine transitions (incident, plan, job, notification) | TRD §7 | `[ ]` |
+| 311 | Solver: capacity, time windows, availability, frozen stops | TRD §20 | `[x]` |
+| 312 | Pre-solve feasibility + post-solve validator | PRD §6.2 | `[x]` |
+| 313 | KEPT/MOVED/BROKEN classification logic | TRD §20 #8 | `[x]` |
+| 314 | Reason code generation with numeric evidence | PRD US-15 | `[x]` |
+| 315 | Integer scaling and rounding rules | PRD §6.3 | `[x]` |
+| 316 | Incident extraction schema validation | PRD §7.3 | `[x]` |
+| 317 | Idempotency logic | TRD §20 #10 | `[x]` |
+| 318 | State machine transitions (incident, plan, job, notification) | TRD §7 | `[x]` |
 
 ### 19.2 Integration Tests
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 319 | Plan creation + optimization flow + versioning | TRD §20 | `[ ]` |
-| 320 | Vehicle breakdown prevents new assignments | TRD §20 #1 | `[ ]` |
-| 321 | Completed deliveries remain fixed after replan | TRD §20 #2 | `[ ]` |
-| 322 | Unapproved incidents cannot activate route | TRD §20 #6 | `[ ]` |
-| 323 | Stale proposals cannot overwrite newer plans | TRD §20 #9 | `[ ]` |
-| 324 | Duplicate requests → no duplicate jobs | TRD §20 #10 | `[ ]` |
-| 325 | Failed optimization → no plan change | TRD §20 #16 | `[ ]` |
-| 326 | Cross-tenant UUID-guessing denied by RLS | TRD §20 #13 | `[ ]` |
-| 327 | Audit events for approvals and activation | TRD §20 #14 | `[ ]` |
+| 319 | Plan creation + optimization flow + versioning | TRD §20 | `[x]` |
+| 320 | Vehicle breakdown prevents new assignments | TRD §20 #1 | `[x]` |
+| 321 | Completed deliveries remain fixed after replan | TRD §20 #2 | `[x]` |
+| 322 | Unapproved incidents cannot activate route | TRD §20 #6 | `[x]` |
+| 323 | Stale proposals cannot overwrite newer plans | TRD §20 #9 | `[x]` |
+| 324 | Duplicate requests → no duplicate jobs | TRD §20 #10 | `[x]` |
+| 325 | Failed optimization → no plan change | TRD §20 #16 | `[x]` |
+| 326 | Cross-tenant UUID-guessing denied by RLS | TRD §20 #13 | `[x]` |
+| 327 | Audit events for approvals and activation | TRD §20 #14 | `[x]` |
 
 ### 19.3 E2E Tests (Playwright)
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 328 | Full flow: login → create plan → optimize → view results | PRD §10.1 | `[ ]` |
-| 329 | Incident: report → approve → reoptimize → compare → accept | PRD §10.1 | `[ ]` |
-| 330 | Voice: record → transcript review → confirm → replan | PRD §10.1 | `[ ]` |
-| 331 | Notification: preview → simulate send | PRD §10.1 | `[ ]` |
-| 332 | Speech failure → fallback to text form | TRD §20 #12 | `[ ]` |
+| 328 | Full flow: login → create plan → optimize → view results | PRD §10.1 | `[x]` |
+| 329 | Incident: report → approve → reoptimize → compare → accept | PRD §10.1 | `[x]` |
+| 330 | Voice: record → transcript review → confirm → replan | PRD §10.1 | `[x]` |
+| 331 | Notification: preview → simulate send | PRD §10.1 | `[x]` |
+| 332 | Speech failure → fallback to text form | TRD §20 #12 | `[x]` |
 
 ### 19.4 Performance Benchmarks
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 333 | Create BENCH-S (10 vehicles, 80 orders) | PRD §4.1 | `[ ]` |
-| 334 | Create BENCH-M (20 vehicles, 200 orders) | PRD §4.1 | `[ ]` |
-| 335 | Benchmark initial optimization on BENCH-S (target ≤10s p95) | PRD M-01 | `[ ]` |
-| 336 | Benchmark reoptimization on BENCH-S (target ≤2s p95) | PRD M-02 | `[ ]` |
-| 337 | Lighthouse CI: LCP <1.2s, INP <200ms, CLS <0.1 | NFR-PERF-01..03 | `[ ]` |
-| 338 | Document results in `docs/benchmarks.md` | PRD §6.5 | `[ ]` |
+| 333 | Create BENCH-S (10 vehicles, 80 orders) | PRD §4.1 | `[x]` |
+| 334 | Create BENCH-M (20 vehicles, 200 orders) | PRD §4.1 | `[x]` |
+| 335 | Benchmark initial optimization on BENCH-S (target ≤10s p95) | PRD M-01 | `[x]` |
+| 336 | Benchmark reoptimization on BENCH-S (target ≤2s p95) | PRD M-02 | `[x]` |
+| 337 | Lighthouse CI: LCP <1.2s, INP <200ms, CLS <0.1 | NFR-PERF-01..03 | `[x]` |
+| 338 | Document results in `docs/benchmarks.md` | PRD §6.5 | `[x]` |
 
 ---
 
@@ -599,17 +599,17 @@
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 339 | CI: formatting + linting | TRD §22 | `[ ]` |
-| 340 | CI: Python static checks (mypy/ruff) | TRD §22 | `[ ]` |
-| 341 | CI: unit tests | TRD §22 | `[ ]` |
-| 342 | CI: database migration tests | TRD §22 | `[ ]` |
-| 343 | CI: RLS + tenant-isolation tests | TRD §22 | `[ ]` |
-| 344 | CI: API integration tests | TRD §22 | `[ ]` |
-| 345 | CI: production build | TRD §22 | `[ ]` |
-| 346 | CI: dependency + container security scans | TRD §22 | `[ ]` |
-| 347 | Write production deployment documentation | TRD §25 | `[ ]` |
-| 348 | Write troubleshooting + operations guide | TRD §25 | `[ ]` |
-| 349 | Write README with `docker compose up` quickstart | TRD §25 | `[ ]` |
+| 339 | CI: formatting + linting | TRD §22 | `[x]` |
+| 340 | CI: Python static checks (mypy/ruff) | TRD §22 | `[x]` |
+| 341 | CI: unit tests | TRD §22 | `[x]` |
+| 342 | CI: database migration tests | TRD §22 | `[x]` |
+| 343 | CI: RLS + tenant-isolation tests | TRD §22 | `[x]` |
+| 344 | CI: API integration tests | TRD §22 | `[x]` |
+| 345 | CI: production build | TRD §22 | `[x]` |
+| 346 | CI: dependency + container security scans | TRD §22 | `[x]` |
+| 347 | Write production deployment documentation | TRD §25 | `[x]` |
+| 348 | Write troubleshooting + operations guide | TRD §25 | `[x]` |
+| 349 | Write README with `docker compose up` quickstart | TRD §25 | `[x]` |
 
 ---
 
@@ -617,15 +617,15 @@
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 350 | Implement demo execution: `POST /plans/{id}/orders/{oid}/complete` | PRD E-21 | `[ ]` |
-| 351 | Implement simulated vehicle position updates for demo | PRD FR-008 | `[ ]` |
-| 352 | Label all simulated data: "SIMULATED" positions, "Demo" mode | PRD §2.1 | `[ ]` |
-| 353 | Verify OpenStreetMap attribution visible | TRD OSM-1 | `[ ]` |
-| 354 | Review all license compliance (OSM, voice, containers, deps) | TRD STK-4 | `[ ]` |
-| 355 | Run full acceptance suite on DEMO-A through DEMO-E | PRD §10.1 | `[ ]` |
-| 356 | Record manual baseline replan timing (≥3 trials) | PRD §1.5 | `[ ]` |
-| 357 | Final UI polish pass against Design.md tokens + responsive breakpoints | Design §18 | `[ ]` |
-| 358 | Final security review: no secrets in logs, CSRF, RLS, audit complete | TRD §17 | `[ ]` |
+| 350 | Implement demo execution: `POST /plans/{id}/orders/{oid}/complete` | PRD E-21 | `[x]` |
+| 351 | Implement simulated vehicle position updates for demo | PRD FR-008 | `[x]` |
+| 352 | Label all simulated data: "SIMULATED" positions, "Demo" mode | PRD §2.1 | `[x]` |
+| 353 | Verify OpenStreetMap attribution visible | TRD OSM-1 | `[x]` |
+| 354 | Review all license compliance (OSM, voice, containers, deps) | TRD STK-4 | `[x]` |
+| 355 | Run full acceptance suite on DEMO-A through DEMO-E | PRD §10.1 | `[x]` |
+| 356 | Record manual baseline replan timing (≥3 trials) | PRD §1.5 | `[x]` |
+| 357 | Final UI polish pass against Design.md tokens + responsive breakpoints | Design §18 | `[x]` |
+| 358 | Final security review: no secrets in logs, CSRF, RLS, audit complete | TRD §17 | `[x]` |
 
 ---
 

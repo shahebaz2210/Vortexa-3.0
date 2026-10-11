@@ -540,17 +540,56 @@
       "source_location": "L12"
     },
     {
-      "id": "apps_web_lib_audit_audit_logger_recordauditeventparams",
-      "label": "RecordAuditEventParams",
+      "id": "apps_web_lib_routing_valhalla_latlng",
+      "label": "LatLng",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 15,
-      "community_name": "audit-logger.ts",
+      "community_name": "vitest",
       "file_type": "code",
-      "norm_label": "recordauditeventparams",
-      "source_file": "apps/web/lib/audit/audit-logger.ts",
-      "source_location": "L4"
+      "norm_label": "latlng",
+      "source_file": "apps/web/lib/routing/valhalla.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "apps_web_lib_routing_valhalla_matrixresponse",
+      "label": "MatrixResponse",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "vitest",
+      "file_type": "code",
+      "norm_label": "matrixresponse",
+      "source_file": "apps/web/lib/routing/valhalla.ts",
+      "source_location": "L12"
+    },
+    {
+      "id": "apps_web_lib_routing_valhalla_routegeometry",
+      "label": "RouteGeometry",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "vitest",
+      "file_type": "code",
+      "norm_label": "routegeometry",
+      "source_file": "apps/web/lib/routing/valhalla.ts",
+      "source_location": "L6"
+    },
+    {
+      "id": "apps_web_lib_telemetry_metrics_telemetryspan",
+      "label": "TelemetrySpan",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "vitest",
+      "file_type": "code",
+      "norm_label": "telemetryspan",
+      "source_file": "apps/web/lib/telemetry/metrics.ts",
+      "source_location": "L6"
     },
     {
       "id": "apps_web_components_ui_selection_controls_checkboxprops",
@@ -1229,6 +1268,19 @@
       "source_location": "L5"
     },
     {
+      "id": "apps_web_lib_audit_audit_logger_recordauditeventparams",
+      "label": "RecordAuditEventParams",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "login/route.ts",
+      "file_type": "code",
+      "norm_label": "recordauditeventparams",
+      "source_file": "apps/web/lib/audit/audit-logger.ts",
+      "source_location": "L4"
+    },
+    {
       "id": "apps_web_lib_auth_rate_limit_attemptrecord",
       "label": "AttemptRecord",
       "_callable": true,
@@ -1356,45 +1408,6 @@
       "file_type": "code",
       "norm_label": "toasttype",
       "source_file": "apps/web/components/ui/toast.tsx",
-      "source_location": "L6"
-    },
-    {
-      "id": "apps_web_lib_routing_valhalla_latlng",
-      "label": "LatLng",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "latlng",
-      "source_file": "apps/web/lib/routing/valhalla.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "apps_web_lib_routing_valhalla_matrixresponse",
-      "label": "MatrixResponse",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "matrixresponse",
-      "source_file": "apps/web/lib/routing/valhalla.ts",
-      "source_location": "L12"
-    },
-    {
-      "id": "apps_web_lib_routing_valhalla_routegeometry",
-      "label": "RouteGeometry",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "routegeometry",
-      "source_file": "apps/web/lib/routing/valhalla.ts",
       "source_location": "L6"
     },
     {
@@ -1892,6 +1905,90 @@
       "source_location": "L66"
     },
     {
+      "id": "apps_web_app_api_v1_health_route_get",
+      "label": "GET()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "vitest",
+      "file_type": "code",
+      "norm_label": "get()",
+      "source_file": "apps/web/app/api/v1/health/route.ts",
+      "source_location": "L4"
+    },
+    {
+      "id": "apps_web_lib_routing_valhalla_fetchtraveltimematrix",
+      "label": "fetchTravelTimeMatrix()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "vitest",
+      "file_type": "code",
+      "norm_label": "fetchtraveltimematrix()",
+      "source_file": "apps/web/lib/routing/valhalla.ts",
+      "source_location": "L34"
+    },
+    {
+      "id": "apps_web_lib_telemetry_metrics_gettelemetryspans",
+      "label": "getTelemetrySpans()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "vitest",
+      "file_type": "code",
+      "norm_label": "gettelemetryspans()",
+      "source_file": "apps/web/lib/telemetry/metrics.ts",
+      "source_location": "L42"
+    },
+    {
+      "id": "apps_web_lib_telemetry_metrics_recordspan",
+      "label": "recordSpan()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "vitest",
+      "file_type": "code",
+      "norm_label": "recordspan()",
+      "source_file": "apps/web/lib/telemetry/metrics.ts",
+      "source_location": "L18"
+    },
+    {
+      "id": "apps_web_tests_activation_test_attemptactivation",
+      "label": "attemptActivation()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "vitest",
+      "file_type": "code",
+      "norm_label": "attemptactivation()",
+      "source_file": "apps/web/tests/activation.test.ts",
+      "source_location": "L6"
+    },
+    {
+      "id": "packages_database_src_seed_getprecomputeddistancematrix",
+      "label": "getPrecomputedDistanceMatrix()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "vitest",
+      "file_type": "code",
+      "norm_label": "getprecomputeddistancematrix()",
+      "source_file": "packages/database/src/seed.ts",
+      "source_location": "L123"
+    },
+    {
+      "id": "packages_database_src_uuid_uuidv7",
+      "label": "uuidv7()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "vitest",
+      "file_type": "code",
+      "norm_label": "uuidv7()",
+      "source_file": "packages/database/src/uuid.ts",
+      "source_location": "L7"
+    },
+    {
       "id": "apps_web_components_ui_selection_controls_radiogroup",
       "label": "RadioGroup()",
       "_callable": true,
@@ -2312,18 +2409,6 @@
       "source_location": "L35"
     },
     {
-      "id": "apps_web_lib_auth_session_createsession",
-      "label": "createSession()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 29,
-      "community_name": "login/route.ts",
-      "file_type": "code",
-      "norm_label": "createsession()",
-      "source_file": "apps/web/lib/auth/session.ts",
-      "source_location": "L46"
-    },
-    {
       "id": "apps_web_app_api_v1_auth_logout_route_post",
       "label": "POST()",
       "_callable": true,
@@ -2358,6 +2443,18 @@
       "norm_label": "clearsession()",
       "source_file": "apps/web/lib/auth/session.ts",
       "source_location": "L112"
+    },
+    {
+      "id": "apps_web_lib_auth_session_createsession",
+      "label": "createSession()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "session.ts",
+      "file_type": "code",
+      "norm_label": "createsession()",
+      "source_file": "apps/web/lib/auth/session.ts",
+      "source_location": "L46"
     },
     {
       "id": "apps_web_lib_auth_session_getsession",
@@ -2550,54 +2647,6 @@
       "norm_label": "usetoast()",
       "source_file": "apps/web/components/ui/toast.tsx",
       "source_location": "L97"
-    },
-    {
-      "id": "apps_web_lib_routing_valhalla_fetchtraveltimematrix",
-      "label": "fetchTravelTimeMatrix()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "fetchtraveltimematrix()",
-      "source_file": "apps/web/lib/routing/valhalla.ts",
-      "source_location": "L34"
-    },
-    {
-      "id": "apps_web_tests_activation_test_attemptactivation",
-      "label": "attemptActivation()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "attemptactivation()",
-      "source_file": "apps/web/tests/activation.test.ts",
-      "source_location": "L6"
-    },
-    {
-      "id": "packages_database_src_seed_getprecomputeddistancematrix",
-      "label": "getPrecomputedDistanceMatrix()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "getprecomputeddistancematrix()",
-      "source_file": "packages/database/src/seed.ts",
-      "source_location": "L123"
-    },
-    {
-      "id": "packages_database_src_uuid_uuidv7",
-      "label": "uuidv7()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "uuidv7()",
-      "source_file": "packages/database/src/uuid.ts",
-      "source_location": "L7"
     },
     {
       "id": "apps_web_app_api_v1_orders_route_get",
@@ -3235,6 +3284,17 @@
       "source_location": "L8"
     },
     {
+      "id": "packages_database_src_index",
+      "label": "database/src/index.ts",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "fleet/route.ts",
+      "file_type": "code",
+      "norm_label": "database/src/index.ts",
+      "source_file": "packages/database/src/index.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "packages_database_src_schema_vehicles",
       "label": "vehicles",
       "_origin": "ast",
@@ -3789,70 +3849,169 @@
       "source_location": "L12"
     },
     {
-      "id": "apps_web_lib_audit_audit_logger",
-      "label": "audit-logger.ts",
+      "id": "apps_web_app_api_v1_health_route",
+      "label": "health/route.ts",
       "_origin": "ast",
       "community": 15,
-      "community_name": "audit-logger.ts",
+      "community_name": "vitest",
       "file_type": "code",
-      "norm_label": "audit-logger.ts",
-      "source_file": "apps/web/lib/audit/audit-logger.ts",
+      "norm_label": "health/route.ts",
+      "source_file": "apps/web/app/api/v1/health/route.ts",
       "source_location": "L1"
     },
     {
-      "id": "packages_database_src_index",
-      "label": "database/src/index.ts",
+      "id": "apps_web_lib_routing_valhalla",
+      "label": "valhalla.ts",
       "_origin": "ast",
       "community": 15,
-      "community_name": "audit-logger.ts",
+      "community_name": "vitest",
       "file_type": "code",
-      "norm_label": "database/src/index.ts",
-      "source_file": "packages/database/src/index.ts",
+      "norm_label": "valhalla.ts",
+      "source_file": "apps/web/lib/routing/valhalla.ts",
       "source_location": "L1"
     },
     {
-      "id": "packages_database_src_schema_auditevents",
-      "label": "auditEvents",
+      "id": "apps_web_lib_routing_valhalla_demo_fallback_matrix",
+      "label": "DEMO_FALLBACK_MATRIX",
       "_origin": "ast",
       "community": 15,
-      "community_name": "audit-logger.ts",
+      "community_name": "vitest",
       "file_type": "code",
-      "norm_label": "auditevents",
-      "source_file": "packages/database/src/schema.ts",
-      "source_location": "L424"
+      "norm_label": "demo_fallback_matrix",
+      "source_file": "apps/web/lib/routing/valhalla.ts",
+      "source_location": "L19"
+    },
+    {
+      "id": "apps_web_lib_telemetry_metrics",
+      "label": "metrics.ts",
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "vitest",
+      "file_type": "code",
+      "norm_label": "metrics.ts",
+      "source_file": "apps/web/lib/telemetry/metrics.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "apps_web_lib_telemetry_metrics_spanbuffer",
+      "label": "spanBuffer",
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "vitest",
+      "file_type": "code",
+      "norm_label": "spanbuffer",
+      "source_file": "apps/web/lib/telemetry/metrics.ts",
+      "source_location": "L16"
+    },
+    {
+      "id": "apps_web_tests_activation_test",
+      "label": "activation.test.ts",
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "vitest",
+      "file_type": "code",
+      "norm_label": "activation.test.ts",
+      "source_file": "apps/web/tests/activation.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "apps_web_tests_routing_test",
+      "label": "routing.test.ts",
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "vitest",
+      "file_type": "code",
+      "norm_label": "routing.test.ts",
+      "source_file": "apps/web/tests/routing.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "apps_web_tests_telemetry_test",
+      "label": "telemetry.test.ts",
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "vitest",
+      "file_type": "code",
+      "norm_label": "telemetry.test.ts",
+      "source_file": "apps/web/tests/telemetry.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "packages_database_src_seed",
+      "label": "seed.ts",
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "vitest",
+      "file_type": "code",
+      "norm_label": "seed.ts",
+      "source_file": "packages/database/src/seed.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "packages_database_src_seed_demo_ids",
+      "label": "DEMO_IDS",
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "vitest",
+      "file_type": "code",
+      "norm_label": "demo_ids",
+      "source_file": "packages/database/src/seed.ts",
+      "source_location": "L3"
+    },
+    {
+      "id": "packages_database_src_seed_demo_locations",
+      "label": "DEMO_LOCATIONS",
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "vitest",
+      "file_type": "code",
+      "norm_label": "demo_locations",
+      "source_file": "packages/database/src/seed.ts",
+      "source_location": "L15"
     },
     {
       "id": "packages_database_src_uuid",
       "label": "uuid.ts",
       "_origin": "ast",
       "community": 15,
-      "community_name": "audit-logger.ts",
+      "community_name": "vitest",
       "file_type": "code",
       "norm_label": "uuid.ts",
       "source_file": "packages/database/src/uuid.ts",
       "source_location": "L1"
     },
     {
-      "id": "packages_database_src_uuid_generateuuidv7",
-      "label": "generateUuidV7",
+      "id": "packages_database_tests_rls_test",
+      "label": "rls.test.ts",
       "_origin": "ast",
       "community": 15,
-      "community_name": "audit-logger.ts",
+      "community_name": "vitest",
       "file_type": "code",
-      "norm_label": "generateuuidv7",
-      "source_file": "packages/database/src/uuid.ts",
-      "source_location": "L29"
+      "norm_label": "rls.test.ts",
+      "source_file": "packages/database/tests/rls.test.ts",
+      "source_location": "L1"
     },
     {
       "id": "docref_rfc_9562",
       "label": "RFC-9562",
       "_origin": "ast",
       "community": 15,
-      "community_name": "audit-logger.ts",
+      "community_name": "vitest",
       "file_type": "concept",
       "norm_label": "rfc-9562",
       "source_file": "packages/database/src/uuid.ts",
       "source_location": "L4"
+    },
+    {
+      "id": "ref_vitest",
+      "label": "vitest",
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "vitest",
+      "file_type": "concept",
+      "norm_label": "vitest",
+      "source_file": "package.json",
+      "source_location": "L20"
     },
     {
       "id": "apps_web_components_ui_selection_controls",
@@ -3877,304 +4036,16 @@
       "source_location": "L11"
     },
     {
-      "id": "todo_13_1_customer_voice_updates",
-      "label": "13.1 Customer Voice Updates",
+      "id": "todo",
+      "label": "TODO.md",
       "_origin": "ast",
       "community": 18,
       "community_name": "DispatchX (ReRoute / VORTEXA 3.0) \u2014 Project TODO",
       "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "13.1 customer voice updates",
+      "node_kind": "page",
+      "norm_label": "todo.md",
       "source_file": "TODO.md",
-      "source_location": "L438"
-    },
-    {
-      "id": "todo_13_2_fleet_briefing",
-      "label": "13.2 Fleet Briefing",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "DispatchX (ReRoute / VORTEXA 3.0) \u2014 Project TODO",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "13.2 fleet briefing",
-      "source_file": "TODO.md",
-      "source_location": "L453"
-    },
-    {
-      "id": "todo_13_3_communications",
-      "label": "13.3 Communications",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "DispatchX (ReRoute / VORTEXA 3.0) \u2014 Project TODO",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "13.3 communications",
-      "source_file": "TODO.md",
-      "source_location": "L462"
-    },
-    {
-      "id": "todo_19_1_unit_tests",
-      "label": "19.1 Unit Tests",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "DispatchX (ReRoute / VORTEXA 3.0) \u2014 Project TODO",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "19.1 unit tests",
-      "source_file": "TODO.md",
-      "source_location": "L548"
-    },
-    {
-      "id": "todo_19_2_integration_tests",
-      "label": "19.2 Integration Tests",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "DispatchX (ReRoute / VORTEXA 3.0) \u2014 Project TODO",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "19.2 integration tests",
-      "source_file": "TODO.md",
-      "source_location": "L561"
-    },
-    {
-      "id": "todo_19_3_e2e_tests_playwright",
-      "label": "19.3 E2E Tests (Playwright)",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "DispatchX (ReRoute / VORTEXA 3.0) \u2014 Project TODO",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "19.3 e2e tests (playwright)",
-      "source_file": "TODO.md",
-      "source_location": "L575"
-    },
-    {
-      "id": "todo_19_4_performance_benchmarks",
-      "label": "19.4 Performance Benchmarks",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "DispatchX (ReRoute / VORTEXA 3.0) \u2014 Project TODO",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "19.4 performance benchmarks",
-      "source_file": "TODO.md",
-      "source_location": "L585"
-    },
-    {
-      "id": "todo_1_1_repository_tooling_setup",
-      "label": "1.1 Repository & Tooling Setup",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "DispatchX (ReRoute / VORTEXA 3.0) \u2014 Project TODO",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "1.1 repository & tooling setup",
-      "source_file": "TODO.md",
-      "source_location": "L12"
-    },
-    {
-      "id": "todo_1_2_docker_dev_environment",
-      "label": "1.2 Docker & Dev Environment",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "DispatchX (ReRoute / VORTEXA 3.0) \u2014 Project TODO",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "1.2 docker & dev environment",
-      "source_file": "TODO.md",
-      "source_location": "L29"
-    },
-    {
-      "id": "todo_1_3_database_foundation",
-      "label": "1.3 Database Foundation",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "DispatchX (ReRoute / VORTEXA 3.0) \u2014 Project TODO",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "1.3 database foundation",
-      "source_file": "TODO.md",
-      "source_location": "L39"
-    },
-    {
-      "id": "todo_1_4_row_level_security",
-      "label": "1.4 Row-Level Security",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "DispatchX (ReRoute / VORTEXA 3.0) \u2014 Project TODO",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "1.4 row-level security",
-      "source_file": "TODO.md",
-      "source_location": "L77"
-    },
-    {
-      "id": "todo_1_5_seed_data",
-      "label": "1.5 Seed Data",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "DispatchX (ReRoute / VORTEXA 3.0) \u2014 Project TODO",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "1.5 seed data",
-      "source_file": "TODO.md",
-      "source_location": "L88"
-    },
-    {
-      "id": "todo_3_1_design_tokens",
-      "label": "3.1 Design Tokens",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "DispatchX (ReRoute / VORTEXA 3.0) \u2014 Project TODO",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "3.1 design tokens",
-      "source_file": "TODO.md",
-      "source_location": "L123"
-    },
-    {
-      "id": "todo_3_3_application_shell",
-      "label": "3.3 Application Shell",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "DispatchX (ReRoute / VORTEXA 3.0) \u2014 Project TODO",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "3.3 application shell",
-      "source_file": "TODO.md",
-      "source_location": "L154"
-    },
-    {
-      "id": "todo_6_1_fastapi_worker",
-      "label": "6.1 FastAPI Worker",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "DispatchX (ReRoute / VORTEXA 3.0) \u2014 Project TODO",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "6.1 fastapi worker",
-      "source_file": "TODO.md",
-      "source_location": "L229"
-    },
-    {
-      "id": "todo_6_2_or_tools_solver",
-      "label": "6.2 OR-Tools Solver",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "DispatchX (ReRoute / VORTEXA 3.0) \u2014 Project TODO",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "6.2 or-tools solver",
-      "source_file": "TODO.md",
-      "source_location": "L238"
-    },
-    {
-      "id": "todo_6_3_post_solve_results",
-      "label": "6.3 Post-Solve & Results",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "DispatchX (ReRoute / VORTEXA 3.0) \u2014 Project TODO",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "6.3 post-solve & results",
-      "source_file": "TODO.md",
-      "source_location": "L257"
-    },
-    {
-      "id": "todo_6_4_job_queue_api",
-      "label": "6.4 Job Queue & API",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "DispatchX (ReRoute / VORTEXA 3.0) \u2014 Project TODO",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "6.4 job queue & api",
-      "source_file": "TODO.md",
-      "source_location": "L268"
-    },
-    {
-      "id": "todo_8_1_text_incidents",
-      "label": "8.1 Text Incidents",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "DispatchX (ReRoute / VORTEXA 3.0) \u2014 Project TODO",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "8.1 text incidents",
-      "source_file": "TODO.md",
-      "source_location": "L303"
-    },
-    {
-      "id": "todo_8_2_voice_incidents",
-      "label": "8.2 Voice Incidents",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "DispatchX (ReRoute / VORTEXA 3.0) \u2014 Project TODO",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "8.2 voice incidents",
-      "source_file": "TODO.md",
-      "source_location": "L320"
-    },
-    {
-      "id": "todo_8_3_incident_confirmation_approval",
-      "label": "8.3 Incident Confirmation & Approval",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "DispatchX (ReRoute / VORTEXA 3.0) \u2014 Project TODO",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "8.3 incident confirmation & approval",
-      "source_file": "TODO.md",
-      "source_location": "L334"
-    },
-    {
-      "id": "todo_9_1_replan_engine",
-      "label": "9.1 Replan Engine",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "DispatchX (ReRoute / VORTEXA 3.0) \u2014 Project TODO",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "9.1 replan engine",
-      "source_file": "TODO.md",
-      "source_location": "L353"
-    },
-    {
-      "id": "todo_9_2_versioning_comparison",
-      "label": "9.2 Versioning & Comparison",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "DispatchX (ReRoute / VORTEXA 3.0) \u2014 Project TODO",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "9.2 versioning & comparison",
-      "source_file": "TODO.md",
-      "source_location": "L368"
-    },
-    {
-      "id": "todo_9_3_replan_ui",
-      "label": "9.3 Replan UI",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "DispatchX (ReRoute / VORTEXA 3.0) \u2014 Project TODO",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "9.3 replan ui",
-      "source_file": "TODO.md",
-      "source_location": "L380"
-    },
-    {
-      "id": "todo_dashboard_reference",
-      "label": "Dashboard Reference",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "DispatchX (ReRoute / VORTEXA 3.0) \u2014 Project TODO",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "dashboard reference",
-      "source_file": "TODO.md",
-      "source_location": "L666"
+      "source_location": "L1"
     },
     {
       "id": "todo_dispatchx_reroute_vortexa_3_0_project_todo",
@@ -4223,18 +4094,6 @@
       "norm_label": "phase 12 \u2014 plan schedule view (tasks 249\u2013254)",
       "source_file": "TODO.md",
       "source_location": "L423"
-    },
-    {
-      "id": "todo_phase_13_notifications_briefings_tasks_255_272",
-      "label": "Phase 13 \u2014 Notifications & Briefings (Tasks 255\u2013272)",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "DispatchX (ReRoute / VORTEXA 3.0) \u2014 Project TODO",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "phase 13 \u2014 notifications & briefings (tasks 255\u2013272)",
-      "source_file": "TODO.md",
-      "source_location": "L436"
     },
     {
       "id": "todo_phase_14_audit_history_tasks_273_276",
@@ -4297,30 +4156,6 @@
       "source_location": "L532"
     },
     {
-      "id": "todo_phase_19_testing_tasks_311_338",
-      "label": "Phase 19 \u2014 Testing (Tasks 311\u2013338)",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "DispatchX (ReRoute / VORTEXA 3.0) \u2014 Project TODO",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "phase 19 \u2014 testing (tasks 311\u2013338)",
-      "source_file": "TODO.md",
-      "source_location": "L546"
-    },
-    {
-      "id": "todo_phase_1_project_foundation_infrastructure_tasks_1_65",
-      "label": "Phase 1 \u2014 Project Foundation & Infrastructure (Tasks 1\u201365)",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "DispatchX (ReRoute / VORTEXA 3.0) \u2014 Project TODO",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "phase 1 \u2014 project foundation & infrastructure (tasks 1\u201365)",
-      "source_file": "TODO.md",
-      "source_location": "L10"
-    },
-    {
       "id": "todo_phase_20_ci_cd_deployment_tasks_339_349",
       "label": "Phase 20 \u2014 CI/CD & Deployment (Tasks 339\u2013349)",
       "_origin": "ast",
@@ -4357,18 +4192,6 @@
       "source_location": "L104"
     },
     {
-      "id": "todo_phase_3_design_system_ui_foundation_tasks_76_104",
-      "label": "Phase 3 \u2014 Design System & UI Foundation (Tasks 76\u2013104)",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "DispatchX (ReRoute / VORTEXA 3.0) \u2014 Project TODO",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "phase 3 \u2014 design system & ui foundation (tasks 76\u2013104)",
-      "source_file": "TODO.md",
-      "source_location": "L121"
-    },
-    {
       "id": "todo_phase_5_map_routing_integration_tasks_124_135",
       "label": "Phase 5 \u2014 Map & Routing Integration (Tasks 124\u2013135)",
       "_origin": "ast",
@@ -4379,18 +4202,6 @@
       "norm_label": "phase 5 \u2014 map & routing integration (tasks 124\u2013135)",
       "source_file": "TODO.md",
       "source_location": "L208"
-    },
-    {
-      "id": "todo_phase_6_optimization_engine_tasks_136_169",
-      "label": "Phase 6 \u2014 Optimization Engine (Tasks 136\u2013169)",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "DispatchX (ReRoute / VORTEXA 3.0) \u2014 Project TODO",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "phase 6 \u2014 optimization engine (tasks 136\u2013169)",
-      "source_file": "TODO.md",
-      "source_location": "L227"
     },
     {
       "id": "todo_phase_7_plan_view_results_ui_tasks_170_178",
@@ -4405,42 +4216,6 @@
       "source_location": "L285"
     },
     {
-      "id": "todo_phase_8_incident_reporting_validation_tasks_179_209",
-      "label": "Phase 8 \u2014 Incident Reporting & Validation (Tasks 179\u2013209)",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "DispatchX (ReRoute / VORTEXA 3.0) \u2014 Project TODO",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "phase 8 \u2014 incident reporting & validation (tasks 179\u2013209)",
-      "source_file": "TODO.md",
-      "source_location": "L301"
-    },
-    {
-      "id": "todo_phase_9_dynamic_re_optimization_tasks_210_233",
-      "label": "Phase 9 \u2014 Dynamic Re-optimization (Tasks 210\u2013233)",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "DispatchX (ReRoute / VORTEXA 3.0) \u2014 Project TODO",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "phase 9 \u2014 dynamic re-optimization (tasks 210\u2013233)",
-      "source_file": "TODO.md",
-      "source_location": "L351"
-    },
-    {
-      "id": "todo_plan_schedule_reference",
-      "label": "Plan Schedule Reference",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "DispatchX (ReRoute / VORTEXA 3.0) \u2014 Project TODO",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "plan schedule reference",
-      "source_file": "TODO.md",
-      "source_location": "L675"
-    },
-    {
       "id": "todo_summary",
       "label": "Summary",
       "_origin": "ast",
@@ -4451,18 +4226,6 @@
       "norm_label": "summary",
       "source_file": "TODO.md",
       "source_location": "L632"
-    },
-    {
-      "id": "todo_ui_reference_design_inspiration",
-      "label": "UI Reference \u2014 Design Inspiration",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "DispatchX (ReRoute / VORTEXA 3.0) \u2014 Project TODO",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "ui reference \u2014 design inspiration",
-      "source_file": "TODO.md",
-      "source_location": "L662"
     },
     {
       "id": "basemodel",
@@ -5140,90 +4903,6 @@
       "source_location": "L1"
     },
     {
-      "id": "readme_1_clone_set_environment",
-      "label": "1. Clone & Set Environment",
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "\u26a1 DispatchX (VORTEXA 3.0 / ReRoute)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "1. clone & set environment",
-      "source_file": "README.md",
-      "source_location": "L158"
-    },
-    {
-      "id": "readme_1_sub_second_vrptw_optimization",
-      "label": "1. \ud83e\udde0 Sub-Second VRPTW Optimization",
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "\u26a1 DispatchX (VORTEXA 3.0 / ReRoute)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "1. \ud83e\udde0 sub-second vrptw optimization",
-      "source_file": "README.md",
-      "source_location": "L79"
-    },
-    {
-      "id": "readme_2_absolute_logistics_invariants_safety",
-      "label": "2. \ud83d\udee1\ufe0f Absolute Logistics Invariants & Safety",
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "\u26a1 DispatchX (VORTEXA 3.0 / ReRoute)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "2. \ud83d\udee1\ufe0f absolute logistics invariants & safety",
-      "source_file": "README.md",
-      "source_location": "L85"
-    },
-    {
-      "id": "readme_2_start_infrastructure",
-      "label": "2. Start Infrastructure",
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "\u26a1 DispatchX (VORTEXA 3.0 / ReRoute)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "2. start infrastructure",
-      "source_file": "README.md",
-      "source_location": "L173"
-    },
-    {
-      "id": "readme_3_install_dependencies_run_web_app",
-      "label": "3. Install Dependencies & Run Web App",
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "\u26a1 DispatchX (VORTEXA 3.0 / ReRoute)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "3. install dependencies & run web app",
-      "source_file": "README.md",
-      "source_location": "L179"
-    },
-    {
-      "id": "readme_3_voice_first_disruption_communications_with_elevenlabs",
-      "label": "3. \ud83c\udf99\ufe0f Voice-First Disruption & Communications with ElevenLabs",
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "\u26a1 DispatchX (VORTEXA 3.0 / ReRoute)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "3. \ud83c\udf99\ufe0f voice-first disruption & communications with elevenlabs",
-      "source_file": "README.md",
-      "source_location": "L90"
-    },
-    {
-      "id": "readme_4_high_density_control_room_ui",
-      "label": "4. \ud83d\uddfa\ufe0f High-Density Control Room UI",
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "\u26a1 DispatchX (VORTEXA 3.0 / ReRoute)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "4. \ud83d\uddfa\ufe0f high-density control room ui",
-      "source_file": "README.md",
-      "source_location": "L95"
-    },
-    {
       "id": "readme_autonomous_human_in_the_loop_dynamic_logistics_dispatch_disruption_recovery",
       "label": "Autonomous, Human-in-the-Loop Dynamic Logistics Dispatch & Disruption Recovery",
       "_origin": "ast",
@@ -5234,18 +4913,6 @@
       "norm_label": "autonomous, human-in-the-loop dynamic logistics dispatch & disruption recovery",
       "source_file": "README.md",
       "source_location": "L4"
-    },
-    {
-      "id": "readme_core_pillars_key_features",
-      "label": "\u26a1 Core Pillars & Key Features",
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "\u26a1 DispatchX (VORTEXA 3.0 / ReRoute)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "\u26a1 core pillars & key features",
-      "source_file": "README.md",
-      "source_location": "L77"
     },
     {
       "id": "readme_dispatchx_vortexa_3_0_reroute",
@@ -5273,39 +4940,51 @@
     },
     {
       "id": "readme_getting_started",
-      "label": "\ud83d\ude80 Getting Started",
+      "label": "\ud83c\udfc3 Getting Started",
       "_origin": "ast",
       "community": 24,
       "community_name": "\u26a1 DispatchX (VORTEXA 3.0 / ReRoute)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "\ud83d\ude80 getting started",
+      "norm_label": "\ud83c\udfc3 getting started",
       "source_file": "README.md",
-      "source_location": "L150"
+      "source_location": "L102"
     },
     {
-      "id": "readme_knowledge_graph_with_graphify",
-      "label": "\ud83e\udde0 Knowledge Graph with Graphify",
+      "id": "readme_installation_development_run",
+      "label": "Installation & Development Run",
       "_origin": "ast",
       "community": 24,
       "community_name": "\u26a1 DispatchX (VORTEXA 3.0 / ReRoute)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "\ud83e\udde0 knowledge graph with graphify",
+      "norm_label": "installation & development run",
       "source_file": "README.md",
-      "source_location": "L202"
+      "source_location": "L109"
     },
     {
-      "id": "readme_license_attribution",
-      "label": "\ud83d\udcc4 License & Attribution",
+      "id": "readme_key_web_application_pages",
+      "label": "\ud83d\ude80 Key Web Application Pages",
       "_origin": "ast",
       "community": 24,
       "community_name": "\u26a1 DispatchX (VORTEXA 3.0 / ReRoute)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "\ud83d\udcc4 license & attribution",
+      "norm_label": "\ud83d\ude80 key web application pages",
       "source_file": "README.md",
-      "source_location": "L210"
+      "source_location": "L74"
+    },
+    {
+      "id": "readme_license",
+      "label": "\ud83d\udcc4 License",
+      "_origin": "ast",
+      "community": 24,
+      "community_name": "\u26a1 DispatchX (VORTEXA 3.0 / ReRoute)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "\ud83d\udcc4 license",
+      "source_file": "README.md",
+      "source_location": "L133"
     },
     {
       "id": "readme_prerequisites",
@@ -5317,31 +4996,19 @@
       "node_kind": "heading",
       "norm_label": "prerequisites",
       "source_file": "README.md",
-      "source_location": "L152"
+      "source_location": "L104"
     },
     {
-      "id": "readme_project_organization",
-      "label": "\ud83d\udcc2 Project Organization",
+      "id": "readme_running_test_suite",
+      "label": "Running Test Suite",
       "_origin": "ast",
       "community": 24,
       "community_name": "\u26a1 DispatchX (VORTEXA 3.0 / ReRoute)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "\ud83d\udcc2 project organization",
+      "norm_label": "running test suite",
       "source_file": "README.md",
-      "source_location": "L121"
-    },
-    {
-      "id": "readme_roadmap_implementation_tracker",
-      "label": "\ud83d\uddfa\ufe0f Roadmap & Implementation Tracker",
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "\u26a1 DispatchX (VORTEXA 3.0 / ReRoute)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "\ud83d\uddfa\ufe0f roadmap & implementation tracker",
-      "source_file": "README.md",
-      "source_location": "L189"
+      "source_location": "L125"
     },
     {
       "id": "readme_system_architecture",
@@ -5353,7 +5020,7 @@
       "node_kind": "heading",
       "norm_label": "\ud83c\udfd7\ufe0f system architecture",
       "source_file": "README.md",
-      "source_location": "L32"
+      "source_location": "L36"
     },
     {
       "id": "readme_technology_stack",
@@ -5365,19 +5032,7 @@
       "node_kind": "heading",
       "norm_label": "\ud83d\udee0\ufe0f technology stack",
       "source_file": "README.md",
-      "source_location": "L103"
-    },
-    {
-      "id": "todo",
-      "label": "TODO.md",
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "\u26a1 DispatchX (VORTEXA 3.0 / ReRoute)",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "todo.md",
-      "source_file": "TODO.md",
-      "source_location": "L1"
+      "source_location": "L90"
     },
     {
       "id": "apps_web_app_api_v1_jobs_id_route",
@@ -5798,6 +5453,17 @@
       "source_location": "L8"
     },
     {
+      "id": "apps_web_lib_audit_audit_logger",
+      "label": "audit-logger.ts",
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "login/route.ts",
+      "file_type": "code",
+      "norm_label": "audit-logger.ts",
+      "source_file": "apps/web/lib/audit/audit-logger.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "apps_web_lib_auth_rate_limit",
       "label": "rate-limit.ts",
       "_origin": "ast",
@@ -5818,6 +5484,28 @@
       "norm_label": "loginattempts",
       "source_file": "apps/web/lib/auth/rate-limit.ts",
       "source_location": "L7"
+    },
+    {
+      "id": "packages_database_src_schema_auditevents",
+      "label": "auditEvents",
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "login/route.ts",
+      "file_type": "code",
+      "norm_label": "auditevents",
+      "source_file": "packages/database/src/schema.ts",
+      "source_location": "L424"
+    },
+    {
+      "id": "packages_database_src_uuid_generateuuidv7",
+      "label": "generateUuidV7",
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "login/route.ts",
+      "file_type": "code",
+      "norm_label": "generateuuidv7",
+      "source_file": "packages/database/src/uuid.ts",
+      "source_location": "L29"
     },
     {
       "id": "apps_web_eslint_config",
@@ -6749,18 +6437,6 @@
       "source_location": "L1"
     },
     {
-      "id": "implementation_status_completed_tasks_tasks_1_56",
-      "label": "\u2705 Completed Tasks (Tasks 1\u201356)",
-      "_origin": "ast",
-      "community": 36,
-      "community_name": "\ud83d\udcca DispatchX \u2014 Implementation Status & Progress Tracker",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "\u2705 completed tasks (tasks 1\u201356)",
-      "source_file": "IMPLEMENTATION_STATUS.md",
-      "source_location": "L74"
-    },
-    {
       "id": "implementation_status_dispatchx_implementation_status_progress_tracker",
       "label": "\ud83d\udcca DispatchX \u2014 Implementation Status & Progress Tracker",
       "_origin": "ast",
@@ -6773,28 +6449,16 @@
       "source_location": "L1"
     },
     {
-      "id": "implementation_status_key_domain_feature_excel_csv_plan_ingestion_with_hard_constraints",
-      "label": "\ud83c\udfaf Key Domain Feature: Excel / CSV Plan Ingestion with Hard Constraints",
+      "id": "implementation_status_key_architectural_highlights_built",
+      "label": "\ud83d\udd0d Key Architectural Highlights Built",
       "_origin": "ast",
       "community": 36,
       "community_name": "\ud83d\udcca DispatchX \u2014 Implementation Status & Progress Tracker",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "\ud83c\udfaf key domain feature: excel / csv plan ingestion with hard constraints",
+      "norm_label": "\ud83d\udd0d key architectural highlights built",
       "source_file": "IMPLEMENTATION_STATUS.md",
       "source_location": "L53"
-    },
-    {
-      "id": "implementation_status_next_tasks_to_execute_section_1_5_seed_data_tasks_57_65",
-      "label": "\ud83d\udccc Next Tasks to Execute: Section 1.5 \u2014 Seed Data (Tasks 57\u201365)",
-      "_origin": "ast",
-      "community": 36,
-      "community_name": "\ud83d\udcca DispatchX \u2014 Implementation Status & Progress Tracker",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "\ud83d\udccc next tasks to execute: section 1.5 \u2014 seed data (tasks 57\u201365)",
-      "source_file": "IMPLEMENTATION_STATUS.md",
-      "source_location": "L112"
     },
     {
       "id": "implementation_status_overall_progress_snapshot",
@@ -6819,18 +6483,6 @@
       "norm_label": "\ud83d\udcd1 phase-by-phase breakdown",
       "source_file": "IMPLEMENTATION_STATUS.md",
       "source_location": "L20"
-    },
-    {
-      "id": "implementation_status_required_input_constraints",
-      "label": "Required Input Constraints:",
-      "_origin": "ast",
-      "community": 36,
-      "community_name": "\ud83d\udcca DispatchX \u2014 Implementation Status & Progress Tracker",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "required input constraints:",
-      "source_file": "IMPLEMENTATION_STATUS.md",
-      "source_location": "L57"
     },
     {
       "id": "appflow_c_1_shell_components",
@@ -7937,48 +7589,412 @@
       "source_location": "L1"
     },
     {
-      "id": "apps_web_lib_routing_valhalla",
-      "label": "valhalla.ts",
+      "id": "todo_1_1_repository_tooling_setup",
+      "label": "1.1 Repository & Tooling Setup",
       "_origin": "ast",
-      "community": 6,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "valhalla.ts",
-      "source_file": "apps/web/lib/routing/valhalla.ts",
-      "source_location": "L1"
+      "community": 51,
+      "community_name": "Phase 1 \u2014 Project Foundation & Infrastructure (Tasks 1\u201365)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "1.1 repository & tooling setup",
+      "source_file": "TODO.md",
+      "source_location": "L12"
     },
     {
-      "id": "apps_web_lib_routing_valhalla_demo_fallback_matrix",
-      "label": "DEMO_FALLBACK_MATRIX",
+      "id": "todo_1_2_docker_dev_environment",
+      "label": "1.2 Docker & Dev Environment",
       "_origin": "ast",
-      "community": 6,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "demo_fallback_matrix",
-      "source_file": "apps/web/lib/routing/valhalla.ts",
-      "source_location": "L19"
+      "community": 51,
+      "community_name": "Phase 1 \u2014 Project Foundation & Infrastructure (Tasks 1\u201365)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "1.2 docker & dev environment",
+      "source_file": "TODO.md",
+      "source_location": "L29"
     },
     {
-      "id": "apps_web_tests_activation_test",
-      "label": "activation.test.ts",
+      "id": "todo_1_3_database_foundation",
+      "label": "1.3 Database Foundation",
       "_origin": "ast",
-      "community": 6,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "activation.test.ts",
-      "source_file": "apps/web/tests/activation.test.ts",
-      "source_location": "L1"
+      "community": 51,
+      "community_name": "Phase 1 \u2014 Project Foundation & Infrastructure (Tasks 1\u201365)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "1.3 database foundation",
+      "source_file": "TODO.md",
+      "source_location": "L39"
     },
     {
-      "id": "apps_web_tests_routing_test",
-      "label": "routing.test.ts",
+      "id": "todo_1_4_row_level_security",
+      "label": "1.4 Row-Level Security",
       "_origin": "ast",
-      "community": 6,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "routing.test.ts",
-      "source_file": "apps/web/tests/routing.test.ts",
-      "source_location": "L1"
+      "community": 51,
+      "community_name": "Phase 1 \u2014 Project Foundation & Infrastructure (Tasks 1\u201365)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "1.4 row-level security",
+      "source_file": "TODO.md",
+      "source_location": "L77"
+    },
+    {
+      "id": "todo_1_5_seed_data",
+      "label": "1.5 Seed Data",
+      "_origin": "ast",
+      "community": 51,
+      "community_name": "Phase 1 \u2014 Project Foundation & Infrastructure (Tasks 1\u201365)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "1.5 seed data",
+      "source_file": "TODO.md",
+      "source_location": "L88"
+    },
+    {
+      "id": "todo_phase_1_project_foundation_infrastructure_tasks_1_65",
+      "label": "Phase 1 \u2014 Project Foundation & Infrastructure (Tasks 1\u201365)",
+      "_origin": "ast",
+      "community": 51,
+      "community_name": "Phase 1 \u2014 Project Foundation & Infrastructure (Tasks 1\u201365)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "phase 1 \u2014 project foundation & infrastructure (tasks 1\u201365)",
+      "source_file": "TODO.md",
+      "source_location": "L10"
+    },
+    {
+      "id": "todo_19_1_unit_tests",
+      "label": "19.1 Unit Tests",
+      "_origin": "ast",
+      "community": 52,
+      "community_name": "Phase 19 \u2014 Testing (Tasks 311\u2013338)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "19.1 unit tests",
+      "source_file": "TODO.md",
+      "source_location": "L548"
+    },
+    {
+      "id": "todo_19_2_integration_tests",
+      "label": "19.2 Integration Tests",
+      "_origin": "ast",
+      "community": 52,
+      "community_name": "Phase 19 \u2014 Testing (Tasks 311\u2013338)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "19.2 integration tests",
+      "source_file": "TODO.md",
+      "source_location": "L561"
+    },
+    {
+      "id": "todo_19_3_e2e_tests_playwright",
+      "label": "19.3 E2E Tests (Playwright)",
+      "_origin": "ast",
+      "community": 52,
+      "community_name": "Phase 19 \u2014 Testing (Tasks 311\u2013338)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "19.3 e2e tests (playwright)",
+      "source_file": "TODO.md",
+      "source_location": "L575"
+    },
+    {
+      "id": "todo_19_4_performance_benchmarks",
+      "label": "19.4 Performance Benchmarks",
+      "_origin": "ast",
+      "community": 52,
+      "community_name": "Phase 19 \u2014 Testing (Tasks 311\u2013338)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "19.4 performance benchmarks",
+      "source_file": "TODO.md",
+      "source_location": "L585"
+    },
+    {
+      "id": "todo_phase_19_testing_tasks_311_338",
+      "label": "Phase 19 \u2014 Testing (Tasks 311\u2013338)",
+      "_origin": "ast",
+      "community": 52,
+      "community_name": "Phase 19 \u2014 Testing (Tasks 311\u2013338)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "phase 19 \u2014 testing (tasks 311\u2013338)",
+      "source_file": "TODO.md",
+      "source_location": "L546"
+    },
+    {
+      "id": "todo_6_1_fastapi_worker",
+      "label": "6.1 FastAPI Worker",
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "Phase 6 \u2014 Optimization Engine (Tasks 136\u2013169)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "6.1 fastapi worker",
+      "source_file": "TODO.md",
+      "source_location": "L229"
+    },
+    {
+      "id": "todo_6_2_or_tools_solver",
+      "label": "6.2 OR-Tools Solver",
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "Phase 6 \u2014 Optimization Engine (Tasks 136\u2013169)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "6.2 or-tools solver",
+      "source_file": "TODO.md",
+      "source_location": "L238"
+    },
+    {
+      "id": "todo_6_3_post_solve_results",
+      "label": "6.3 Post-Solve & Results",
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "Phase 6 \u2014 Optimization Engine (Tasks 136\u2013169)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "6.3 post-solve & results",
+      "source_file": "TODO.md",
+      "source_location": "L257"
+    },
+    {
+      "id": "todo_6_4_job_queue_api",
+      "label": "6.4 Job Queue & API",
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "Phase 6 \u2014 Optimization Engine (Tasks 136\u2013169)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "6.4 job queue & api",
+      "source_file": "TODO.md",
+      "source_location": "L268"
+    },
+    {
+      "id": "todo_phase_6_optimization_engine_tasks_136_169",
+      "label": "Phase 6 \u2014 Optimization Engine (Tasks 136\u2013169)",
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "Phase 6 \u2014 Optimization Engine (Tasks 136\u2013169)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "phase 6 \u2014 optimization engine (tasks 136\u2013169)",
+      "source_file": "TODO.md",
+      "source_location": "L227"
+    },
+    {
+      "id": "todo_13_1_customer_voice_updates",
+      "label": "13.1 Customer Voice Updates",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "Phase 13 \u2014 Notifications & Briefings (Tasks 255\u2013272)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "13.1 customer voice updates",
+      "source_file": "TODO.md",
+      "source_location": "L438"
+    },
+    {
+      "id": "todo_13_2_fleet_briefing",
+      "label": "13.2 Fleet Briefing",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "Phase 13 \u2014 Notifications & Briefings (Tasks 255\u2013272)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "13.2 fleet briefing",
+      "source_file": "TODO.md",
+      "source_location": "L453"
+    },
+    {
+      "id": "todo_13_3_communications",
+      "label": "13.3 Communications",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "Phase 13 \u2014 Notifications & Briefings (Tasks 255\u2013272)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "13.3 communications",
+      "source_file": "TODO.md",
+      "source_location": "L462"
+    },
+    {
+      "id": "todo_phase_13_notifications_briefings_tasks_255_272",
+      "label": "Phase 13 \u2014 Notifications & Briefings (Tasks 255\u2013272)",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "Phase 13 \u2014 Notifications & Briefings (Tasks 255\u2013272)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "phase 13 \u2014 notifications & briefings (tasks 255\u2013272)",
+      "source_file": "TODO.md",
+      "source_location": "L436"
+    },
+    {
+      "id": "todo_8_1_text_incidents",
+      "label": "8.1 Text Incidents",
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "Phase 8 \u2014 Incident Reporting & Validation (Tasks 179\u2013209)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "8.1 text incidents",
+      "source_file": "TODO.md",
+      "source_location": "L303"
+    },
+    {
+      "id": "todo_8_2_voice_incidents",
+      "label": "8.2 Voice Incidents",
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "Phase 8 \u2014 Incident Reporting & Validation (Tasks 179\u2013209)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "8.2 voice incidents",
+      "source_file": "TODO.md",
+      "source_location": "L320"
+    },
+    {
+      "id": "todo_8_3_incident_confirmation_approval",
+      "label": "8.3 Incident Confirmation & Approval",
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "Phase 8 \u2014 Incident Reporting & Validation (Tasks 179\u2013209)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "8.3 incident confirmation & approval",
+      "source_file": "TODO.md",
+      "source_location": "L334"
+    },
+    {
+      "id": "todo_phase_8_incident_reporting_validation_tasks_179_209",
+      "label": "Phase 8 \u2014 Incident Reporting & Validation (Tasks 179\u2013209)",
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "Phase 8 \u2014 Incident Reporting & Validation (Tasks 179\u2013209)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "phase 8 \u2014 incident reporting & validation (tasks 179\u2013209)",
+      "source_file": "TODO.md",
+      "source_location": "L301"
+    },
+    {
+      "id": "todo_9_1_replan_engine",
+      "label": "9.1 Replan Engine",
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "Phase 9 \u2014 Dynamic Re-optimization (Tasks 210\u2013233)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "9.1 replan engine",
+      "source_file": "TODO.md",
+      "source_location": "L353"
+    },
+    {
+      "id": "todo_9_2_versioning_comparison",
+      "label": "9.2 Versioning & Comparison",
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "Phase 9 \u2014 Dynamic Re-optimization (Tasks 210\u2013233)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "9.2 versioning & comparison",
+      "source_file": "TODO.md",
+      "source_location": "L368"
+    },
+    {
+      "id": "todo_9_3_replan_ui",
+      "label": "9.3 Replan UI",
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "Phase 9 \u2014 Dynamic Re-optimization (Tasks 210\u2013233)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "9.3 replan ui",
+      "source_file": "TODO.md",
+      "source_location": "L380"
+    },
+    {
+      "id": "todo_phase_9_dynamic_re_optimization_tasks_210_233",
+      "label": "Phase 9 \u2014 Dynamic Re-optimization (Tasks 210\u2013233)",
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "Phase 9 \u2014 Dynamic Re-optimization (Tasks 210\u2013233)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "phase 9 \u2014 dynamic re-optimization (tasks 210\u2013233)",
+      "source_file": "TODO.md",
+      "source_location": "L351"
+    },
+    {
+      "id": "todo_3_1_design_tokens",
+      "label": "3.1 Design Tokens",
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "Phase 3 \u2014 Design System & UI Foundation (Tasks 76\u2013104)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "3.1 design tokens",
+      "source_file": "TODO.md",
+      "source_location": "L123"
+    },
+    {
+      "id": "todo_3_3_application_shell",
+      "label": "3.3 Application Shell",
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "Phase 3 \u2014 Design System & UI Foundation (Tasks 76\u2013104)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "3.3 application shell",
+      "source_file": "TODO.md",
+      "source_location": "L154"
+    },
+    {
+      "id": "todo_phase_3_design_system_ui_foundation_tasks_76_104",
+      "label": "Phase 3 \u2014 Design System & UI Foundation (Tasks 76\u2013104)",
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "Phase 3 \u2014 Design System & UI Foundation (Tasks 76\u2013104)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "phase 3 \u2014 design system & ui foundation (tasks 76\u2013104)",
+      "source_file": "TODO.md",
+      "source_location": "L121"
+    },
+    {
+      "id": "todo_dashboard_reference",
+      "label": "Dashboard Reference",
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "UI Reference \u2014 Design Inspiration",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "dashboard reference",
+      "source_file": "TODO.md",
+      "source_location": "L666"
+    },
+    {
+      "id": "todo_plan_schedule_reference",
+      "label": "Plan Schedule Reference",
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "UI Reference \u2014 Design Inspiration",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "plan schedule reference",
+      "source_file": "TODO.md",
+      "source_location": "L675"
+    },
+    {
+      "id": "todo_ui_reference_design_inspiration",
+      "label": "UI Reference \u2014 Design Inspiration",
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "UI Reference \u2014 Design Inspiration",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "ui reference \u2014 design inspiration",
+      "source_file": "TODO.md",
+      "source_location": "L662"
     },
     {
       "id": "package",
@@ -8190,50 +8206,6 @@
       "source_location": "L6"
     },
     {
-      "id": "packages_database_src_seed",
-      "label": "seed.ts",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "seed.ts",
-      "source_file": "packages/database/src/seed.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "packages_database_src_seed_demo_ids",
-      "label": "DEMO_IDS",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "demo_ids",
-      "source_file": "packages/database/src/seed.ts",
-      "source_location": "L3"
-    },
-    {
-      "id": "packages_database_src_seed_demo_locations",
-      "label": "DEMO_LOCATIONS",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "demo_locations",
-      "source_file": "packages/database/src/seed.ts",
-      "source_location": "L15"
-    },
-    {
-      "id": "packages_database_tests_rls_test",
-      "label": "rls.test.ts",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "rls.test.ts",
-      "source_file": "packages/database/tests/rls.test.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "package_json_ref_typescript",
       "label": "typescript",
       "_origin": "ast",
@@ -8254,17 +8226,6 @@
       "norm_label": "prettier",
       "source_file": "package.json",
       "source_location": "L18"
-    },
-    {
-      "id": "ref_vitest",
-      "label": "vitest",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "package.json",
-      "file_type": "concept",
-      "norm_label": "vitest",
-      "source_file": "package.json",
-      "source_location": "L20"
     },
     {
       "id": "apps_web_app_api_v1_orders_route",
@@ -8836,6 +8797,17 @@
       "type": "SERVICE"
     },
     {
+      "id": "packages_database_src_index_db",
+      "label": "packages_database_src_index_db",
+      "community": 10,
+      "community_name": "fleet/route.ts",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "packages_database_src_index_db",
+      "source_file": "",
+      "type": "external"
+    },
+    {
       "id": "packages_database_src_index_vehicles",
       "label": "packages_database_src_index_vehicles",
       "community": 10,
@@ -8847,43 +8819,10 @@
       "type": "external"
     },
     {
-      "id": "packages_database_src_index_auditevents",
-      "label": "packages_database_src_index_auditevents",
-      "community": 15,
-      "community_name": "audit-logger.ts",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "packages_database_src_index_auditevents",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "packages_database_src_index_db",
-      "label": "packages_database_src_index_db",
-      "community": 15,
-      "community_name": "audit-logger.ts",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "packages_database_src_index_db",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "packages_database_src_index_generateuuidv7",
-      "label": "packages_database_src_index_generateuuidv7",
-      "community": 15,
-      "community_name": "audit-logger.ts",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "packages_database_src_index_generateuuidv7",
-      "source_file": "",
-      "type": "external"
-    },
-    {
       "id": "ref_node_crypto",
       "label": "ref_node_crypto",
       "community": 15,
-      "community_name": "audit-logger.ts",
+      "community_name": "vitest",
       "external": true,
       "file_type": "concept",
       "norm_label": "ref_node_crypto",
@@ -9008,6 +8947,28 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "packages_contracts_src_index_memberrole",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "packages_database_src_index_auditevents",
+      "label": "packages_database_src_index_auditevents",
+      "community": 29,
+      "community_name": "login/route.ts",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "packages_database_src_index_auditevents",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "packages_database_src_index_generateuuidv7",
+      "label": "packages_database_src_index_generateuuidv7",
+      "community": 29,
+      "community_name": "login/route.ts",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "packages_database_src_index_generateuuidv7",
       "source_file": "",
       "type": "external"
     },
@@ -9141,6 +9102,18 @@
       "context": "call",
       "source_file": "apps/web/app/api/v1/disruptions/[id]/replan/route.ts",
       "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_web_app_api_v1_health_route_get",
+      "target": "apps_web_lib_telemetry_metrics_gettelemetryspans",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "apps/web/app/api/v1/health/route.ts",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -10844,6 +10817,18 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "apps/web/app/api/v1/fleet/route.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_web_app_api_v1_health_route",
+      "target": "apps_web_lib_telemetry_metrics_gettelemetryspans",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/web/app/api/v1/health/route.ts",
       "source_location": "L2",
       "weight": 1.0
     },
@@ -12648,6 +12633,30 @@
       "weight": 1.0
     },
     {
+      "source": "apps_web_tests_telemetry_test",
+      "target": "apps_web_lib_telemetry_metrics_gettelemetryspans",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/web/tests/telemetry.test.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_web_tests_telemetry_test",
+      "target": "apps_web_lib_telemetry_metrics_recordspan",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/web/tests/telemetry.test.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
       "source": "apps_web_tests_voice_test",
       "target": "apps_web_lib_voice_elevenlabs_parsevoicetranscript",
       "relation": "imports",
@@ -13245,6 +13254,30 @@
       "context": "import",
       "source_file": "apps/web/app/api/v1/fleet/route.ts",
       "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_web_app_api_v1_health_route",
+      "target": "ref_next",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/web/app/api/v1/health/route.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_web_app_api_v1_health_route",
+      "target": "apps_web_lib_telemetry_metrics",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/web/app/api/v1/health/route.ts",
+      "source_location": "L2",
       "weight": 1.0
     },
     {
@@ -15853,6 +15886,30 @@
       "weight": 1.0
     },
     {
+      "source": "apps_web_tests_telemetry_test",
+      "target": "ref_vitest",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/web/tests/telemetry.test.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_web_tests_telemetry_test",
+      "target": "apps_web_lib_telemetry_metrics",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "apps/web/tests/telemetry.test.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
       "source": "apps_web_tests_voice_test",
       "target": "ref_vitest",
       "relation": "imports_from",
@@ -17209,6 +17266,17 @@
       "confidence_score": 1.0,
       "source_file": "apps/web/app/api/v1/fleet/route.ts",
       "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_web_app_api_v1_health_route",
+      "target": "apps_web_app_api_v1_health_route_get",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/web/app/api/v1/health/route.ts",
+      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -19346,6 +19414,50 @@
       "weight": 1.0
     },
     {
+      "source": "apps_web_lib_telemetry_metrics",
+      "target": "apps_web_lib_telemetry_metrics_spanbuffer",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/web/lib/telemetry/metrics.ts",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_web_lib_telemetry_metrics",
+      "target": "apps_web_lib_telemetry_metrics_recordspan",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/web/lib/telemetry/metrics.ts",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_web_lib_telemetry_metrics",
+      "target": "apps_web_lib_telemetry_metrics_gettelemetryspans",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/web/lib/telemetry/metrics.ts",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_web_lib_telemetry_metrics",
+      "target": "apps_web_lib_telemetry_metrics_telemetryspan",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/web/lib/telemetry/metrics.ts",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
       "source": "apps_web_lib_voice_elevenlabs",
       "target": "apps_web_lib_voice_elevenlabs_parsevoicetranscript",
       "relation": "contains",
@@ -19919,17 +20031,6 @@
     },
     {
       "source": "implementation_status_dispatchx_implementation_status_progress_tracker",
-      "target": "implementation_status_next_tasks_to_execute_section_1_5_seed_data_tasks_57_65",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "IMPLEMENTATION_STATUS.md",
-      "source_location": "L112",
-      "weight": 1.0
-    },
-    {
-      "source": "implementation_status_dispatchx_implementation_status_progress_tracker",
       "target": "implementation_status_phase_by_phase_breakdown",
       "relation": "contains",
       "_origin": "ast",
@@ -19941,24 +20042,13 @@
     },
     {
       "source": "implementation_status_dispatchx_implementation_status_progress_tracker",
-      "target": "implementation_status_key_domain_feature_excel_csv_plan_ingestion_with_hard_constraints",
+      "target": "implementation_status_key_architectural_highlights_built",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "IMPLEMENTATION_STATUS.md",
       "source_location": "L53",
-      "weight": 1.0
-    },
-    {
-      "source": "implementation_status_dispatchx_implementation_status_progress_tracker",
-      "target": "implementation_status_completed_tasks_tasks_1_56",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "IMPLEMENTATION_STATUS.md",
-      "source_location": "L74",
       "weight": 1.0
     },
     {
@@ -19970,17 +20060,6 @@
       "confidence_score": 1.0,
       "source_file": "IMPLEMENTATION_STATUS.md",
       "source_location": "L9",
-      "weight": 1.0
-    },
-    {
-      "source": "implementation_status_key_domain_feature_excel_csv_plan_ingestion_with_hard_constraints",
-      "target": "implementation_status_required_input_constraints",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "IMPLEMENTATION_STATUS.md",
-      "source_location": "L57",
       "weight": 1.0
     },
     {
@@ -21755,72 +21834,6 @@
       "weight": 1.0
     },
     {
-      "source": "readme_core_pillars_key_features",
-      "target": "readme_1_sub_second_vrptw_optimization",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": "L79",
-      "weight": 1.0
-    },
-    {
-      "source": "readme_core_pillars_key_features",
-      "target": "readme_2_absolute_logistics_invariants_safety",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": "L85",
-      "weight": 1.0
-    },
-    {
-      "source": "readme_core_pillars_key_features",
-      "target": "readme_3_voice_first_disruption_communications_with_elevenlabs",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": "L90",
-      "weight": 1.0
-    },
-    {
-      "source": "readme_core_pillars_key_features",
-      "target": "readme_4_high_density_control_room_ui",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": "L95",
-      "weight": 1.0
-    },
-    {
-      "source": "readme_dispatchx_vortexa_3_0_reroute",
-      "target": "readme_technology_stack",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": "L103",
-      "weight": 1.0
-    },
-    {
-      "source": "readme_dispatchx_vortexa_3_0_reroute",
-      "target": "readme_project_organization",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": "L121",
-      "weight": 1.0
-    },
-    {
       "source": "readme_dispatchx_vortexa_3_0_reroute",
       "target": "readme_getting_started",
       "relation": "contains",
@@ -21828,18 +21841,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L150",
+      "source_location": "L102",
       "weight": 1.0
     },
     {
       "source": "readme_dispatchx_vortexa_3_0_reroute",
-      "target": "readme_roadmap_implementation_tracker",
+      "target": "readme_license",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L189",
+      "source_location": "L133",
       "weight": 1.0
     },
     {
@@ -21855,35 +21868,13 @@
     },
     {
       "source": "readme_dispatchx_vortexa_3_0_reroute",
-      "target": "readme_knowledge_graph_with_graphify",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": "L202",
-      "weight": 1.0
-    },
-    {
-      "source": "readme_dispatchx_vortexa_3_0_reroute",
-      "target": "readme_license_attribution",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": "L210",
-      "weight": 1.0
-    },
-    {
-      "source": "readme_dispatchx_vortexa_3_0_reroute",
       "target": "readme_system_architecture",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L32",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -21899,13 +21890,24 @@
     },
     {
       "source": "readme_dispatchx_vortexa_3_0_reroute",
-      "target": "readme_core_pillars_key_features",
+      "target": "readme_key_web_application_pages",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L77",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "readme_dispatchx_vortexa_3_0_reroute",
+      "target": "readme_technology_stack",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L90",
       "weight": 1.0
     },
     {
@@ -21916,40 +21918,29 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L152",
+      "source_location": "L104",
       "weight": 1.0
     },
     {
       "source": "readme_getting_started",
-      "target": "readme_1_clone_set_environment",
+      "target": "readme_installation_development_run",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L158",
+      "source_location": "L109",
       "weight": 1.0
     },
     {
       "source": "readme_getting_started",
-      "target": "readme_2_start_infrastructure",
+      "target": "readme_running_test_suite",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L173",
-      "weight": 1.0
-    },
-    {
-      "source": "readme_getting_started",
-      "target": "readme_3_install_dependencies_run_web_app",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": "L179",
+      "source_location": "L125",
       "weight": 1.0
     },
     {
@@ -22910,17 +22901,6 @@
       "weight": 1.0
     },
     {
-      "source": "readme",
-      "target": "todo",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": "L191",
-      "weight": 1.0
-    },
-    {
       "source": "services_optimizer_app_solver_solve_vrptw",
       "target": "services_optimizer_app_solver_solve_vrptw_volume_demand_callback",
       "relation": "indirect_call",
@@ -23234,5 +23214,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "a4094512ed086eb4baf5833350623bbb000f0213"
+  "built_at_commit": "8c4d96fe90b651c5b2922479afbf8d6d99b05677"
 }

@@ -1,17 +1,17 @@
 # Graph Report - Vortexa 3.0  (2026-10-11)
 
 ## Corpus Check
-- 122 files · ~97,965 words
+- 125 files · ~97,223 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 8 file(s) not represented in the graph (top: (none) 3, .example 1, .ico 1)
 
 ## Summary
-- 774 nodes · 1236 edges · 51 communities (45 shown, 6 thin omitted)
+- 771 nodes · 1237 edges · 59 communities (53 shown, 6 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 20 edges (avg confidence: 0.93)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `a4094512`
+- Built from commit: `8c4d96fe`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -31,7 +31,7 @@
 - contracts/package.json
 - compilerOptions
 - compilerOptions
-- audit-logger.ts
+- vitest
 - Control Room Dashboard Cockpit
 - selection-controls.tsx
 - DispatchX (ReRoute / VORTEXA 3.0) — Project TODO
@@ -66,10 +66,18 @@
 - docker/README.md
 - migrations/README.md
 - optimizer/README.md
+- Phase 1 — Project Foundation & Infrastructure (Tasks 1–65)
+- Phase 19 — Testing (Tasks 311–338)
+- Phase 6 — Optimization Engine (Tasks 136–169)
+- Phase 13 — Notifications & Briefings (Tasks 255–272)
+- Phase 8 — Incident Reporting & Validation (Tasks 179–209)
+- Phase 9 — Dynamic Re-optimization (Tasks 210–233)
+- Phase 3 — Design System & UI Foundation (Tasks 76–104)
+- UI Reference — Design Inspiration
 
 ## God Nodes (most connected - your core abstractions)
 1. `react` - 41 edges
-2. `next` - 36 edges
+2. `next` - 37 edges
 3. `AppShell()` - 33 edges
 4. `Button` - 32 edges
 5. `lucide-react` - 30 edges
@@ -94,7 +102,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (51 total, 6 thin omitted)
+## Communities (59 total, 6 thin omitted)
 
 ### Community 0 - "react"
 Cohesion: 0.06
@@ -121,8 +129,8 @@ Cohesion: 0.10
 Nodes (20): inter, jetbrainsMono, metadata, RootLayout(), Header(), HeaderProps, Theme, ThemeContext (+12 more)
 
 ### Community 6 - "package.json"
-Cohesion: 0.06
-Nodes (29): DEMO_FALLBACK_MATRIX, fetchTravelTimeMatrix(), LatLng, MatrixResponse, RouteGeometry, description, devDependencies, prettier (+21 more)
+Cohesion: 0.10
+Nodes (20): description, devDependencies, prettier, typescript, vitest, engines, node, npm (+12 more)
 
 ### Community 7 - "plan-parser.ts"
 Cohesion: 0.17
@@ -137,7 +145,7 @@ Cohesion: 0.11
 Nodes (18): compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules, jsx, lib, module (+10 more)
 
 ### Community 10 - "fleet/route.ts"
-Cohesion: 0.25
+Cohesion: 0.22
 Nodes (5): db, sql, vehicles, drizzle-orm, postgres
 
 ### Community 11 - "fleet/page.tsx"
@@ -156,9 +164,9 @@ Nodes (10): compilerOptions, declaration, esModuleInterop, forceConsistentCasing
 Cohesion: 0.18
 Nodes (10): compilerOptions, declaration, esModuleInterop, forceConsistentCasingInFileNames, module, moduleResolution, skipLibCheck, strict (+2 more)
 
-### Community 15 - "audit-logger.ts"
-Cohesion: 0.20
-Nodes (4): RecordAuditEventParams, RFC-9562, auditEvents, generateUuidV7
+### Community 15 - "vitest"
+Cohesion: 0.10
+Nodes (15): GET(), DEMO_FALLBACK_MATRIX, fetchTravelTimeMatrix(), LatLng, MatrixResponse, RouteGeometry, getTelemetrySpans(), recordSpan() (+7 more)
 
 ### Community 16 - "Control Room Dashboard Cockpit"
 Cohesion: 0.29
@@ -169,8 +177,8 @@ Cohesion: 0.25
 Nodes (7): Checkbox, CheckboxProps, RadioGroup(), RadioGroupProps, RadioOption, Toggle(), ToggleProps
 
 ### Community 18 - "DispatchX (ReRoute / VORTEXA 3.0) — Project TODO"
-Cohesion: 0.04
-Nodes (49): 13.1 Customer Voice Updates, 13.2 Fleet Briefing, 13.3 Communications, 19.1 Unit Tests, 19.2 Integration Tests, 19.3 E2E Tests (Playwright), 19.4 Performance Benchmarks, 1.1 Repository & Tooling Setup (+41 more)
+Cohesion: 0.12
+Nodes (15): DispatchX (ReRoute / VORTEXA 3.0) — Project TODO, Phase 10 — Atomic Route Activation (Tasks 234–241), Phase 11 — Dashboard (Tasks 242–248), Phase 12 — Plan Schedule View (Tasks 249–254), Phase 14 — Audit & History (Tasks 273–276), Phase 15 — Error & Edge-Case States (Tasks 277–287), Phase 16 — Accessibility (Tasks 288–296), Phase 17 — Observability (Tasks 297–303) (+7 more)
 
 ### Community 19 - "models.py"
 Cohesion: 0.09
@@ -185,8 +193,8 @@ Cohesion: 0.09
 Nodes (25): POST(), POST(), planLockVersions, jobQueue, POST(), POST(), POST(), Disruption (+17 more)
 
 ### Community 24 - "⚡ DispatchX (VORTEXA 3.0 / ReRoute)"
-Cohesion: 0.10
-Nodes (19): 1. Clone & Set Environment, 1. 🧠 Sub-Second VRPTW Optimization, 2. 🛡️ Absolute Logistics Invariants & Safety, 2. Start Infrastructure, 3. Install Dependencies & Run Web App, 3. 🎙️ Voice-First Disruption & Communications with ElevenLabs, 4. 🗺️ High-Density Control Room UI, Autonomous, Human-in-the-Loop Dynamic Logistics Dispatch & Disruption Recovery (+11 more)
+Cohesion: 0.17
+Nodes (11): Autonomous, Human-in-the-Loop Dynamic Logistics Dispatch & Disruption Recovery, ⚡ DispatchX (VORTEXA 3.0 / ReRoute), 📌 Executive Summary, 🏃 Getting Started, Installation & Development Run, 🚀 Key Web Application Pages, 📄 License, Prerequisites (+3 more)
 
 ### Community 25 - "next"
 Cohesion: 0.15
@@ -205,12 +213,12 @@ Cohesion: 0.20
 Nodes (10): E.1 Global, Auth, and Shell, E.2 Dashboard (R-04), E.3 Fleet and Vehicle (R-06, R-07), E.4 Plans and Routes (R-08, R-09, R-10), E.5 Incident Reporting (R-12) — Form and Voice, E.6 Incident List and Detail (R-11, R-13), E.7 Proposal Review and Approval (R-14), E.8 Communications (R-15) (+2 more)
 
 ### Community 29 - "login/route.ts"
-Cohesion: 0.29
-Nodes (7): LoginRequestSchema, POST(), recordAuditEvent(), AttemptRecord, checkLoginRateLimit(), loginAttempts, createSession()
+Cohesion: 0.18
+Nodes (9): LoginRequestSchema, POST(), recordAuditEvent(), RecordAuditEventParams, AttemptRecord, checkLoginRateLimit(), loginAttempts, auditEvents (+1 more)
 
 ### Community 30 - "session.ts"
-Cohesion: 0.40
-Nodes (7): POST(), GET(), clearSession(), getSession(), sessions, signToken(), verifyToken()
+Cohesion: 0.36
+Nodes (8): POST(), GET(), clearSession(), createSession(), getSession(), sessions, signToken(), verifyToken()
 
 ### Community 31 - "Appflow.md"
 Cohesion: 0.22
@@ -233,8 +241,8 @@ Cohesion: 0.39
 Nodes (6): hashPassword(), verifyPassword(), authenticateCredentials(), DEMO_USERS, findUserByEmail(), bcryptjs
 
 ### Community 36 - "📊 DispatchX — Implementation Status & Progress Tracker"
-Cohesion: 0.25
-Nodes (7): ✅ Completed Tasks (Tasks 1–56), 📊 DispatchX — Implementation Status & Progress Tracker, 🎯 Key Domain Feature: Excel / CSV Plan Ingestion with Hard Constraints, 📌 Next Tasks to Execute: Section 1.5 — Seed Data (Tasks 57–65), 📈 Overall Progress Snapshot, 📑 Phase-by-Phase Breakdown, Required Input Constraints:
+Cohesion: 0.40
+Nodes (4): 📊 DispatchX — Implementation Status & Progress Tracker, 🔍 Key Architectural Highlights Built, 📈 Overall Progress Snapshot, 📑 Phase-by-Phase Breakdown
 
 ### Community 37 - "C. Global Application Shell and Navigation"
 Cohesion: 0.33
@@ -276,25 +284,57 @@ Nodes (4): L.1 Events, L.2 Rules, L.3 Operational Measures, L. Observability and
 Cohesion: 0.50
 Nodes (3): Deploy on Vercel, Getting Started, Learn More
 
+### Community 51 - "Phase 1 — Project Foundation & Infrastructure (Tasks 1–65)"
+Cohesion: 0.33
+Nodes (6): 1.1 Repository & Tooling Setup, 1.2 Docker & Dev Environment, 1.3 Database Foundation, 1.4 Row-Level Security, 1.5 Seed Data, Phase 1 — Project Foundation & Infrastructure (Tasks 1–65)
+
+### Community 52 - "Phase 19 — Testing (Tasks 311–338)"
+Cohesion: 0.40
+Nodes (5): 19.1 Unit Tests, 19.2 Integration Tests, 19.3 E2E Tests (Playwright), 19.4 Performance Benchmarks, Phase 19 — Testing (Tasks 311–338)
+
+### Community 53 - "Phase 6 — Optimization Engine (Tasks 136–169)"
+Cohesion: 0.40
+Nodes (5): 6.1 FastAPI Worker, 6.2 OR-Tools Solver, 6.3 Post-Solve & Results, 6.4 Job Queue & API, Phase 6 — Optimization Engine (Tasks 136–169)
+
+### Community 54 - "Phase 13 — Notifications & Briefings (Tasks 255–272)"
+Cohesion: 0.50
+Nodes (4): 13.1 Customer Voice Updates, 13.2 Fleet Briefing, 13.3 Communications, Phase 13 — Notifications & Briefings (Tasks 255–272)
+
+### Community 55 - "Phase 8 — Incident Reporting & Validation (Tasks 179–209)"
+Cohesion: 0.50
+Nodes (4): 8.1 Text Incidents, 8.2 Voice Incidents, 8.3 Incident Confirmation & Approval, Phase 8 — Incident Reporting & Validation (Tasks 179–209)
+
+### Community 56 - "Phase 9 — Dynamic Re-optimization (Tasks 210–233)"
+Cohesion: 0.50
+Nodes (4): 9.1 Replan Engine, 9.2 Versioning & Comparison, 9.3 Replan UI, Phase 9 — Dynamic Re-optimization (Tasks 210–233)
+
+### Community 57 - "Phase 3 — Design System & UI Foundation (Tasks 76–104)"
+Cohesion: 0.67
+Nodes (3): 3.1 Design Tokens, 3.3 Application Shell, Phase 3 — Design System & UI Foundation (Tasks 76–104)
+
+### Community 58 - "UI Reference — Design Inspiration"
+Cohesion: 0.67
+Nodes (3): Dashboard Reference, Plan Schedule Reference, UI Reference — Design Inspiration
+
 ## Knowledge Gaps
 - **17 isolated node(s):** `@dispatchx/contracts`, `react-dom`, `@tailwindcss/turbopack`, `@types/bcryptjs`, `@types/node` (+12 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 476 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 471 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `next` connect `next` to `react`, `zod`, `web/package.json`, `header.tsx`, `plan-parser.ts`, `fleet/route.ts`, `fleet/page.tsx`, `mock-data.ts`, `login/route.ts`, `session.ts`?**
-  _High betweenness centrality (0.309) - this node is a cross-community bridge._
+- **Why does `next` connect `next` to `react`, `zod`, `web/package.json`, `header.tsx`, `plan-parser.ts`, `fleet/route.ts`, `fleet/page.tsx`, `vitest`, `mock-data.ts`, `login/route.ts`, `session.ts`?**
+  _High betweenness centrality (0.306) - this node is a cross-community bridge._
 - **What connects `@dispatchx/contracts`, `react-dom`, `@tailwindcss/turbopack` to the rest of the system?**
   _17 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `react` be split into smaller, more focused modules?**
   _Cohesion score 0.06273338312173264 - nodes in this community are weakly interconnected._
-- **Why does `DispatchX (ReRoute / VORTEXA 3.0) — Project TODO` connect `DispatchX (ReRoute / VORTEXA 3.0) — Project TODO` to `⚡ DispatchX (VORTEXA 3.0 / ReRoute)`, `fleet/page.tsx`?**
-  _High betweenness centrality (0.119) - this node is a cross-community bridge._
+- **Why does `zod` connect `zod` to `src/env.ts`, `schemas.ts`, `plan-parser.ts`, `contracts/package.json`, `login/route.ts`?**
+  _High betweenness centrality (0.086) - this node is a cross-community bridge._
 - **Should `schemas.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.041666666666666664 - nodes in this community are weakly interconnected._
-- **Why does `Phase 3 — Design System & UI Foundation (Tasks 76–104)` connect `DispatchX (ReRoute / VORTEXA 3.0) — Project TODO` to `react`?**
-  _High betweenness centrality (0.111) - this node is a cross-community bridge._
+- **Why does `DispatchX (ReRoute / VORTEXA 3.0) — Project TODO` connect `DispatchX (ReRoute / VORTEXA 3.0) — Project TODO` to `fleet/page.tsx`, `Phase 1 — Project Foundation & Infrastructure (Tasks 1–65)`, `Phase 19 — Testing (Tasks 311–338)`, `Phase 6 — Optimization Engine (Tasks 136–169)`, `Phase 13 — Notifications & Briefings (Tasks 255–272)`, `Phase 8 — Incident Reporting & Validation (Tasks 179–209)`, `Phase 9 — Dynamic Re-optimization (Tasks 210–233)`, `Phase 3 — Design System & UI Foundation (Tasks 76–104)`, `UI Reference — Design Inspiration`?**
+  _High betweenness centrality (0.084) - this node is a cross-community bridge._
 - **Should `web/package.json` be split into smaller, more focused modules?**
   _Cohesion score 0.05 - nodes in this community are weakly interconnected._
