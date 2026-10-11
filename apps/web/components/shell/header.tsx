@@ -101,6 +101,17 @@ export function Header({ onToggleSidebar, onOpenMobileDrawer, user }: HeaderProp
           <span>Live Engine</span>
         </div>
 
+        {/* Quick Switch to Driver Portal */}
+        <Link href="/driver">
+          <Button
+            variant="outline"
+            size="sm"
+            className="text-xs font-semibold flex items-center gap-1.5 border-primary/40 text-primary hover:bg-primary/10"
+          >
+            <span>📱 Driver Portal</span>
+          </Button>
+        </Link>
+
         {/* Theme Toggle */}
         <ThemeToggle />
 

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { AppShell } from "@/components/shell/app-shell";
 import { Button } from "@/components/ui/button";
 import { StatusBadge } from "@/components/ui/status-badge";
@@ -125,8 +126,14 @@ export default function DriverPortalPage() {
           </div>
 
           <div className="flex items-center gap-2">
+            <Link href="/">
+              <Button variant="secondary" size="sm" className="text-xs">
+                ← Back to Dispatcher
+              </Button>
+            </Link>
             <Button
               variant="outline"
+              size="sm"
               onClick={playShiftBriefing}
               disabled={isPlayingBriefing}
               className="flex items-center gap-2 text-xs border-primary/40 text-primary hover:bg-primary/10"
