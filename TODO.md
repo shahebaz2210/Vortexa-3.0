@@ -19,7 +19,7 @@
 | 4 | Install and configure Tailwind CSS v4 in `apps/web/` | TRD §3, Design §14 | `[x]` |
 | 5 | Install `lucide-react` icon library | Design §2.1 | `[x]` |
 | 6 | Add Google Fonts (Inter 400/500/600, JetBrains Mono 500/600) to layout | Design §6 | `[x]` |
-| 7 | Initialize `services/optimizer/` as Python 3.12 project with `pyproject.toml`, FastAPI, Pydantic, OR-Tools | TRD §3, §10 | `[ ]` |
+| 7 | Initialize `services/optimizer/` as Python 3.12 project with `pyproject.toml`, FastAPI, Pydantic, OR-Tools | TRD §3, §10 | `[x]` |
 | 8 | Create `packages/contracts/` with shared Zod schemas for request/response types | TRD §3, §12.1 | `[ ]` |
 | 9 | Create `.env.example` documenting all required environment variables (including `ELEVENLABS_API_KEY`, ElevenLabs voice IDs, DB, Valhalla) | TRD §14 | `[ ]` |
 | 10 | Create Zod validation schemas for server-side env config (including ElevenLabs credentials) | TRD §14.3 | `[ ]` |
