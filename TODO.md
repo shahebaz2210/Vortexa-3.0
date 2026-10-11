@@ -40,24 +40,24 @@
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 18 | Configure Drizzle ORM in `packages/database/` | TRD §3 | `[ ]` |
-| 19 | Migration 001: enable PostGIS extension | TRD §5.5 | `[ ]` |
-| 20 | Migration 002: define all PostgreSQL enums (member_role, vehicle_status, delivery_status, incident_type, incident_status, plan_status, job_status, comparison_class, notification_status) | TRD §5.3 | `[ ]` |
-| 21 | Implement UUIDv7 generation function (application-side) | TRD DB-1 | `[ ]` |
-| 22 | Migration 003: `organizations` table | TRD §5.2 #1 | `[ ]` |
-| 23 | Migration 004: `memberships` table (user ↔ org ↔ role) | TRD §5.2 #2 | `[ ]` |
-| 24 | Migration 005: `locations` table with PostGIS point, GiST index | TRD §5.2 #3 | `[ ]` |
-| 25 | Migration 006: `vehicles` table with CHECK constraints | TRD §5.2 #4 | `[ ]` |
-| 26 | Migration 007: `customers` table | TRD §5.2 #5 | `[ ]` |
-| 27 | Migration 008: `orders` table with CHECK constraints (weight>0, window_start<window_end) | TRD §5.2 #6 | `[ ]` |
-| 28 | Migration 009: `route_plans` table (versioned, status) | TRD §5.2 #7 | `[ ]` |
-| 29 | Migration 010: `route_stops` table with unique constraints | TRD §5.2 #8 | `[ ]` |
-| 30 | Migration 011: `delivery_events` table (append-only) | TRD §5.2 #9 | `[ ]` |
-| 31 | Migration 012: `incidents` table | TRD §5.2 #10 | `[ ]` |
-| 32 | Migration 013: `optimization_jobs` table | TRD §5.2 #11 | `[ ]` |
-| 33 | Migration 014: `plan_diffs` table (KEPT/MOVED/BROKEN) | TRD §5.2 #12 | `[ ]` |
-| 34 | Migration 015: `customer_notifications` table | TRD §5.2 #13 | `[ ]` |
-| 35 | Migration 016: `fleet_briefings` table | TRD §5.2 #14 | `[ ]` |
+| 18 | Configure Drizzle ORM in `packages/database/` | TRD §3 | `[x]` |
+| 19 | Migration 001: enable PostGIS extension | TRD §5.5 | `[x]` |
+| 20 | Migration 002: define all PostgreSQL enums (member_role, vehicle_status, delivery_status, incident_type, incident_status, plan_status, job_status, comparison_class, notification_status) | TRD §5.3 | `[x]` |
+| 21 | Implement UUIDv7 generation function (application-side) | TRD DB-1 | `[x]` |
+| 22 | Migration 003: `organizations` table | TRD §5.2 #1 | `[x]` |
+| 23 | Migration 004: `memberships` table (user ↔ org ↔ role) | TRD §5.2 #2 | `[x]` |
+| 24 | Migration 005: `locations` table with PostGIS point, GiST index | TRD §5.2 #3 | `[x]` |
+| 25 | Migration 006: `vehicles` table with CHECK constraints | TRD §5.2 #4 | `[x]` |
+| 26 | Migration 007: `customers` table | TRD §5.2 #5 | `[x]` |
+| 27 | Migration 008: `orders` table with CHECK constraints (weight>0, window_start<window_end) | TRD §5.2 #6 | `[x]` |
+| 28 | Migration 009: `route_plans` table (versioned, status) | TRD §5.2 #7 | `[x]` |
+| 29 | Migration 010: `route_stops` table with unique constraints | TRD §5.2 #8 | `[x]` |
+| 30 | Migration 011: `delivery_events` table (append-only) | TRD §5.2 #9 | `[x]` |
+| 31 | Migration 012: `incidents` table | TRD §5.2 #10 | `[x]` |
+| 32 | Migration 013: `optimization_jobs` table | TRD §5.2 #11 | `[x]` |
+| 33 | Migration 014: `plan_diffs` table (KEPT/MOVED/BROKEN) | TRD §5.2 #12 | `[x]` |
+| 34 | Migration 015: `customer_notifications` table | TRD §5.2 #13 | `[x]` |
+| 35 | Migration 016: `fleet_briefings` table | TRD §5.2 #14 | `[x]` |
 | 36 | Migration 017: `audit_events` table (append-only) | TRD §5.2 #15 | `[ ]` |
 | 37 | Migration 018: `idempotency_records` table | TRD §5.2 #16 | `[ ]` |
 | 38 | Migration 019: `vehicle_positions` table | PRD §5.1 | `[ ]` |
