@@ -1,6 +1,6 @@
 <div align="center">
 
-# ReRoute: Disrupted Deliveries, Rerouted by Voice
+# DispatchX: Disrupted Deliveries, Rerouted by Voice
 ### AI-Assisted Dynamic Fleet & Delivery Replanning
 
 *When the morning plan breaks, ReRoute re-plans only what is left, and a human stays in control.*
