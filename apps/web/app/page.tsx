@@ -25,6 +25,7 @@ import {
   MapPin,
   ShieldCheck,
 } from "lucide-react";
+import { HandsFreeDisruptionModal } from "@/components/disruptions/hands-free-disruption-modal";
 
 interface FleetVehicle {
   id: string;
@@ -55,6 +56,9 @@ export default function ControlRoomPage() {
   const [customerModalOpen, setCustomerModalOpen] = useState(false);
   const [notificationSent, setNotificationSent] = useState(false);
   const [isPlayingCustomerVoice, setIsPlayingCustomerVoice] = useState(false);
+
+  // Disruption Detected Voice Reporter Modal (Feature 1: Hands-Free Voice Ingestion)
+  const [showDisruptionModal, setShowDisruptionModal] = useState(false);
 
   // Active Disruption Alert state (Category 2 & 5)
   const [activeAlert, setActiveAlert] = useState<string | null>(
@@ -351,17 +355,16 @@ export default function ControlRoomPage() {
               </Button>
             </Link>
 
-            {/* 3. Disruption Detected */}
-            <Link href="/disruptions">
-              <Button
-                variant="danger"
-                size="sm"
-                leftIcon={<AlertTriangle className="h-4 w-4" />}
-                className="bg-rose-600 hover:bg-rose-700 text-white font-semibold"
-              >
-                Disruption Detected
-              </Button>
-            </Link>
+            {/* 3. Disruption Detected (Feature 1: Hands-Free Voice Ingestion & Location Guardrail) */}
+            <Button
+              variant="danger"
+              size="sm"
+              leftIcon={<AlertTriangle className="h-4 w-4" />}
+              className="bg-rose-600 hover:bg-rose-700 text-white font-semibold cursor-pointer shadow-xs animate-pulse"
+              onClick={() => setShowDisruptionModal(true)}
+            >
+              Disruption Detected
+            </Button>
           </div>
         </div>
 
@@ -656,6 +659,16 @@ export default function ControlRoomPage() {
             </div>
           </div>
         )}
+
+        {/* Hands-Free Voice Disruption Reporter Modal (Feature 1: Inbound) */}
+        <HandsFreeDisruptionModal
+          isOpen={showDisruptionModal}
+          fleet={fleet}
+          onClose={() => setShowDisruptionModal(false)}
+          onDisruptionConfirmed={() => {
+            setReplanSuccess(true);
+          }}
+        />
       </div>
     </AppShell>
   );

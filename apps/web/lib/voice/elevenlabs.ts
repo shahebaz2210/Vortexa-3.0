@@ -14,10 +14,14 @@ export interface ParsedVoiceIncident {
   severity: "LOW" | "MEDIUM" | "HIGH" | "CRITICAL";
   status: "VALID" | "REJECTED";
   rejection_reason?: string;
+  voice_feedback?: string;
   order_id?: string;
   vehicle_id?: string;
   failure_time_minutes?: number;
   delay_minutes: number;
+  delay_min?: number;
+  from?: string;
+  to?: string;
   duration_period_minutes?: number;
   location_from?: string;
   location_to?: string;
@@ -43,6 +47,27 @@ export const KNOWN_NETWORK_LOCATIONS = [
   "presidio clinic",
   "baytech robotics",
   "depot-sf-01",
+  "depot-central",
+  "depot-north",
+  "depot-east",
+  "node 1",
+  "node 2",
+  "node 3",
+  "node 4",
+  "node 5",
+  "node 6",
+  "node 7",
+  "node 8",
+  "node 9",
+  "node 10",
+  "loc_01",
+  "loc_02",
+  "loc_03",
+  "loc_04",
+  "loc_05",
+  "loc_06",
+  "loc_07",
+  "loc_08",
   "ord-9901",
   "ord-9902",
   "ord-9903",
@@ -58,32 +83,76 @@ export function parseVoiceTranscript(
   const text = transcript.toLowerCase();
   const known = [...KNOWN_NETWORK_LOCATIONS, ...customKnownLocations.map((l) => l.toLowerCase())];
 
-  // 1. Detect location mentions and check if unknown location mentioned
-  // Look for patterns like "on <location>", "at <location>", "near <location>", "between <loc1> and <loc2>"
-  const locationMatch = text.match(/(?:at|on|near|between)\s+([a-z0-9\s]{3,30}?)(?:,|\.|\s+due|\s+delayed|\s+blocked|\s+closed|\s+at|$)/i);
-  let detectedLocation = locationMatch ? locationMatch[1].trim() : null;
-
-  // Filter out non-location words
-  if (detectedLocation && (detectedLocation.startsWith("the ") || detectedLocation.startsWith("a "))) {
-    detectedLocation = detectedLocation.replace(/^(the|a)\s+/i, "");
+  // Detect vehicle mention if present in transcript (e.g. "Truck 2", "Truck 1", "Van 3")
+  let vehicleId = driverVehicleId;
+  const truckMatch = text.match(/(?:truck|vehicle|van)\s*#?\s*(\d+)/i);
+  if (truckMatch) {
+    const num = parseInt(truckMatch[1], 10);
+    vehicleId = num < 10 ? `TRK-0${num}` : `TRK-${num}`;
   }
 
-  // Check unknown location rejection rule (PS S-01: A report naming an unknown location must be rejected, not guessed at)
-  if (detectedLocation) {
-    const isKnown = known.some((k) => detectedLocation!.includes(k) || k.includes(detectedLocation!));
-    if (!isKnown) {
+  // 1. Detect location mentions (between Loc A and Loc B, or at/on/near Loc)
+  const betweenMatch = text.match(/between\s+([a-z0-9_\s]{2,20}?)\s+and\s+([a-z0-9_\s]{2,20}?)(?:,|\.|$|\s+traffic|\s+due|\s+waterlogging|\s+for|\s+at)/i);
+  let locFrom: string | undefined;
+  let locTo: string | undefined;
+
+  if (betweenMatch) {
+    const rawFrom = betweenMatch[1].trim();
+    const rawTo = betweenMatch[2].trim();
+
+    // Guardrail Check
+    const fromKnown = known.some((k) => rawFrom.includes(k) || k.includes(rawFrom));
+    const toKnown = known.some((k) => rawTo.includes(k) || k.includes(rawTo));
+
+    if (!fromKnown || !toKnown) {
+      const invalidLoc = !fromKnown ? rawFrom : rawTo;
       return {
         type: "ROAD_CLOSURE",
         severity: "HIGH",
         status: "REJECTED",
-        rejection_reason: `Report rejected: Location '${detectedLocation}' is unknown in the delivery network. Guessing is disabled by ReRoute policy (PS S-01).`,
-        vehicle_id: driverVehicleId,
+        rejection_reason: `Report rejected: Location '${invalidLoc}' is unknown in the delivery network. Location unrecognized, please state a valid sector.`,
+        voice_feedback: `Location unrecognized, please state a valid sector.`,
+        vehicle_id: vehicleId,
         delay_minutes: 0,
         raw_transcript: transcript,
-        extracted_summary: `REJECTED: Unknown location '${detectedLocation}' reported. Dispatcher verification required.`,
+        extracted_summary: `Location unrecognized, please state a valid sector (Unknown: '${invalidLoc}').`,
         recommended_action: "Reject report and request clarification from driver",
         requires_dispatcher_confirmation: true,
       };
+    }
+
+    // Normalize Node X to LOC_0X
+    const nodeFromNum = rawFrom.match(/node\s*(\d+)/i);
+    locFrom = nodeFromNum ? `LOC_0${nodeFromNum[1]}` : rawFrom.toUpperCase().replace(/\s+/g, "_");
+    const nodeToNum = rawTo.match(/node\s*(\d+)/i);
+    locTo = nodeToNum ? `LOC_0${nodeToNum[1]}` : rawTo.toUpperCase().replace(/\s+/g, "_");
+  } else {
+    // Single location detection: "at <loc>", "on <loc>", "near <loc>", "sector <loc>"
+    const singleLocMatch = text.match(/(?:at|on|near|in|sector)\s+([a-z0-9\s]{3,30}?)(?:,|\.|\s+due|\s+delayed|\s+blocked|\s+closed|\s+at|$)/i);
+    let detectedLocation = singleLocMatch ? singleLocMatch[1].trim() : null;
+
+    if (detectedLocation && (detectedLocation.startsWith("the ") || detectedLocation.startsWith("a "))) {
+      detectedLocation = detectedLocation.replace(/^(the|a)\s+/i, "");
+    }
+
+    if (detectedLocation) {
+      const isKnown = known.some((k) => detectedLocation!.includes(k) || k.includes(detectedLocation!));
+      if (!isKnown) {
+        return {
+          type: "ROAD_CLOSURE",
+          severity: "HIGH",
+          status: "REJECTED",
+          rejection_reason: `Report rejected: Location '${detectedLocation}' is unknown in the delivery network. Location unrecognized, please state a valid sector.`,
+          voice_feedback: `Location unrecognized, please state a valid sector.`,
+          vehicle_id: vehicleId,
+          delay_minutes: 0,
+          raw_transcript: transcript,
+          extracted_summary: `Location unrecognized, please state a valid sector (Unknown: '${detectedLocation}').`,
+          recommended_action: "Reject report and request clarification from driver",
+          requires_dispatcher_confirmation: true,
+        };
+      }
+      locFrom = detectedLocation;
     }
   }
 
@@ -99,12 +168,11 @@ export function parseVoiceTranscript(
     type = "URGENT_DELIVERY";
     severity = "HIGH";
     action = "Insert urgent delivery into optimal active vehicle route respecting capacity and deadlines";
-  } else if (text.includes("breakdown") || text.includes("failed") || text.includes("failure") || text.includes("flat tire") || text.includes("engine")) {
+  } else if (text.includes("breakdown") || text.includes("failed") || text.includes("failure") || text.includes("flat tire") || text.includes("engine") || text.includes("overheated")) {
     type = "VEHICLE_BREAKDOWN";
     severity = "CRITICAL";
     delay = 120;
-    failureTime = 600; // default 10:00 AM (600 mins from midnight)
-    // Extract stated time if present: "at 10:30", "at 9:15"
+    failureTime = 630; // default 10:30 AM (630 mins from midnight)
     const timeMatch = text.match(/at\s+(\d{1,2}):?(\d{2})?\s*(am|pm)?/i);
     if (timeMatch) {
       const hours = parseInt(timeMatch[1], 10);
@@ -112,18 +180,24 @@ export function parseVoiceTranscript(
       const isPm = timeMatch[3]?.toLowerCase() === "pm";
       failureTime = (isPm && hours !== 12 ? hours + 12 : hours) * 60 + mins;
     }
-    action = `Halt ${driverVehicleId} at failure time (${failureTime}m). Reassign and reassign remaining route stops to active fleet.`;
-  } else if (text.includes("closure") || text.includes("closed") || text.includes("bridge") || text.includes("blocked")) {
+    action = `Halt ${vehicleId} at failure time (${failureTime}m). Reassign and reassign remaining route stops to active fleet.`;
+  } else if (text.includes("closure") || text.includes("closed") || text.includes("bridge") || text.includes("blocked") || text.includes("waterlogging") || text.includes("flooded") || text.includes("halted")) {
     type = "ROAD_CLOSURE";
     severity = "HIGH";
-    delay = 30;
-    // Extract stated duration period if mentioned: "for 2 hours", "for 45 minutes"
-    const durMatch = text.match(/for\s+(\d+)\s*(hour|minute|min)/i);
-    if (durMatch) {
-      const val = parseInt(durMatch[1], 10);
-      durationPeriod = durMatch[2].startsWith("hour") ? val * 60 : val;
+    delay = 60;
+    // Extract stated duration period if mentioned: "an hour", "1 hour", "for 2 hours", "for 45 minutes"
+    if (text.includes("an hour") || text.includes("one hour") || text.includes("1 hour")) {
+      delay = 60;
+      durationPeriod = 60;
+    } else {
+      const durMatch = text.match(/for\s+(\d+)\s*(hour|minute|min)/i);
+      if (durMatch) {
+        const val = parseInt(durMatch[1], 10);
+        delay = durMatch[2].startsWith("hour") ? val * 60 : val;
+        durationPeriod = delay;
+      }
     }
-    action = `Increase segment travel time by +${delay}m for duration of ${durationPeriod}m. Trigger dynamic detour around blocked segment.`;
+    action = `Increase travel time between ${locFrom || "segment"} and ${locTo || "segment"} by +${delay}m for ${durationPeriod}m. Trigger dynamic detour.`;
   } else if (text.includes("nobody") || text.includes("not home") || text.includes("customer unavailable")) {
     type = "CUSTOMER_UNAVAILABLE";
     severity = "LOW";
@@ -146,15 +220,21 @@ export function parseVoiceTranscript(
     severity,
     status: "VALID",
     order_id: orderId,
-    vehicle_id: driverVehicleId,
+    vehicle_id: vehicleId,
     failure_time_minutes: failureTime,
     delay_minutes: delay,
+    delay_min: delay,
+    from: locFrom,
+    to: locTo,
     duration_period_minutes: durationPeriod,
-    location_from: detectedLocation || undefined,
+    location_from: locFrom,
+    location_to: locTo,
     raw_transcript: transcript,
-    extracted_summary: `${type.replace(/_/g, " ")} validated at ${detectedLocation || "known route node"}. Delay: ${delay}m.`,
+    extracted_summary: locTo
+      ? `${type.replace(/_/g, " ")} reported between ${locFrom} and ${locTo}. Delay: ${delay}m (${vehicleId}).`
+      : `${type.replace(/_/g, " ")} at ${locFrom || "active route"}. Delay: ${delay}m (${vehicleId}).`,
     recommended_action: action,
-    requires_dispatcher_confirmation: true, // Dispatcher must confirm before taking effect
+    requires_dispatcher_confirmation: true,
   };
 }
 
