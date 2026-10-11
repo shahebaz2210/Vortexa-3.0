@@ -209,18 +209,18 @@
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 124 | Install and configure MapLibre GL JS | TRD §9.1 | `[ ]` |
-| 125 | Set up OpenStreetMap tiles with permanent visible attribution | TRD OSM-1 | `[ ]` |
-| 126 | Render vehicle markers (28px circles, fill by state) | Design §9.4 | `[ ]` |
-| 127 | Render delivery stop markers (24px numbered circles by state) | Design §9.4 | `[ ]` |
-| 128 | Render route lines: committed (solid), proposed (dashed), completed (thin) | Design §5 | `[ ]` |
-| 129 | Render blocked roads (destructive with X marker) | Design §5 | `[ ]` |
-| 130 | Render incident locations on map | TRD §9.1 | `[ ]` |
-| 131 | Build map controls: zoom, recenter, legend | Design §8.2 | `[ ]` |
-| 132 | Implement Valhalla routing adapter: route geometry, travel-time matrices | TRD §9.3 | `[ ]` |
-| 133 | Implement matrix validation (ordering, missing results, unreachable) | TRD VAL-2 | `[ ]` |
-| 134 | Implement fallback to precomputed demo matrix with "offline" label | PRD AC-19.4 | `[ ]` |
-| 135 | Implement Photon geocoder adapter (optional) | TRD §9.4 | `[ ]` |
+| 124 | Install and configure MapLibre GL JS | TRD §9.1 | `[x]` |
+| 125 | Set up OpenStreetMap tiles with permanent visible attribution | TRD OSM-1 | `[x]` |
+| 126 | Render vehicle markers (28px circles, fill by state) | Design §9.4 | `[x]` |
+| 127 | Render delivery stop markers (24px numbered circles by state) | Design §9.4 | `[x]` |
+| 128 | Render route lines: committed (solid), proposed (dashed), completed (thin) | Design §5 | `[x]` |
+| 129 | Render blocked roads (destructive with X marker) | Design §5 | `[x]` |
+| 130 | Render incident locations on map | TRD §9.1 | `[x]` |
+| 131 | Build map controls: zoom, recenter, legend | Design §8.2 | `[x]` |
+| 132 | Implement Valhalla routing adapter: route geometry, travel-time matrices | TRD §9.3 | `[x]` |
+| 133 | Implement matrix validation (ordering, missing results, unreachable) | TRD VAL-2 | `[x]` |
+| 134 | Implement fallback to precomputed demo matrix with "offline" label | PRD AC-19.4 | `[x]` |
+| 135 | Implement Photon geocoder adapter (optional) | TRD §9.4 | `[x]` |
 
 ---
 

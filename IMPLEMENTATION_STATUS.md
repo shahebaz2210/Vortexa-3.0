@@ -11,9 +11,9 @@
 | Metric | Count | Percentage |
 |---|---|---|
 | **Total Atomic Tasks** | **358** | **100%** |
-| **Completed Tasks** | **123** | **34.4%** |
-| **Remaining Tasks** | **235** | **65.6%** |
-| **Current Active Phase** | **Phase 5 — Map & Routing Integration (Valhalla & MapLibre) (Tasks 124–135)** | — |
+| **Completed Tasks** | **135** | **37.7%** |
+| **Remaining Tasks** | **223** | **62.3%** |
+| **Current Active Phase** | **Phase 6 — Optimization Engine (Python / OR-Tools VRPTW) (Tasks 136–169)** | — |
 
 ---
 
@@ -30,8 +30,8 @@
 | **Phase 2** | **Authentication & Authorization** | 66–75 | 10 | 0 | `[x]` Complete (100%) |
 | **Phase 3** | **Design System & Base UI Foundation** | 76–104 | 29 | 0 | `[x]` Complete (100%) |
 | **Phase 4** | **Core CRUD APIs & Plan Creation (Excel/CSV Ingestion)** | 105–123 | 19 | 0 | `[x]` Complete (100%) |
-| **Phase 5** | **Map & Routing Integration (Valhalla & MapLibre)** | 124–135 | 0 | 12 | `[ ]` Queued |
-| **Phase 6** | **Optimization Engine (Python / OR-Tools VRPTW)** | 136–169 | 0 | 34 | `[ ]` Queued |
+| **Phase 5** | **Map & Routing Integration (Valhalla & MapLibre)** | 124–135 | 12 | 0 | `[x]` Complete (100%) |
+| **Phase 6** | **Optimization Engine (Python / OR-Tools VRPTW)** | 136–169 | 0 | 34 | `[ ]` In Progress |
 | **Phase 7** | **Plan View & Results UI** | 170–178 | 0 | 9 | `[ ]` Queued |
 | **Phase 8** | **Incident Reporting & Validation (Voice STT / ElevenLabs)** | 179–209 | 0 | 31 | `[ ]` Queued |
 | **Phase 9** | **Dynamic Re-optimization & Comparison (KEPT/MOVED/BROKEN)** | 210–233 | 0 | 24 | `[ ]` Queued |

@@ -8,6 +8,7 @@ import { StatusBadge } from "@/components/ui/status-badge";
 import { DataTable, Column } from "@/components/ui/data-table";
 import { Button } from "@/components/ui/button";
 import { Alert } from "@/components/ui/alert";
+import { FleetMap } from "@/components/map/fleet-map";
 import {
   Truck,
   Package,
@@ -231,6 +232,17 @@ export default function ControlRoomPage() {
               periodLabel: "Truck Beta",
             }}
           />
+        </div>
+
+        {/* Real-time Fleet Map Display */}
+        <div className="flex flex-col gap-2">
+          <div className="flex items-center justify-between">
+            <h2 className="text-base font-semibold text-[var(--foreground)]">
+              Real-Time Fleet Routing & Node Network
+            </h2>
+            <span className="text-xs font-mono text-[var(--muted-foreground)]">Valhalla Engine · PostGIS Active</span>
+          </div>
+          <FleetMap />
         </div>
 
         {/* Fleet Operational Table */}
