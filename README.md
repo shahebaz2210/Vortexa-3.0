@@ -5,7 +5,7 @@
 
 *When the morning plan breaks, ReRoute re-plans only what is left, and a human stays in control.*
 
-**Team Hackoholics · VORTEXA 3.0 · Domain 4: Supply Chain & Optimization · Problem S-01**
+**Team TechBaazi · VORTEXA 3.0 · Domain 4: Supply Chain & Optimization · Problem S-01**
 
 </div>
 
@@ -32,7 +32,7 @@
 A delivery company builds an optimized morning plan: each truck gets a list of customers, each customer has a time window, and each truck has a weight/volume limit. By mid-morning reality intervenes: a truck breaks down, a road is closed, or an urgent order arrives. Re-planning by hand in a spreadsheet, with capacity limits and time windows interacting, is slow and error-prone. Dispatchers either rebuild everything (and confuse drivers and customers) or patch things by guesswork (and miss windows).
 
 ### Our solution
-**ReRoute** is a dispatcher-facing system that:
+**DispatchX** is a dispatcher-facing system that:
 
 1. **Builds a feasible morning plan** with Google OR-Tools (VRPTW), including explicit arrival times, service durations and **waiting time** when a truck arrives before a window opens.
 2. **Accepts disruptions as plain text or a voice report**, and extracts structured fields (incident type, vehicle, location, time, completed order).
