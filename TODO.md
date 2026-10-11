@@ -173,35 +173,35 @@
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 105 | `GET /api/v1/fleet` — list vehicles with pagination/filters | TRD §12 | `[ ]` |
-| 106 | `PATCH /api/v1/fleet/:id/position` — update vehicle position | TRD §12 | `[ ]` |
-| 107 | Build Fleet Overview page: vehicle list, status badges, capacity bars, search/sort | Appflow R-06 | `[ ]` |
-| 108 | Build Vehicle Detail page: capacity, route, position, stops | Appflow R-07 | `[ ]` |
-| 109 | Build `FleetStatusCard` component | Design §9.4 | `[ ]` |
+| 105 | `GET /api/v1/fleet` — list vehicles with pagination/filters | TRD §12 | `[x]` |
+| 106 | `PATCH /api/v1/fleet/:id/position` — update vehicle position | TRD §12 | `[x]` |
+| 107 | Build Fleet Overview page: vehicle list, status badges, capacity bars, search/sort | Appflow R-06 | `[x]` |
+| 108 | Build Vehicle Detail page: capacity, route, position, stops | Appflow R-07 | `[x]` |
+| 109 | Build `FleetStatusCard` component | Design §9.4 | `[x]` |
 
 ### 4.2 Orders
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 110 | `GET /api/v1/orders` — list deliveries | TRD §12 | `[ ]` |
-| 111 | `POST /api/v1/orders` — create delivery with Zod validation | TRD §12 | `[ ]` |
-| 112 | `PATCH /api/v1/orders/:id` — update permitted fields | TRD §12 | `[ ]` |
-| 113 | Implement all validation rules (weight/volume>0, windows, unique ref, ORDER_EXCEEDS_ALL_VEHICLES) | PRD DM-01..07 | `[ ]` |
+| 110 | `GET /api/v1/orders` — list deliveries | TRD §12 | `[x]` |
+| 111 | `POST /api/v1/orders` — create delivery with Zod validation | TRD §12 | `[x]` |
+| 112 | `PATCH /api/v1/orders/:id` — update permitted fields | TRD §12 | `[x]` |
+| 113 | Implement all validation rules (weight/volume>0, windows, unique ref, ORDER_EXCEEDS_ALL_VEHICLES) | PRD DM-01..07 | `[x]` |
 
 ### 4.3 Plan Creation
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 114 | `POST /api/v1/plans` — create plan from orders + vehicles | PRD US-02 | `[ ]` |
-| 115 | Implement CSV upload: parse, validate, reject on error | PRD US-03 | `[ ]` |
-| 116 | CSV hardening: reject >2MB, formula injection chars | PRD AC-03.3 | `[ ]` |
-| 117 | `GET /api/v1/plans/{id}` — full plan with active version | PRD E-04 | `[ ]` |
-| 118 | `GET /api/v1/plans` — paginated plan list | PRD E-22 | `[ ]` |
-| 119 | `GET /api/v1/plans/{id}/versions/{n}` — specific version | PRD E-14 | `[ ]` |
-| 120 | Build Create Delivery Plan page: form, CSV upload, sample loader | PRD Screen 2 | `[ ]` |
-| 121 | Build Planning Data Review page: parsed rows, warnings, "Generate plan" button | PRD Screen 3 | `[ ]` |
-| 122 | Per-row error display with code, row#, field, message | PRD US-03 | `[ ]` |
-| 123 | Validation summary with focus management | PRD US-03 | `[ ]` |
+| 114 | `POST /api/v1/plans` — create plan from orders + vehicles | PRD US-02 | `[x]` |
+| 115 | Implement CSV upload: parse, validate, reject on error | PRD US-03 | `[x]` |
+| 116 | CSV hardening: reject >2MB, formula injection chars | PRD AC-03.3 | `[x]` |
+| 117 | `GET /api/v1/plans/{id}` — full plan with active version | PRD E-04 | `[x]` |
+| 118 | `GET /api/v1/plans` — paginated plan list | PRD E-22 | `[x]` |
+| 119 | `GET /api/v1/plans/{id}/versions/{n}` — specific version | PRD E-14 | `[x]` |
+| 120 | Build Create Delivery Plan page: form, CSV upload, sample loader | PRD Screen 2 | `[x]` |
+| 121 | Build Planning Data Review page: parsed rows, warnings, "Generate plan" button | PRD Screen 3 | `[x]` |
+| 122 | Per-row error display with code, row#, field, message | PRD US-03 | `[x]` |
+| 123 | Validation summary with focus management | PRD US-03 | `[x]` |
 
 ---
 

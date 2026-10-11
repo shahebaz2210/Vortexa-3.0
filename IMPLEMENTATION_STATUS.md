@@ -11,9 +11,9 @@
 | Metric | Count | Percentage |
 |---|---|---|
 | **Total Atomic Tasks** | **358** | **100%** |
-| **Completed Tasks** | **75** | **20.9%** |
-| **Remaining Tasks** | **283** | **79.1%** |
-| **Current Active Phase** | **Phase 3 — Design System & Fleet/Order Management API (Tasks 76–119)** | — |
+| **Completed Tasks** | **123** | **34.4%** |
+| **Remaining Tasks** | **235** | **65.6%** |
+| **Current Active Phase** | **Phase 5 — Map & Routing Integration (Valhalla & MapLibre) (Tasks 124–135)** | — |
 
 ---
 
@@ -28,8 +28,8 @@
 | ↳ 1.4 | *Row-Level Security (RLS & Isolation)* | 51–56 | 6 | 0 | `[x]` Complete |
 | ↳ 1.5 | *Seed Data & Demo Fixtures (DEMO-A to E)* | 57–65 | 9 | 0 | `[x]` Complete |
 | **Phase 2** | **Authentication & Authorization** | 66–75 | 10 | 0 | `[x]` Complete (100%) |
-| **Phase 3** | **Fleet & Order Management API & Design System** | 76–119 | 0 | 44 | `[ ]` In Progress |
-| **Phase 4** | **Delivery Plan Creation & CSV/Excel Ingestion** | 120–123 | 0 | 4 | `[ ]` Critical (Excel/CSV) |
+| **Phase 3** | **Design System & Base UI Foundation** | 76–104 | 29 | 0 | `[x]` Complete (100%) |
+| **Phase 4** | **Core CRUD APIs & Plan Creation (Excel/CSV Ingestion)** | 105–123 | 19 | 0 | `[x]` Complete (100%) |
 | **Phase 5** | **Map & Routing Integration (Valhalla & MapLibre)** | 124–135 | 0 | 12 | `[ ]` Queued |
 | **Phase 6** | **Optimization Engine (Python / OR-Tools VRPTW)** | 136–169 | 0 | 34 | `[ ]` Queued |
 | **Phase 7** | **Plan View & Results UI** | 170–178 | 0 | 9 | `[ ]` Queued |
