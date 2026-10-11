@@ -13,6 +13,7 @@ import {
   AlertTriangle,
   BarChart3,
   Settings,
+  Users,
 } from "lucide-react";
 
 export interface NavItem {
@@ -27,9 +28,10 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "Dashboard", href: "/", icon: LayoutDashboard },
   { label: "Orders", href: "/orders", icon: Package },
   { label: "Fleet", href: "/fleet", icon: Truck },
+  { label: "Drivers", href: "/drivers", icon: Users, badge: "6 Active", badgeVariant: "info" },
   { label: "Route Optimization", href: "/plans", icon: Route },
   { label: "Disruptions", href: "/disruptions", icon: AlertTriangle, badge: 2, badgeVariant: "danger" },
-  { label: "Driver Web Portal", href: "/driver", icon: Truck },
+  { label: "Driver In-Cab Portal", href: "/driver", icon: Truck },
   { label: "Audit Trail", href: "/audit", icon: CalendarDays },
 ];
 

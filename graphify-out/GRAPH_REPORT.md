@@ -1,17 +1,17 @@
 # Graph Report - Vortexa 3.0  (2026-10-11)
 
 ## Corpus Check
-- 130 files · ~99,801 words
+- 132 files · ~104,320 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 9 file(s) not represented in the graph (top: (none) 3, .example 1, .ico 1)
 
 ## Summary
-- 780 nodes · 1237 edges · 61 communities (54 shown, 7 thin omitted)
+- 790 nodes · 1248 edges · 63 communities (55 shown, 8 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 21 edges (avg confidence: 0.94)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `07009987`
+- Built from commit: `a87a74f8`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -37,7 +37,7 @@
 - DispatchX (ReRoute / VORTEXA 3.0) — Project TODO
 - models.py
 - skeleton.tsx
-- compare/page.tsx
+- mock-data.ts
 - dispatchx-optimizer
 - ⚡ DispatchX (VORTEXA 3.0 / ReRoute)
 - zod
@@ -76,15 +76,17 @@
 - UI Reference — Design Inspiration
 - audit-logger.ts
 - fleet-map.tsx
+- valhalla.ts
+- drivers/route.ts
 
 ## God Nodes (most connected - your core abstractions)
-1. `next` - 42 edges
-2. `react` - 40 edges
+1. `next` - 45 edges
+2. `react` - 41 edges
 3. `Button` - 32 edges
 4. `AppShell()` - 31 edges
-5. `lucide-react` - 29 edges
+5. `lucide-react` - 31 edges
 6. `DispatchX (ReRoute / VORTEXA 3.0) — Project TODO` - 24 edges
-7. `StatusBadge()` - 19 edges
+7. `StatusBadge()` - 17 edges
 8. `compilerOptions` - 16 edges
 9. `solve_vrptw()` - 16 edges
 10. `DataTable()` - 14 edges
@@ -104,11 +106,11 @@
 ## Import Cycles
 - None detected.
 
-## Communities (61 total, 7 thin omitted)
+## Communities (63 total, 8 thin omitted)
 
 ### Community 0 - "react"
 Cohesion: 0.06
-Nodes (72): AuditEntry, AuditTrailPage(), DisruptionsPage(), Incident, DriverPortalPage(), DriverStop, VehicleDetailContent(), VehicleDetailPage() (+64 more)
+Nodes (78): AuditEntry, AuditTrailPage(), DisruptionsPage(), Incident, DriverStop, StandaloneDriverPortal(), AVAILABLE_VEHICLES, DriverManagementPage() (+70 more)
 
 ### Community 1 - "next"
 Cohesion: 0.09
@@ -120,7 +122,7 @@ Nodes (47): BrokenReasonCode, BrokenReasonCodeSchema, ComparisonClass, Compariso
 
 ### Community 3 - "web/package.json"
 Cohesion: 0.05
-Nodes (38): eslintConfig, dependencies, bcryptjs, @dispatchx/contracts, lucide-react, next, react, react-dom (+30 more)
+Nodes (39): eslintConfig, dependencies, bcryptjs, @dispatchx/contracts, lucide-react, next, react, react-dom (+31 more)
 
 ### Community 4 - "schema.ts"
 Cohesion: 0.06
@@ -135,8 +137,8 @@ Cohesion: 0.10
 Nodes (20): description, devDependencies, prettier, typescript, vitest, engines, node, npm (+12 more)
 
 ### Community 7 - "plan-parser.ts"
-Cohesion: 0.16
-Nodes (13): CreateOrderSchema, inMemoryOrders, OrderRecord, POST(), FLEET_MAX_VOLUME_M3, FLEET_MAX_WEIGHT_KG, FORMULA_INJECTION_CHARS, hasFormulaInjection() (+5 more)
+Cohesion: 0.17
+Nodes (12): CreateOrderSchema, inMemoryOrders, OrderRecord, POST(), FLEET_MAX_VOLUME_M3, FLEET_MAX_WEIGHT_KG, FORMULA_INJECTION_CHARS, hasFormulaInjection() (+4 more)
 
 ### Community 8 - "database/package.json"
 Cohesion: 0.10
@@ -190,9 +192,9 @@ Nodes (16): health_check(), optimize(), MetricEstimates, ObjectiveWeights, Optim
 Cohesion: 0.67
 Nodes (3): Skeleton(), SkeletonProps, TableSkeletonRows()
 
-### Community 21 - "compare/page.tsx"
-Cohesion: 0.06
-Nodes (39): POST(), POST(), planLockVersions, jobQueue, POST(), POST(), POST(), PlanCompareContent() (+31 more)
+### Community 21 - "mock-data.ts"
+Cohesion: 0.07
+Nodes (31): POST(), POST(), planLockVersions, jobQueue, POST(), POST(), POST(), Disruption (+23 more)
 
 ### Community 24 - "⚡ DispatchX (VORTEXA 3.0 / ReRoute)"
 Cohesion: 0.17
@@ -322,22 +324,26 @@ Nodes (3): Dashboard Reference, Plan Schedule Reference, UI Reference — Design
 Cohesion: 0.29
 Nodes (5): DEFAULT_MARKERS, DEFAULT_ROUTES, FleetMapProps, MapMarker, RouteLine
 
+### Community 61 - "valhalla.ts"
+Cohesion: 0.38
+Nodes (5): DEMO_FALLBACK_MATRIX, fetchTravelTimeMatrix(), LatLng, MatrixResponse, RouteGeometry
+
 ## Knowledge Gaps
 - **17 isolated node(s):** `@dispatchx/contracts`, `react-dom`, `@tailwindcss/turbopack`, `@types/bcryptjs`, `@types/node` (+12 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 476 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 483 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `next` connect `next` to `react`, `login/route.ts`, `web/package.json`, `header.tsx`, `plan-parser.ts`, `fleet/route.ts`, `metrics.ts`, `compare/page.tsx`, `zod`, `session.ts`?**
-  _High betweenness centrality (0.313) - this node is a cross-community bridge._
+- **Why does `next` connect `next` to `react`, `login/route.ts`, `web/package.json`, `header.tsx`, `plan-parser.ts`, `fleet/route.ts`, `metrics.ts`, `mock-data.ts`, `zod`, `session.ts`, `drivers/route.ts`?**
+  _High betweenness centrality (0.322) - this node is a cross-community bridge._
 - **What connects `@dispatchx/contracts`, `react-dom`, `@tailwindcss/turbopack` to the rest of the system?**
   _17 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `react` be split into smaller, more focused modules?**
-  _Cohesion score 0.06367695593088721 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.057547956630525435 - nodes in this community are weakly interconnected._
 - **Why does `zod` connect `zod` to `login/route.ts`, `schemas.ts`, `src/env.ts`, `plan-parser.ts`, `contracts/package.json`?**
-  _High betweenness centrality (0.086) - this node is a cross-community bridge._
+  _High betweenness centrality (0.085) - this node is a cross-community bridge._
 - **Should `next` be split into smaller, more focused modules?**
   _Cohesion score 0.08695652173913043 - nodes in this community are weakly interconnected._
 - **Why does `DispatchX (ReRoute / VORTEXA 3.0) — Project TODO` connect `DispatchX (ReRoute / VORTEXA 3.0) — Project TODO` to `Phase 4 — Core CRUD APIs (Tasks 105–123)`, `Phase 1 — Project Foundation & Infrastructure (Tasks 1–65)`, `Phase 19 — Testing (Tasks 311–338)`, `Phase 6 — Optimization Engine (Tasks 136–169)`, `Phase 13 — Notifications & Briefings (Tasks 255–272)`, `Phase 8 — Incident Reporting & Validation (Tasks 179–209)`, `Phase 9 — Dynamic Re-optimization (Tasks 210–233)`, `Phase 3 — Design System & UI Foundation (Tasks 76–104)`, `UI Reference — Design Inspiration`?**
