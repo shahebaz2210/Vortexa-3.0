@@ -162,9 +162,9 @@
     "semantic_hash": ""
   },
   "apps/web/components/shell/sidebar.tsx": {
-    "mtime": 1791727483.4720316,
-    "seen": 1791727640.576695,
-    "ast_hash": "1333cfd8ef7e93a3766aa68becc94150",
+    "mtime": 1791727810.2496579,
+    "seen": 1791728070.744607,
+    "ast_hash": "dd5f41194fb0918558d772447df47d8d",
     "semantic_hash": ""
   },
   "apps/web/components/shell/skip-link.tsx": {
@@ -587,12 +587,6 @@
     "ast_hash": "2bcba77952c0e05c79c580f59c72cfa0",
     "semantic_hash": ""
   },
-  "apps/web/components/layout/sidebar.tsx": {
-    "mtime": 1791723864.97748,
-    "seen": 1791723960.0230513,
-    "ast_hash": "ae22c0ceee2570d3cef63cf6c93bd7d6",
-    "semantic_hash": ""
-  },
   "apps/web/lib/mock-data.ts": {
     "mtime": 1791720503.3408847,
     "seen": 1791720694.4915483,
@@ -801,12 +795,6 @@
     "mtime": 1791725063.5804877,
     "seen": 1791725268.347275,
     "ast_hash": "cfe91f6d208e931f82b3c161935d42aa",
-    "semantic_hash": ""
-  },
-  "apps/web/app/drivers/page.tsx": {
-    "mtime": 1791727510.5499935,
-    "seen": 1791727640.5732994,
-    "ast_hash": "6bb496b2f84eef251525e77527527f09",
     "semantic_hash": ""
   },
   "apps/web/components/disruptions/hands-free-disruption-modal.tsx": {
