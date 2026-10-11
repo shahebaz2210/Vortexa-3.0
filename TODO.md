@@ -105,16 +105,16 @@
 
 | # | Task | Source | Status |
 |---|---|---|---|
-| 66 | Implement `POST /api/v1/auth/login` endpoint | PRD US-01 | `[ ]` |
-| 67 | Implement session: HttpOnly, Secure, SameSite=Lax cookie; rotate session ID | PRD AC-01.1 | `[ ]` |
-| 68 | Implement idle expiry (30 min) and absolute expiry (8 h) | PRD AC-01.4 | `[ ]` |
-| 69 | Implement CSRF protection (`X-CSRF-Token` header on mutations) | PRD AC-01.5 | `[ ]` |
-| 70 | Implement rate limiting: 5 failures/15 min → 429 with Retry-After | PRD AC-01.3 | `[ ]` |
-| 71 | Implement generic "Invalid email or password" error | PRD AC-01.2 | `[ ]` |
-| 72 | Implement `POST /api/v1/auth/logout` | PRD E-02 | `[ ]` |
-| 73 | Implement RBAC middleware (DISPATCHER, MANAGER) | PRD §1.3 | `[ ]` |
-| 74 | Write audit events: AUTH_LOGIN_SUCCESS, AUTH_LOGIN_FAILURE | PRD AC-01.1 | `[ ]` |
-| 75 | Write auth tests: login, invalid creds, lockout, session expiry, CSRF | PRD AC-01 | `[ ]` |
+| 66 | Implement `POST /api/v1/auth/login` endpoint | PRD US-01 | `[x]` |
+| 67 | Implement session: HttpOnly, Secure, SameSite=Lax cookie; rotate session ID | PRD AC-01.1 | `[x]` |
+| 68 | Implement idle expiry (30 min) and absolute expiry (8 h) | PRD AC-01.4 | `[x]` |
+| 69 | Implement CSRF protection (`X-CSRF-Token` header on mutations) | PRD AC-01.5 | `[x]` |
+| 70 | Implement rate limiting: 5 failures/15 min → 429 with Retry-After | PRD AC-01.3 | `[x]` |
+| 71 | Implement generic "Invalid email or password" error | PRD AC-01.2 | `[x]` |
+| 72 | Implement `POST /api/v1/auth/logout` | PRD E-02 | `[x]` |
+| 73 | Implement RBAC middleware (DISPATCHER, MANAGER) | PRD §1.3 | `[x]` |
+| 74 | Write audit events: AUTH_LOGIN_SUCCESS, AUTH_LOGIN_FAILURE | PRD AC-01.1 | `[x]` |
+| 75 | Write auth tests: login, invalid creds, lockout, session expiry, CSRF | PRD AC-01 | `[x]` |
 
 ---
 
