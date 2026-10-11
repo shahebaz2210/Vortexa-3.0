@@ -14,7 +14,7 @@
 | # | Task | Source | Status |
 |---|---|---|---|
 | 1 | Initialize monorepo root with `package.json`, `.gitignore`, `.editorconfig`, `README.md` | TRD §4 | `[x]` |
-| 2 | Create directory scaffold: `apps/web/`, `services/optimizer/`, `packages/contracts/`, `packages/database/`, `infra/docker/`, `infra/migrations/` | TRD §4 | `[ ]` |
+| 2 | Create directory scaffold: `apps/web/`, `services/optimizer/`, `packages/contracts/`, `packages/database/`, `infra/docker/`, `infra/migrations/` | TRD §4 | `[x]` |
 | 3 | Initialize `apps/web/` as Next.js 15 App Router project with TypeScript 5.x strict mode | TRD §3 | `[ ]` |
 | 4 | Install and configure Tailwind CSS v4 in `apps/web/` | TRD §3, Design §14 | `[ ]` |
 | 5 | Install `lucide-react` icon library | Design §2.1 | `[ ]` |
