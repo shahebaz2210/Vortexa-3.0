@@ -1,318 +1,237 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
-import {
-  Truck,
-  Package,
-  MapPin,
-  Clock,
-  CheckCircle2,
-  AlertTriangle,
-  Mic,
-  Send,
-  Navigation,
-  Phone,
-  ChevronRight,
-  ShieldCheck,
-} from "lucide-react";
+import { AppShell } from "@/components/shell/app-shell";
 import { Button } from "@/components/ui/button";
 import { StatusBadge } from "@/components/ui/status-badge";
-import { Alert } from "@/components/ui/alert";
-import { Modal } from "@/components/ui/modal";
+import { VoiceRecorder } from "@/components/driver/voice-recorder";
+import { ProofOfDeliveryModal } from "@/components/driver/proof-of-delivery";
 
 interface DriverStop {
   id: string;
-  orderRef: string;
+  orderId: string;
   customerName: string;
   address: string;
-  timeWindow: string;
-  weightKg: number;
-  status: "PENDING" | "IN_TRANSIT" | "DELIVERED" | "FAILED";
-  notes?: string;
+  plannedArrival: string;
+  packageWeight: number;
+  packageVolume: number;
+  status: "COMPLETED" | "ACTIVE" | "PENDING";
+  specialNotes?: string;
 }
 
-export default function DriverWebPortalPage() {
-  const [activeStopIndex, setActiveStopIndex] = useState(1);
-  const [isReportingDisruption, setIsReportingDisruption] = useState(false);
-  const [disruptionText, setDisruptionText] = useState("");
-  const [isRecordingVoice, setIsRecordingVoice] = useState(false);
-  const [reportedAlert, setReportedAlert] = useState<string | null>(null);
+export default function DriverPortalPage() {
+  const [vehicleId] = useState("VH-001 (SF-789-TX)");
+  const [isPlayingBriefing, setIsPlayingBriefing] = useState(false);
+  const [selectedPodStop, setSelectedPodStop] = useState<DriverStop | null>(null);
 
   const [stops, setStops] = useState<DriverStop[]>([
     {
       id: "STOP-01",
-      orderRef: "DEPOT-01",
-      customerName: "Central Logistics Hub",
-      address: "Depot Departure Gate 4",
-      timeWindow: "08:00 - 08:30",
-      weightKg: 0,
-      status: "DELIVERED",
+      orderId: "ORD-9901",
+      customerName: "Apex BioLabs",
+      address: "185 Berry St, Suite 400, SF",
+      plannedArrival: "08:45 AM",
+      packageWeight: 45,
+      packageVolume: 0.35,
+      status: "COMPLETED",
     },
     {
       id: "STOP-02",
-      orderRef: "ORD-1001",
-      customerName: "Astra Tech Labs",
-      address: "12 Innovation Way, Tech District",
-      timeWindow: "08:30 - 11:30",
-      weightKg: 240,
-      status: "DELIVERED",
+      orderId: "ORD-9902",
+      customerName: "Marina Grocers",
+      address: "2200 Chestnut St, SF",
+      plannedArrival: "09:30 AM",
+      packageWeight: 120,
+      packageVolume: 1.1,
+      status: "ACTIVE",
+      specialNotes: "Dock entrance in alleyway; code 4490",
     },
     {
       id: "STOP-03",
-      orderRef: "ORD-1002",
-      customerName: "BioGen Research",
-      address: "45 Medical Sciences Park",
-      timeWindow: "09:00 - 12:00",
-      weightKg: 450,
-      status: "IN_TRANSIT",
+      orderId: "ORD-9903",
+      customerName: "Mission Culinary Arts",
+      address: "750 Valencia St, SF",
+      plannedArrival: "10:15 AM",
+      packageWeight: 85,
+      packageVolume: 0.7,
+      status: "PENDING",
     },
     {
       id: "STOP-04",
-      orderRef: "ORD-1004",
-      customerName: "Vortex Quantum Hub",
-      address: "101 Silicon Quay",
-      timeWindow: "11:00 - 15:00",
-      weightKg: 380,
+      orderId: "ORD-9904",
+      customerName: "Presidio Diagnostic Clinic",
+      address: "102 Montgomery St, SF",
+      plannedArrival: "11:20 AM",
+      packageWeight: 28,
+      packageVolume: 0.2,
       status: "PENDING",
     },
   ]);
 
-  const activeStop = stops[activeStopIndex] || stops[2];
-
-  const handleMarkDelivered = (index: number) => {
+  const markDelivered = (stopId: string) => {
     setStops((prev) =>
-      prev.map((s, idx) => (idx === index ? { ...s, status: "DELIVERED" } : s))
+      prev.map((s) => (s.id === stopId ? { ...s, status: "COMPLETED" } : s))
     );
-    if (index + 1 < stops.length) {
-      setActiveStopIndex(index + 1);
-      setStops((prev) =>
-        prev.map((s, idx) => (idx === index + 1 ? { ...s, status: "IN_TRANSIT" } : s))
-      );
+  };
+
+  const playShiftBriefing = async () => {
+    setIsPlayingBriefing(true);
+    const briefingText =
+      "Good morning driver. You are operating vehicle VH 001. Today you have four scheduled stops across San Francisco. Your next immediate stop is Marina Grocers on Chestnut Street, planned for 9:30 AM. Drive safely and use the voice microphone if you encounter any disruptions.";
+
+    try {
+      const res = await fetch("/api/v1/voice/speak", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text: briefingText }),
+      });
+
+      if (res.headers.get("content-type")?.includes("audio/mpeg")) {
+        const blob = await res.blob();
+        const audio = new Audio(URL.createObjectURL(blob));
+        audio.onended = () => setIsPlayingBriefing(false);
+        audio.play();
+        return;
+      }
+    } catch {
+      // Fallback
+    }
+
+    if (typeof window !== "undefined" && "speechSynthesis" in window) {
+      const utterance = new SpeechSynthesisUtterance(briefingText);
+      utterance.onend = () => setIsPlayingBriefing(false);
+      window.speechSynthesis.speak(utterance);
+    } else {
+      setIsPlayingBriefing(false);
     }
   };
 
-  const handleSendDisruption = () => {
-    if (!disruptionText.trim()) return;
-    setReportedAlert(`Incident sent to Dispatcher: "${disruptionText}". Route replan awaiting approval.`);
-    setIsReportingDisruption(false);
-    setDisruptionText("");
-  };
-
-  const handleSimulateVoiceInput = () => {
-    setIsRecordingVoice(true);
-    setTimeout(() => {
-      setIsRecordingVoice(false);
-      setDisruptionText("Truck breakdown near Industrial bypass. Engine overheating, need roadside assistance and remaining orders reallocated.");
-    }, 2000);
-  };
-
   return (
-    <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)] flex flex-col antialiased">
-      {/* Driver Header */}
-      <header className="h-14 border-b border-[var(--border)] bg-[var(--surface-elevated)] px-4 sm:px-8 flex items-center justify-between sticky top-0 z-30 shadow-xs">
-        <div className="flex items-center gap-3">
-          <div className="h-8 w-8 rounded-lg bg-[var(--primary)] flex items-center justify-center text-white font-bold">
-            <Truck className="h-4 w-4" />
-          </div>
+    <AppShell>
+      <div className="max-w-4xl mx-auto space-y-6">
+        {/* Driver Header */}
+        <div className="bg-card border border-border rounded-xl p-5 shadow-sm flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
             <div className="flex items-center gap-2">
-              <span className="font-bold text-sm">Truck Alpha (TRK-01)</span>
-              <span className="text-[10px] px-1.5 py-0.5 rounded bg-[var(--success-subtle)] text-[var(--success-subtle-foreground)] font-mono font-semibold">
-                ON SHIFT
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="text-xs font-semibold text-muted uppercase tracking-wider">
+                Active Shift • Web Driver Terminal
               </span>
             </div>
-            <p className="text-[11px] text-[var(--muted-foreground)]">Driver: Marcus Vance · 3/4 Stops Completed</p>
+            <h1 className="text-2xl font-bold text-foreground mt-1">Driver Portal: Alex Vance</h1>
+            <p className="text-sm text-muted">
+              Assigned Vehicle: <span className="font-semibold text-foreground">{vehicleId}</span>
+            </p>
           </div>
-        </div>
 
-        <div className="flex items-center gap-2">
-          <Link href="/">
-            <Button variant="outline" size="sm">
-              Switch to Dispatcher
+          <div className="flex items-center gap-2">
+            <Button
+              variant="outline"
+              onClick={playShiftBriefing}
+              disabled={isPlayingBriefing}
+              className="flex items-center gap-2 text-xs border-primary/40 text-primary hover:bg-primary/10"
+            >
+              <span>{isPlayingBriefing ? "🔊 Playing..." : "🗣️ Audio Shift Briefing"}</span>
             </Button>
-          </Link>
-          <Button
-            variant="danger"
-            size="sm"
-            leftIcon={<AlertTriangle className="h-4 w-4" />}
-            onClick={() => setIsReportingDisruption(true)}
-          >
-            Report Disruption
-          </Button>
+          </div>
         </div>
-      </header>
 
-      {/* Main Driver Content */}
-      <main className="flex-1 max-w-4xl w-full mx-auto p-4 sm:p-6 flex flex-col gap-6">
-        {reportedAlert && (
-          <Alert variant="warning" title="Incident Staged to Dispatcher" onClose={() => setReportedAlert(null)}>
-            {reportedAlert}
-          </Alert>
-        )}
+        {/* ElevenLabs Voice Incident Reporting Section */}
+        <VoiceRecorder vehicleId={vehicleId} />
 
-        {/* Current Target Stop Hero Card */}
-        {activeStop && activeStop.status !== "DELIVERED" ? (
-          <div className="rounded-xl border-2 border-[var(--primary)] bg-[var(--card)] p-5 shadow-sm flex flex-col gap-4">
-            <div className="flex items-start justify-between">
-              <div>
-                <span className="text-[11px] font-bold text-[var(--primary)] uppercase tracking-wider">
-                  CURRENT ACTIVE DELIVERY
-                </span>
-                <h2 className="text-xl font-bold text-[var(--foreground)] mt-0.5">
-                  {activeStop.customerName}
-                </h2>
-                <div className="flex items-center gap-1.5 text-xs text-[var(--muted-foreground)] mt-1">
-                  <MapPin className="h-3.5 w-3.5 text-[var(--primary)]" />
-                  <span>{activeStop.address}</span>
-                </div>
-              </div>
-              <StatusBadge status="ACTIVE_VEHICLE" customLabel="EN ROUTE" />
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 p-3 rounded-lg bg-[var(--surface-secondary)] text-xs">
-              <div>
-                <span className="text-[var(--muted-foreground)] block text-[10px]">ORDER REF</span>
-                <span className="font-mono font-bold text-[var(--foreground)]">{activeStop.orderRef}</span>
-              </div>
-              <div>
-                <span className="text-[var(--muted-foreground)] block text-[10px]">TIME WINDOW</span>
-                <span className="font-mono font-bold text-[var(--foreground)]">{activeStop.timeWindow}</span>
-              </div>
-              <div>
-                <span className="text-[var(--muted-foreground)] block text-[10px]">PAYLOAD WEIGHT</span>
-                <span className="font-mono font-bold text-[var(--foreground)]">{activeStop.weightKg} kg</span>
-              </div>
-            </div>
-
-            {/* Stop Actions */}
-            <div className="flex items-center gap-3 pt-2">
-              <Button
-                variant="primary"
-                size="lg"
-                className="flex-1"
-                leftIcon={<CheckCircle2 className="h-5 w-5" />}
-                onClick={() => handleMarkDelivered(activeStopIndex)}
-              >
-                Mark as Delivered
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                leftIcon={<Navigation className="h-4 w-4" />}
-                onClick={() => window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(activeStop.address)}`, "_blank")}
-              >
-                Directions
-              </Button>
+        {/* Today's Route Stops Checklist */}
+        <div className="space-y-3">
+          <div className="flex items-center justify-between">
+            <h2 className="text-lg font-bold text-foreground">Assigned Route Manifest</h2>
+            <div className="text-xs text-muted">
+              {stops.filter((s) => s.status === "COMPLETED").length} of {stops.length} completed
             </div>
           </div>
-        ) : (
-          <div className="p-8 rounded-xl border border-[var(--success-border)] bg-[var(--success-subtle)] text-center flex flex-col items-center gap-2">
-            <CheckCircle2 className="h-10 w-10 text-[var(--success)]" />
-            <h3 className="text-lg font-bold text-[var(--success-subtle-foreground)]">Shift Manifest Fully Completed!</h3>
-            <p className="text-xs text-[var(--success-subtle-foreground)]">All scheduled deliveries have been fulfilled and verified.</p>
-          </div>
-        )}
 
-        {/* Route Stops Sequence */}
-        <div className="flex flex-col gap-3">
-          <h3 className="text-sm font-semibold text-[var(--foreground)]">
-            Full Shift Stop Sequence ({stops.length} stops)
-          </h3>
-
-          <div className="space-y-2.5">
+          <div className="space-y-3">
             {stops.map((stop, index) => {
-              const isCurrent = index === activeStopIndex && stop.status !== "DELIVERED";
+              const isCurrent = stop.status === "ACTIVE";
               return (
                 <div
                   key={stop.id}
-                  className={`p-3.5 rounded-xl border transition-all flex items-center justify-between ${
+                  className={`p-4 rounded-xl border transition-all ${
                     isCurrent
-                      ? "border-[var(--primary)] bg-[var(--primary)]/5"
-                      : "border-[var(--border)] bg-[var(--surface)]"
+                      ? "border-primary bg-primary/5 shadow-md ring-1 ring-primary/30"
+                      : stop.status === "COMPLETED"
+                      ? "border-border bg-muted/20 opacity-70"
+                      : "border-border bg-card"
                   }`}
                 >
-                  <div className="flex items-center gap-3">
-                    <div
-                      className={`h-7 w-7 rounded-full flex items-center justify-center font-mono text-xs font-bold ${
-                        stop.status === "DELIVERED"
-                          ? "bg-[var(--success-subtle)] text-[var(--success-subtle-foreground)]"
-                          : isCurrent
-                          ? "bg-[var(--primary)] text-white"
-                          : "bg-[var(--surface-secondary)] text-[var(--muted-foreground)]"
-                      }`}
-                    >
-                      {index + 1}
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex items-start gap-3">
+                      <div
+                        className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold ${
+                          stop.status === "COMPLETED"
+                            ? "bg-emerald-600 text-white"
+                            : isCurrent
+                            ? "bg-primary text-primary-foreground"
+                            : "bg-muted text-muted-foreground"
+                        }`}
+                      >
+                        {stop.status === "COMPLETED" ? "✓" : index + 1}
+                      </div>
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <h3 className="text-base font-semibold text-foreground">
+                            {stop.customerName}
+                          </h3>
+                          {isCurrent && (
+                            <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-primary text-primary-foreground">
+                              CURRENT STOP
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-sm text-muted mt-0.5">{stop.address}</p>
+                        {stop.specialNotes && (
+                          <p className="text-xs text-amber-600 dark:text-amber-400 mt-1">
+                            ℹ️ Note: {stop.specialNotes}
+                          </p>
+                        )}
+                        <div className="flex items-center gap-4 text-xs text-muted mt-2">
+                          <span>
+                            ETA: <strong className="text-foreground">{stop.plannedArrival}</strong>
+                          </span>
+                          <span>Weight: {stop.packageWeight} kg</span>
+                          <span>Volume: {stop.packageVolume} m³</span>
+                        </div>
+                      </div>
                     </div>
-                    <div>
-                      <div className="font-semibold text-xs text-[var(--foreground)]">{stop.customerName}</div>
-                      <div className="text-[11px] text-[var(--muted-foreground)] truncate max-w-sm">{stop.address}</div>
-                    </div>
-                  </div>
 
-                  <div className="flex items-center gap-3">
-                    <span className="font-mono text-xs text-[var(--muted-foreground)] hidden sm:inline">{stop.timeWindow}</span>
-                    <StatusBadge status={stop.status} size="sm" />
+                    <div className="flex flex-col items-end gap-2">
+                      <StatusBadge status={stop.status} />
+                      {stop.status !== "COMPLETED" && (
+                        <Button
+                          variant={isCurrent ? "primary" : "outline"}
+                          size="sm"
+                          onClick={() => setSelectedPodStop(stop)}
+                          className="text-xs"
+                        >
+                          Confirm Delivery (POD)
+                        </Button>
+                      )}
+                    </div>
                   </div>
                 </div>
               );
             })}
           </div>
         </div>
-      </main>
 
-      {/* Disruption Report Modal (Voice / Text) */}
-      <Modal
-        isOpen={isReportingDisruption}
-        onClose={() => setIsReportingDisruption(false)}
-        title="Report Vehicle Disruption or Delay"
-        description="Dispatches incident report to the central control room. Replanning will be staged for dispatcher approval."
-      >
-        <div className="flex flex-col gap-4">
-          <div className="flex items-center justify-between p-3 rounded-lg bg-[var(--surface-secondary)] border border-[var(--border-subtle)]">
-            <div className="flex items-center gap-2 text-xs">
-              <Mic className={`h-4 w-4 ${isRecordingVoice ? "text-[var(--destructive)] animate-pulse" : "text-[var(--primary)]"}`} />
-              <span>{isRecordingVoice ? "ElevenLabs Voice Transcription Listening..." : "Record Incident with ElevenLabs Speech-to-Text"}</span>
-            </div>
-            <Button
-              variant="outline"
-              size="sm"
-              isLoading={isRecordingVoice}
-              onClick={handleSimulateVoiceInput}
-            >
-              {isRecordingVoice ? "Recording..." : "Voice Input"}
-            </Button>
-          </div>
-
-          <div className="flex flex-col gap-1.5">
-            <label className="text-xs font-medium text-[var(--foreground)]">
-              Describe Incident & Location
-            </label>
-            <textarea
-              rows={4}
-              value={disruptionText}
-              onChange={(e) => setDisruptionText(e.target.value)}
-              placeholder="e.g. Flat tire on Highway 101 near Exit 14. Cannot proceed for 45 minutes..."
-              className="w-full rounded-lg border border-[var(--input)] bg-[var(--surface-input)] p-3 text-xs text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--ring)]"
-            />
-          </div>
-
-          <div className="flex items-center justify-end gap-2 pt-2">
-            <Button variant="ghost" size="sm" onClick={() => setIsReportingDisruption(false)}>
-              Cancel
-            </Button>
-            <Button
-              variant="danger"
-              size="sm"
-              leftIcon={<Send className="h-3.5 w-3.5" />}
-              onClick={handleSendDisruption}
-              disabled={!disruptionText.trim()}
-            >
-              Send Incident Report
-            </Button>
-          </div>
-        </div>
-      </Modal>
-    </div>
+        {/* POD Modal */}
+        {selectedPodStop && (
+          <ProofOfDeliveryModal
+            orderId={selectedPodStop.orderId}
+            customerName={selectedPodStop.customerName}
+            onDelivered={() => markDelivered(selectedPodStop.id)}
+            onClose={() => setSelectedPodStop(null)}
+          />
+        )}
+      </div>
+    </AppShell>
   );
 }
