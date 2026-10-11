@@ -108,9 +108,9 @@
     "semantic_hash": "a506849f8dfa91382e6c748d7c21d194"
   },
   "apps/web/app/page.tsx": {
-    "mtime": 1791723828.6070962,
-    "seen": 1791723960.0219529,
-    "ast_hash": "7496113db3dc7787cfc95f5579673659",
+    "mtime": 1791724406.1548595,
+    "seen": 1791724456.1072986,
+    "ast_hash": "8345e0f8c859cb3808149f4941d54325",
     "semantic_hash": ""
   },
   "apps/web/app/plans/[id]/page.tsx": {

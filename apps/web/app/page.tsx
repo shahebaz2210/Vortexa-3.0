@@ -328,76 +328,40 @@ export default function ControlRoomPage() {
           </div>
 
           <div className="flex items-center gap-2.5 flex-wrap">
-            {/* Interactive Date Selector (Category 3) */}
-            <div className="flex items-center gap-1 bg-card border border-border rounded-lg p-1 shadow-xs">
-              <button
-                type="button"
-                onClick={() => adjustDate(-1)}
-                className="p-1.5 rounded hover:bg-muted text-muted hover:text-foreground transition-colors"
-                title="Previous Day"
-                aria-label="Previous Day"
-              >
-                <ChevronLeft className="h-4 w-4" />
-              </button>
-              <div className="flex items-center gap-1.5 px-2 text-xs font-mono font-semibold text-foreground">
-                <Calendar className="h-3.5 w-3.5 text-primary" />
-                <input
-                  type="date"
-                  value={selectedDate}
-                  onChange={(e) => setSelectedDate(e.target.value)}
-                  className="bg-transparent focus:outline-none cursor-pointer"
-                  aria-label="Select delivery plan date"
-                />
-              </div>
-              <button
-                type="button"
-                onClick={() => adjustDate(1)}
-                className="p-1.5 rounded hover:bg-muted text-muted hover:text-foreground transition-colors"
-                title="Next Day"
-                aria-label="Next Day"
-              >
-                <ChevronRight className="h-4 w-4" />
-              </button>
-              <button
-                type="button"
-                onClick={() => setSelectedDate(new Date().toISOString().split("T")[0])}
-                className="text-[10px] font-semibold px-2 py-1 rounded bg-muted/60 hover:bg-muted text-foreground transition-colors ml-1"
-              >
-                Today
-              </button>
-            </div>
-
-            {/* Quick Actions (Category 2) */}
+            {/* 1. Create new route plan */}
             <Link href="/plans/new">
+              <Button
+                variant="primary"
+                size="sm"
+                leftIcon={<FileSpreadsheet className="h-4 w-4" />}
+                className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold"
+              >
+                Create new route plan
+              </Button>
+            </Link>
+
+            {/* 2. Disruptions */}
+            <Link href="/disruptions">
               <Button
                 variant="outline"
                 size="sm"
-                leftIcon={<FileSpreadsheet className="h-4 w-4 text-primary" />}
-              >
-                Upload Excel/CSV
-              </Button>
-            </Link>
-
-            <Link href="/disruptions">
-              <Button
-                variant="secondary"
-                size="sm"
                 leftIcon={<AlertTriangle className="h-4 w-4 text-amber-500" />}
               >
-                Disruptions (2)
+                Disruptions
               </Button>
             </Link>
 
-            <Button
-              variant="primary"
-              size="sm"
-              isLoading={isReplanning}
-              leftIcon={<RotateCw className="h-4 w-4" />}
-              onClick={handleReoptimize}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold"
-            >
-              Re-optimize Routes
-            </Button>
+            {/* 3. Disruption Detected */}
+            <Link href="/disruptions">
+              <Button
+                variant="danger"
+                size="sm"
+                leftIcon={<AlertTriangle className="h-4 w-4" />}
+                className="bg-rose-600 hover:bg-rose-700 text-white font-semibold"
+              >
+                Disruption Detected
+              </Button>
+            </Link>
           </div>
         </div>
 
