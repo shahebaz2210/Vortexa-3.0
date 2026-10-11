@@ -458,3 +458,176 @@ export const idempotencyRecords = pgTable(
   },
   (t) => [uniqueIndex("idempotency_org_key_idx").on(t.organizationId, t.key)]
 );
+
+// ==============================================================================
+// 17. Vehicle Positions Telemetry Stream (Task 38)
+// ==============================================================================
+export const vehiclePositions = pgTable(
+  "vehicle_positions",
+  {
+    id: uuid("id").primaryKey(),
+    organizationId: uuid("organization_id")
+      .notNull()
+      .references(() => organizations.id, { onDelete: "cascade" }),
+    vehicleId: uuid("vehicle_id")
+      .notNull()
+      .references(() => vehicles.id, { onDelete: "cascade" }),
+    latitude: doublePrecision("latitude").notNull(),
+    longitude: doublePrecision("longitude").notNull(),
+    speedMps: doublePrecision("speed_mps"),
+    headingDeg: doublePrecision("heading_deg"),
+    recordedAt: timestamp("recorded_at", { withTimezone: true }).defaultNow().notNull(),
+  },
+  (t) => [index("veh_pos_veh_time_idx").on(t.vehicleId, t.recordedAt)]
+);
+
+// ==============================================================================
+// 18. Incident Approvals (Task 39)
+// ==============================================================================
+export const incidentApprovals = pgTable(
+  "incident_approvals",
+  {
+    id: uuid("id").primaryKey(),
+    organizationId: uuid("organization_id")
+      .notNull()
+      .references(() => organizations.id, { onDelete: "cascade" }),
+    incidentId: uuid("incident_id")
+      .notNull()
+      .references(() => incidents.id, { onDelete: "cascade" }),
+    approverId: varchar("approver_id", { length: 255 }).notNull(),
+    decision: varchar("decision", { length: 50 }).notNull(),
+    notes: text("notes"),
+    modifications: jsonb("modifications"),
+    approvedAt: timestamp("approved_at", { withTimezone: true }).defaultNow().notNull(),
+  },
+  (t) => [index("inc_approval_incident_idx").on(t.incidentId)]
+);
+
+// ==============================================================================
+// 19. Plan Versions (Task 40)
+// ==============================================================================
+export const planVersions = pgTable(
+  "plan_versions",
+  {
+    id: uuid("id").primaryKey(),
+    organizationId: uuid("organization_id")
+      .notNull()
+      .references(() => organizations.id, { onDelete: "cascade" }),
+    planId: uuid("plan_id")
+      .notNull()
+      .references(() => routePlans.id, { onDelete: "cascade" }),
+    versionNumber: integer("version_number").notNull(),
+    stateSnapshot: jsonb("state_snapshot").notNull(),
+    isActive: boolean("is_active").default(false).notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
+  },
+  (t) => [
+    uniqueIndex("plan_ver_num_idx").on(t.planId, t.versionNumber),
+    index("plan_ver_active_idx").on(t.planId, t.isActive),
+  ]
+);
+
+// ==============================================================================
+// 20. Optimization Metrics (Task 41)
+// ==============================================================================
+export const optimizationMetrics = pgTable(
+  "optimization_metrics",
+  {
+    id: uuid("id").primaryKey(),
+    organizationId: uuid("organization_id")
+      .notNull()
+      .references(() => organizations.id, { onDelete: "cascade" }),
+    jobId: uuid("job_id")
+      .notNull()
+      .references(() => optimizationJobs.id, { onDelete: "cascade" }),
+    totalDistanceMeters: doublePrecision("total_distance_meters").notNull(),
+    totalDurationSeconds: integer("total_duration_seconds").notNull(),
+    estimatedFuelLiters: doublePrecision("estimated_fuel_liters"),
+    estimatedCostUsd: doublePrecision("estimated_cost_usd"),
+    estimatedCo2Kg: doublePrecision("estimated_co2_kg"),
+    slaOnTimePercent: doublePrecision("sla_on_time_percent"),
+    unassignedCount: integer("unassigned_count").default(0).notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
+  },
+  (t) => [index("opt_metrics_job_idx").on(t.jobId)]
+);
+
+// ==============================================================================
+// 21. Delivery Change Records (Task 42)
+// ==============================================================================
+export const deliveryChangeRecords = pgTable(
+  "delivery_change_records",
+  {
+    id: uuid("id").primaryKey(),
+    organizationId: uuid("organization_id")
+      .notNull()
+      .references(() => organizations.id, { onDelete: "cascade" }),
+    orderId: uuid("order_id")
+      .notNull()
+      .references(() => orders.id, { onDelete: "cascade" }),
+    oldArrival: timestamp("old_arrival", { withTimezone: true }),
+    newArrival: timestamp("new_arrival", { withTimezone: true }).notNull(),
+    reason: text("reason").notNull(),
+    notified: boolean("notified").default(false).notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
+  },
+  (t) => [index("deliv_change_order_idx").on(t.orderId)]
+);
+
+// ==============================================================================
+// 22. Generated Audio (ElevenLabs Voice Audio Artifacts) (Task 43)
+// ==============================================================================
+export const generatedAudio = pgTable(
+  "generated_audio",
+  {
+    id: uuid("id").primaryKey(),
+    organizationId: uuid("organization_id")
+      .notNull()
+      .references(() => organizations.id, { onDelete: "cascade" }),
+    entityType: varchar("entity_type", { length: 50 }).notNull(),
+    entityId: uuid("entity_id").notNull(),
+    voiceId: varchar("voice_id", { length: 100 }).notNull(),
+    modelId: varchar("model_id", { length: 100 }).notNull(),
+    audioUrl: text("audio_url").notNull(),
+    fileSizeBytes: integer("file_size_bytes"),
+    durationSeconds: doublePrecision("duration_seconds"),
+    expiresAt: timestamp("expires_at", { withTimezone: true }),
+    createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
+  },
+  (t) => [index("gen_audio_entity_idx").on(t.entityType, t.entityId)]
+);
+
+// ==============================================================================
+// 23. Road Network Nodes & Edges (Task 44)
+// ==============================================================================
+export const locationNodes = pgTable("location_nodes", {
+  id: uuid("id").primaryKey(),
+  organizationId: uuid("organization_id")
+    .notNull()
+    .references(() => organizations.id, { onDelete: "cascade" }),
+  nodeOsmId: varchar("node_osm_id", { length: 50 }),
+  latitude: doublePrecision("latitude").notNull(),
+  longitude: doublePrecision("longitude").notNull(),
+});
+
+export const roadEdges = pgTable(
+  "road_edges",
+  {
+    id: uuid("id").primaryKey(),
+    organizationId: uuid("organization_id")
+      .notNull()
+      .references(() => organizations.id, { onDelete: "cascade" }),
+    sourceNodeId: uuid("source_node_id")
+      .notNull()
+      .references(() => locationNodes.id, { onDelete: "cascade" }),
+    targetNodeId: uuid("target_node_id")
+      .notNull()
+      .references(() => locationNodes.id, { onDelete: "cascade" }),
+    distanceMeters: doublePrecision("distance_meters").notNull(),
+    durationSeconds: doublePrecision("duration_seconds").notNull(),
+    isBlocked: boolean("is_blocked").default(false).notNull(),
+    updatedAt: timestamp("updated_at", { withTimezone: true }).defaultNow().notNull(),
+  },
+  (t) => [index("road_edges_source_target_idx").on(t.sourceNodeId, t.targetNodeId)]
+);
+

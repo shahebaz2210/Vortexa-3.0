@@ -58,21 +58,21 @@
 | 33 | Migration 014: `plan_diffs` table (KEPT/MOVED/BROKEN) | TRD §5.2 #12 | `[x]` |
 | 34 | Migration 015: `customer_notifications` table | TRD §5.2 #13 | `[x]` |
 | 35 | Migration 016: `fleet_briefings` table | TRD §5.2 #14 | `[x]` |
-| 36 | Migration 017: `audit_events` table (append-only) | TRD §5.2 #15 | `[ ]` |
-| 37 | Migration 018: `idempotency_records` table | TRD §5.2 #16 | `[ ]` |
-| 38 | Migration 019: `vehicle_positions` table | PRD §5.1 | `[ ]` |
-| 39 | Migration 020: `incident_approvals` table | PRD §5.1 | `[ ]` |
-| 40 | Migration 021: `plan_versions` table | PRD §5.1 | `[ ]` |
-| 41 | Migration 022: `optimization_metrics` table | PRD §5.1 | `[ ]` |
-| 42 | Migration 023: `delivery_change_records` table | PRD §5.1 | `[ ]` |
-| 43 | Migration 024: `generated_audio` table | PRD §5.1 | `[ ]` |
-| 44 | Migration 025: road network tables — `location_nodes` + `road_edges` | PRD §5.1 | `[ ]` |
-| 45 | Add all foreign key constraints across tables | TRD DB-6 | `[ ]` |
-| 46 | Add tenant-scoped composite foreign keys | TRD §5.5 | `[ ]` |
-| 47 | Add operational query indexes | TRD §5.5 | `[ ]` |
-| 48 | Add immutability triggers on `audit_events` and `delivery_events` | TRD §6.3 | `[ ]` |
-| 49 | Add state-transition enforcement triggers | TRD ST-4 | `[ ]` |
-| 50 | Verify all migrations apply cleanly | TRD Phase 1 | `[ ]` |
+| 36 | Migration 017: `audit_events` table (append-only) | TRD §5.2 #15 | `[x]` |
+| 37 | Migration 018: `idempotency_records` table | TRD §5.2 #16 | `[x]` |
+| 38 | Migration 019: `vehicle_positions` table | PRD §5.1 | `[x]` |
+| 39 | Migration 020: `incident_approvals` table | PRD §5.1 | `[x]` |
+| 40 | Migration 021: `plan_versions` table | PRD §5.1 | `[x]` |
+| 41 | Migration 022: `optimization_metrics` table | PRD §5.1 | `[x]` |
+| 42 | Migration 023: `delivery_change_records` table | PRD §5.1 | `[x]` |
+| 43 | Migration 024: `generated_audio` table | PRD §5.1 | `[x]` |
+| 44 | Migration 025: road network tables — `location_nodes` + `road_edges` | PRD §5.1 | `[x]` |
+| 45 | Add all foreign key constraints across tables | TRD DB-6 | `[x]` |
+| 46 | Add tenant-scoped composite foreign keys | TRD §5.5 | `[x]` |
+| 47 | Add operational query indexes | TRD §5.5 | `[x]` |
+| 48 | Add immutability triggers on `audit_events` and `delivery_events` | TRD §6.3 | `[x]` |
+| 49 | Add state-transition enforcement triggers | TRD ST-4 | `[x]` |
+| 50 | Verify all migrations apply cleanly | TRD Phase 1 | `[x]` |
 
 ### 1.4 Row-Level Security
 
